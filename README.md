@@ -1,4 +1,4 @@
-# Team Disband Documentation
+# Catalog Documentation
 
 
 
@@ -19,7 +19,18 @@
 
 ## Available Scripts
 
-In the project directory, you can run:
 ### `npm start`
 
 Runs the app in the development mode on [http://localhost:3000](http://localhost:3000)
+
+## Before starting
+
+### 1. Use `git pull origin main` to start working from the latest version of
+
+After merging with `main` branch your local project 
+
+### 2. Be sure that you named branch properly 
+
+Use this pattern: `taskName-devName`
+
+Example: `routes-serhii`
