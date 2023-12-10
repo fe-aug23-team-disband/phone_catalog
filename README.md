@@ -5,7 +5,13 @@
 ## Project structure
 <pre>
 ├──public
-|  └──images
+|  ├──api
+|  ├──images
+|  |  ├──categories
+|  |  ├──icons
+|  |  ├──phones
+|  |  └──logo.png
+|  └──index.html
 └──src
    ├──api
    ├──components
@@ -53,5 +59,5 @@ If needed, you can ask for help in the `#qna` channel in Discord
 
 ## After work 
 
-### If you want another task
-Just dm me in Telegram or Discord
+### If you feel alive
+Just dm me in Telegram or Discord, i'll give you next task =)
