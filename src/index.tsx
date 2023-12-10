@@ -1,4 +1,3 @@
-import React from "react";
 import ReactDOM from "react-dom/client";
 import { App } from "./App";
 import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -14,7 +13,7 @@ const root = ReactDOM.createRoot(
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path:  "/",
     element: <App />,
     children: [
       {
@@ -27,15 +26,15 @@ const router = createBrowserRouter([
       },
       {
         path: "phones",
-        element: <Catalog type={"phones"}/>,
+        element: <Catalog type={"phones"} />,
       },
       {
         path: "tablets",
-        element: <Catalog type={"tablets"}/>,
+        element: <Catalog type={"tablets"} />,
       },
       {
         path: "accessories",
-        element: <Catalog type={"accessories"}/>,
+        element: <Catalog type={"accessories"} />,
       },
       {
         path: "favourites",

@@ -10,6 +10,9 @@
    ├──api
    ├──components
    ├──styles
+   |  ├──mixins
+   |  ├──utils
+   |  └──main.scss
    ├──types
    └──utils
 </pre>
@@ -19,10 +22,4 @@
 In the project directory, you can run:
 ### `npm start`
 
-Runs the app in the development mode
-on [http://localhost:3000](http://localhost:3000)
-
-some changes
- test branch some changes
-
-test-changes
+Runs the app in the development mode on [http://localhost:3000](http://localhost:3000)

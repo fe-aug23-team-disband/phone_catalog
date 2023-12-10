@@ -1,7 +1,8 @@
+interface Props {
+  type: "phones" | "tablets" | "accessories"
+}
 
-
-// eslint-disable-next-line react/prop-types
-export const Catalog: React.FC<{type: "phones" | "tablets" | "accessories"}> = ({ type }) => {
+export const Catalog: React.FC<Props> = ({ type }) => {
   return (
     <h1>{type}</h1>
   );
