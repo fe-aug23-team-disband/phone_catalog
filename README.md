@@ -29,7 +29,7 @@ Runs the app in the development mode on [http://localhost:3000](http://localhost
 
 After merging with `main` branch your local project 
 
-### 2. Be sure that you named develop branch properly 
+### 2. Be sure that you named developer branch properly 
 
 Use this pattern: `taskName-devName`
 
