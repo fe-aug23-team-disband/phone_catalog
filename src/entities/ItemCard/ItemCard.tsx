@@ -1,4 +1,4 @@
-import phones from "../../../public/api/phones.json";
+import phones from "./phones.json";
 import styles from "./ItemCard.module.scss";
 
 export const ItemCard = () => {
