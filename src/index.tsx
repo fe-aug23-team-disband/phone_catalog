@@ -1,11 +1,11 @@
 import ReactDOM from "react-dom/client";
-import { App } from "./App";
+import { App } from "./app/App";
 import { Navigate, RouterProvider, createBrowserRouter } from "react-router-dom";
-import { Catalog } from "./components/Catalog/Catalog";
-import { Favourites } from "./components/Favourites/Favourites";
-import { Cart } from "./components/Cart/Cart";
-import { NotFound } from "./components/NotFound/NotFound";
-import { HomePage } from "./components/HomePage/HomePage";
+import { CatalogPage } from "./pages/CatalogPage/CatalogPage";
+import { FavouritesPage } from "./pages/FavouritesPage/FavouritesPage";
+import { CartPage } from "./pages/CartPage/CartPage";
+import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
+import { HomePage } from "./pages/HomePage/HomePage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -26,27 +26,27 @@ const router = createBrowserRouter([
       },
       {
         path: "phones",
-        element: <Catalog type={"phones"} />,
+        element: <CatalogPage type={"phones"} />,
       },
       {
         path: "tablets",
-        element: <Catalog type={"tablets"} />,
+        element: <CatalogPage type={"tablets"} />,
       },
       {
         path: "accessories",
-        element: <Catalog type={"accessories"} />,
+        element: <CatalogPage type={"accessories"} />,
       },
       {
         path: "favourites",
-        element: <Favourites />,
+        element: <FavouritesPage />,
       },
       {
         path: "cart",
-        element: <Cart />,
+        element: <CartPage />,
       },
       {
         path: "*",
-        element: <NotFound />,
+        element: <NotFoundPage />,
       }
     ],
   }

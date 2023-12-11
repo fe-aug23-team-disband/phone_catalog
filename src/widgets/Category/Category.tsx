@@ -1,5 +1,5 @@
 import styles from "./Category.module.scss";
-import { CategoryCard } from "./CategoryCard/CategoryCard";
+import { CategoryCard } from "../../entities/CategoryCard/CategoryCard";
 
 import ImagePhone from "./categories/banner-phones.png";
 import ImageTablet from "./categories/banner-tablets.png";

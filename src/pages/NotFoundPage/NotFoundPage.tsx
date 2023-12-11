@@ -1,7 +1,7 @@
 import styles from "./NotFound.module.scss";
 import logo from "./not_found.png";
 
-export const NotFound = () => {
+export const NotFoundPage = () => {
   return (
     <div className={styles.content}>
       <div className={styles.error__message}>
