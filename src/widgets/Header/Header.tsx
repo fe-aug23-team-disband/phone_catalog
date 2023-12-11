@@ -17,7 +17,7 @@ const Header = () => {
   ];
 
   const icons = [
-    { icon: favoriteIcon, url: "/favorite", alt: "favorite", count: 7 },
+    { icon: favoriteIcon, url: "/favourites", alt: "favourites", count: 7 },
     { icon: cartIcon, url: "/cart", alt: "cart" }
   ];
 
