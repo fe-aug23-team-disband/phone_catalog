@@ -4,6 +4,8 @@ interface Props {
 
 export const Catalog: React.FC<Props> = ({ type }) => {
   return (
-    <h1>{type}</h1>
+    <h1>
+      {type}
+    </h1>
   );
 };
