@@ -22,6 +22,9 @@ jobs:
       - name: Install Dependencies
         run: npm install
 
+      - name: Build
+        run: npm run build
+
       - name: Deploy to GitHub Pages
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/fe-aug23-team-disband/phone_catalog.git
