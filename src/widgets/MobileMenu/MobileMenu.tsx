@@ -67,11 +67,11 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
             to={item.url}
             className={styles.mobile_menu_button_link}
           >
-            <span className={styles.header_icon_wrap}>
+            <span className={styles.mobile_menu_button_wrap}>
               <img src={item.icon} alt={item.alt} />
               {item.count && (
-                <span className={styles.header_icon_count_bg}>
-                  <span className={styles.header_icon_count}>{item.count}</span>
+                <span className={styles.mobile_menu_button_count_bg}>
+                  <span className={styles.mobile_menu_button_count}>{item.count}</span>
                 </span>
               )}
             </span>
