@@ -1,7 +1,6 @@
-name: Publish github pages
-  
+name: Deploy to GitHub Pages
+
 on:
-  
   push:
     branches:
       - main
@@ -9,9 +8,7 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      contents: write
+
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v2
@@ -26,9 +23,4 @@ jobs:
         run: npm install
 
       - name: Deploy to GitHub Pages
-        run: |
-          git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/fe-aug23-team-disband/phone_catalog.git
-          npm run deploy
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
+        run: npm run deploy
