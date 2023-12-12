@@ -7,7 +7,7 @@ export const ItemCard = ({ phone }: { phone: PhoneType}) => {
   return (
     <div className={styles.itemCard}>
       <img
-        src={`/${phone.image}`}
+        src={`${phone.image}`}
         alt={phone.name}
         className={styles.itemCard__Image}
       />

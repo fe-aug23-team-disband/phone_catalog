@@ -1,15 +1,15 @@
 import { Category } from "../../widgets/Category/Category";
 import { Carousel } from "../../widgets/Carousel/Carousel";
-import { Slider } from "../../widgets/Slider/Slider";
+import { ItemSlider } from "../../widgets/ItemSlider/ItemSlider";
 
 export const HomePage = () => {
   return (
     <>
       <h1>Welcome to Nice Gadgets store!</h1>
       <Carousel />
-      <Slider />
+      <ItemSlider name="Brand new model" />
       <Category />
-      <Slider />
+      <ItemSlider name="Hot prices" />
     </>
   );
 };

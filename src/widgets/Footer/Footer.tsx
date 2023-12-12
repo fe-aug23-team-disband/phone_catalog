@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import main_styles from "../../styles/main.module.scss";
 import styles from "./Footer.module.scss";
-import logoImg from "./logo.png";
-import topIcon from "./button-top.png";
+import logoImg from "../../static/Footer/logo.png";
+import topIcon from "../../static/Footer/button-top.png";
 import ButtonIcon from "./ButtonIcon";
 
 const Footer = () => {

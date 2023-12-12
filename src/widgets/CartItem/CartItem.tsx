@@ -1,7 +1,7 @@
 import styles from "./CartItem.module.scss";
 
-import IconRemove from "./images/button-close.svg";
-import ImagePhone from "./images/phone.jpg";
+import IconRemove from "../../static/CartItem/button-close.svg";
+import ImagePhone from "../../static/CartItem/phone.jpg";
 
 export const CartItem = () => {
   return (

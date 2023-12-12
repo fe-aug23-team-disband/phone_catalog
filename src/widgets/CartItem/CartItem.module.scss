@@ -35,18 +35,18 @@
     }
 
     &_minus {
-      background-image: url('./images/button-minus.svg');
+      background-image: url('../../static/CartItem/button-minus.svg');
 
       &:hover {
-        background-image: url('./images/button-minus-hover.svg');
+        background-image: url('../../static/CartItem/button-minus-hover.svg');
       }
     }
 
     &_plus {
-      background-image: url('./images/button-plus.svg');
+      background-image: url('../../static/CartItem/button-plus.svg');
 
       &:hover {
-        background-image: url('./images/button-plus-hover.svg');
+        background-image: url('../../static/CartItem/button-plus-hover.svg');
       }
     }
   }

@@ -1,10 +1,10 @@
 import styles from "./Header.module.scss";
 import cn from "classnames";
 import { Link, NavLink } from "react-router-dom";
-import logoImg from "./logo.png";
-import favoriteIcon from "./button-heart.png";
-import cartIcon from "./button-shop.png";
-import menuIcon from "./button-burger-menu.png";
+import logoImg from "../../static/Header/logo.png";
+import favoriteIcon from "../../static/Header/button-heart.png";
+import cartIcon from "../../static/Header/button-shop.png";
+import menuIcon from "../../static/Header/button-burger-menu.png";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import { useState } from "react";
 

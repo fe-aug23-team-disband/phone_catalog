@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./NotFound.module.scss";
-import ImageError from "./not_found.png";
+import ImageError from "../../static/NotFoundPage/not_found.png";
 
 export const NotFoundPage = () => {
   return (
