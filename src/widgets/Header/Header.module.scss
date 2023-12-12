@@ -4,23 +4,31 @@
   display: flex;
   align-items: center;
   justify-content: left;
-  height: 64px;
-  background: $black;
   box-shadow: 0px 1px 0px 0px #323542;
-
+  height: 64px;
+  background: $primary-color;
+  font-family: "Mont", "Arial", sans-serif;
+  font-weight: bold;
+  &_menu {
+    display: none;
+    margin: 0;
+    border: 0;
+    border-left: 1px solid #323542;
+    padding: 23px;
+    background: $primary-color;
+  }
   &_inside_wrapper {
-    // background-color: aqua;
     display: flex;
-    width: 100%;
     justify-content: space-between;
+    width: 100%;
   }
 
   &_logo {
     display: flex;
     &_img {
+      margin: 0 24px;
       width: 80px;
       height: 28px;
-      margin: 0 24px;
     }
   }
 
@@ -28,12 +36,11 @@
     display: flex;
     align-items: center;
     &__list {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
       display: flex;
       gap: 64px;
-      display: flex;
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
     }
     &__item {
       text-decoration: none;
@@ -41,36 +48,36 @@
     &__link {
       position: relative;
       padding: 26px 0;
-      text-decoration: none;
-      font-size: 12px;
-      font-style: normal;
-      font-weight: 800;
       line-height: 11px;
       letter-spacing: 0.48px;
+      font-size: 12px;
+      font-weight: 800;
       text-transform: uppercase;
+      text-decoration: none;
       color: $secondary-text-color;
+
+      &_active {
+        color: $primary-text-color;
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          margin-bottom: 0;
+          width: 100%;
+          height: 3px;
+          bottom: 0;
+          background-color: $primary-text-color;
+        }
+      }
+
       &:hover {
         color: $primary-text-color;
       }
     }
-    &__link_active {
-      color: $primary-text-color;
-      &::after {
-        display: block;
-        position: absolute;
-        content: "";
-        height: 4px;
-        width: 100%;
-        bottom: 0;
-        margin-bottom: 0;
-        background-color: $primary-text-color;
-      }
-    }
   }
   &_icons {
-    color: wheat;
     &_link {
-      padding: 24px;
+      padding: 22px 24px;
       border-left: 1px solid #323542;
     }
   }
@@ -84,13 +91,13 @@
   }
   &_icon {
     &_count_bg {
+      position: absolute;
       top: -7px;
       right: -7px;
-      position: absolute;
-      background-color: #eb5757;
       width: 14px;
       height: 14px;
       border-radius: 50%;
+      background-color: #eb5757;
       font-size: 9px;
       text-align: center;
     }
@@ -98,30 +105,29 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #f1f2f9;
       height: inherit;
+      color: $primary-text-color;
     }
   }
 }
 
-// @media (max-width: 800px) {
-//   .header {
-//     display: flex;
-//     justify-content: space-between;
-//     &_menu {
+@media (max-width: 800px) {
+  .header {
+    display: flex;
+    justify-content: space-between;
+    &_menu {
+      display: block;
+    }
+    &_inside_wrapper {
+      display: none;
+    }
 
-//     }
-//     &_inside_wrapper {
-//       visibility: hidden;
-//       height: 0;
-//       width: 0;
-//     }
-//   }
-// }
-
-
-
-
-
-// -----------menu-------
-
+    &_logo {
+      display: flex;
+      &_img {
+        width: 64px;
+        height: 22px;
+      }
+    }
+  }
+}
