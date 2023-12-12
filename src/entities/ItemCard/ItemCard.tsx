@@ -1,40 +1,51 @@
-import phones from "./phones.json";
+import { PhoneType } from "../../types/PhoneType";
 import styles from "./ItemCard.module.scss";
+import { FavoriteButton } from "../../shared/FavoriteButton/FavoriteButton";
+import { AddToCartButton } from "../../shared/AddToCartButton/AddToCartButton";
 
-export const ItemCard = () => {
-  const testPhone = phones[0];
+export const ItemCard = ({ phone }: { phone: PhoneType}) => {
   return (
     <div className={styles.itemCard}>
       <img
-        src={`/${testPhone.image}`}
-        alt={testPhone.name}
+        src={`/${phone.image}`}
+        alt={phone.name}
         className={styles.itemCard__Image}
       />
 
       <div className={styles.itemCard__Title}>
-        {testPhone.name}
+        {phone.name}
       </div>
 
       <div className={styles.itemCard__Price}>
-        <div className="ItemCard__Price-Current">{testPhone.price}</div>
+        <div className={styles.itemCard__Price_Current}>{phone.price}</div>
 
-        <div className="ItemCard__Price-Full">{testPhone.fullPrice}</div>
+        <div className={styles.itemCard__Price_Full}>{phone.fullPrice}</div>
       </div>
 
-      <div className="ItemCard__Divider"></div>
+      <div className={styles.itemCard__Specs}>
+        <div className={styles.itemCard__Specs_Container}>
+          <div className={styles.itemCard__Specs_Category}>Screen</div>
 
-      <div className="ItemCard__Specs">
-        <div className="ItemCard__Specs-Screen">{testPhone.screen}</div>
+          <div className={styles.itemCard__Specs_Value}>{phone.screen}</div>
+        </div>
 
-        <div className="ItemCard__Specs-Capacity">{testPhone.capacity}</div>
+        <div className={styles.itemCard__Specs_Container}>
+          <div className={styles.itemCard__Specs_Category}>Capacity</div>
 
-        <div className="ItemCard__Specs-RAM">{testPhone.ram}</div>
+          <div className={styles.itemCard__Specs_Value}>{phone.capacity}</div>
+        </div>
+
+        <div className={styles.itemCard__Specs_Container}>
+          <div className={styles.itemCard__Specs_Category}>RAM</div>
+
+          <div className={styles.itemCard__Specs_Value}>{phone.ram}</div>
+        </div>
       </div>
 
-      <div className="ItemCard__ButtonSection">
-        <button className="ItemCard__ButtonSection-AddToCart">Add To Cart</button>
+      <div className={styles.itemCard__ButtonWrapper}>
+        <AddToCartButton />
 
-        <button className="ItemCard__ButtonSection-MakeFavorite"></button>
+        <FavoriteButton />
       </div>
     </div>
   );
