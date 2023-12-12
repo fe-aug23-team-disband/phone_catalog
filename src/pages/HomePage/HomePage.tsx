@@ -5,7 +5,7 @@ import { Slider } from "../../widgets/Slider/Slider";
 export const HomePage = () => {
   return (
     <>
-      <h1>Welcome to Nice Gadgetss store!</h1>
+      <h1>Welcome to Nice Gadgets store!</h1>
       <Carousel />
       <Slider />
       <Category />
