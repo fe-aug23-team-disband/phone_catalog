@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styles from "./NotFound.module.scss";
 import logo from "./not_found.png";
 
@@ -10,7 +11,7 @@ export const NotFoundPage = () => {
           The link is broken or the page no longer exists.
         </p>
         <p className={styles.description}>
-          Go to the <a className={styles.homepage__link} href="/">homepage</a>.
+          Go to the <Link className={styles.homepage__link} to="/">homepage</Link>.
         </p>
       </div>
       <img className={styles.error__image} src={logo} alt="Page not found" />
