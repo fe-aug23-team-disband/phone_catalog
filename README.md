@@ -3,25 +3,7 @@
 
 
 ## Project structure
-<pre>
-├──public
-|  ├──api
-|  ├──images
-|  |  ├──categories
-|  |  ├──icons
-|  |  ├──phones
-|  |  └──logo.png
-|  └──index.html
-└──src
-   ├──api
-   ├──components
-   ├──styles
-   |  ├──mixins
-   |  ├──utils
-   |  └──main.scss
-   ├──types
-   └──utils
-</pre>
+https://feature-sliced.design/docs/get-started/overview
 
 ## Available Scripts
 

@@ -1,0 +1,12 @@
+@import '../styles/mixins/mixins.scss';
+@import '../styles/utils/variables.scss';
+@import '../styles/fonts.module.scss';
+
+.mainContent {
+  @include contentPaddingInline;
+  max-width: $max-width;
+}
+
+.mainWrapper {
+  font-family: "Mont", sans-serif;
+}
