@@ -2,7 +2,7 @@
   "name": "phone_catalog",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://fe-aug23-team-disband.github.io",
+  "homepage": "https://fe-aug23-team-disband.github.io/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.7",
     "@testing-library/jest-dom": "^5.17.0",
