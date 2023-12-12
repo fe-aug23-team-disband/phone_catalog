@@ -1,0 +1,101 @@
+@import '../../styles/mixins/mixins.scss';
+@import '../../styles/utils/variables.scss';
+
+.item {
+  display: flex;
+  flex-direction: column;
+  padding: 23px 16px 16px 16px;
+  background-color: $surface-1;
+  @include onTablet {
+    padding: 24px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 23px;
+    margin-bottom: 16px;
+
+    @include onTablet {
+      margin: 0;
+    }
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.3s ease;
+
+    &_remove:hover {
+      transform: scale(1.2);
+    }
+
+    &_minus {
+      background-image: url('./images/button-minus.svg');
+
+      &:hover {
+        background-image: url('./images/button-minus-hover.svg');
+      }
+    }
+
+    &_plus {
+      background-image: url('./images/button-plus.svg');
+
+      &:hover {
+        background-image: url('./images/button-plus-hover.svg');
+      }
+    }
+  }
+
+  &__image_phone {
+    width: 80px;
+  }
+
+  &__name,
+  &__amount {
+    font-size: 14px;
+    font-weight: 600;
+    color: $primary-text-color;
+  }
+
+  &__values {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include onTablet {
+      gap: 53px;
+    }
+  }
+
+  &__count {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid $surface-2;
+    transition: all ease 0.1s;
+
+    &:hover {
+      background-color: $surface-2;
+    }
+  }
+
+  &__price {
+    font-size: 22px;
+    font-weight: 800;
+    color: $primary-text-color;
+    margin: 0;
+  }
+}
