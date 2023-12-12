@@ -7,6 +7,7 @@ export const App = () => {
   return (
     <main className={styles.mainWrapper}>
       <Header />
+      asdasasdadsdas
       <div className={styles.mainContent}>
         <Outlet />
         <Footer />
