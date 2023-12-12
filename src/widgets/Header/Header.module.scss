@@ -4,19 +4,21 @@
   display: flex;
   align-items: center;
   justify-content: left;
-  box-shadow: 0px 1px 0px 0px #323542;
-  height: 64px;
+  box-shadow: 0px 1px 0px 0px $surface-2;
+  height: 65px;
   background: $black;
   font-family: "Mont", "Arial", sans-serif;
   font-weight: bold;
+
   &_menu {
     display: none;
     margin: 0;
     border: 0;
-    border-left: 1px solid #323542;
+    border-left: 1px solid $surface-2;
     padding: 23px;
     background: $black;
   }
+
   &_inside_wrapper {
     display: flex;
     justify-content: space-between;
@@ -26,6 +28,7 @@
   &_logo {
     display: flex;
     &_img {
+      display: flex;
       margin: 0 24px;
       width: 80px;
       height: 28px;
@@ -42,9 +45,11 @@
       padding: 0;
       list-style-type: none;
     }
+
     &__item {
       text-decoration: none;
     }
+
     &__link {
       position: relative;
       padding: 26px 0;
@@ -65,7 +70,7 @@
           margin-bottom: 0;
           width: 100%;
           height: 3px;
-          bottom: 0;
+          bottom: 4px;
           background-color: $primary-text-color;
         }
       }
@@ -75,12 +80,14 @@
       }
     }
   }
+
   &_icons {
     &_link {
       padding: 22px 24px;
-      border-left: 1px solid #323542;
+      border-left: 1px solid $surface-2;
     }
   }
+
   &_icon_wrap {
     position: relative;
     img {
@@ -89,6 +96,7 @@
       height: 16px;
     }
   }
+
   &_icon {
     &_count_bg {
       position: absolute;
@@ -97,10 +105,12 @@
       width: 14px;
       height: 14px;
       border-radius: 50%;
-      background-color: #eb5757;
+      border: 1px solid $black;
+      background-color: $red;
       font-size: 9px;
       text-align: center;
     }
+
     &_count {
       display: flex;
       align-items: center;
@@ -115,9 +125,11 @@
   .header {
     display: flex;
     justify-content: space-between;
+
     &_menu {
       display: block;
     }
+
     &_inside_wrapper {
       display: none;
     }
