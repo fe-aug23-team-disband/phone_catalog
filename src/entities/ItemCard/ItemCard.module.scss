@@ -1,8 +1,11 @@
 $card-width: 272px;
 $padding: 32px;
 
+@import '../../styles/mixins/mixins.scss';
+
 .itemCard {
   display: flex;
+  box-sizing: border-box;
   width: $card-width;
   padding: $padding;
   flex-direction: column;
@@ -10,47 +13,98 @@ $padding: 32px;
   gap: 8px;
   flex-shrink: 0;
   background:#161827;
-}
 
-.itemCard__Image {
-  width: 100%;
-}
+  &__Image{
+    width: 100%;
+    max-width: 208px;
+    height: auto;
+  }
 
-.itemCard__Title {
-  display: flex;
-  padding-top: 16px;
-  align-items: flex-start;
-  align-self: stretch;
+  &__Title {
+    display: flex;
+    padding-top: 16px;
+    align-items: flex-start;
+    align-self: stretch;
 
-  color: var(--gray-white, #F1F2F9);
-  font-family: Mont;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 21px;
-}
+    color: var(--gray-white, #F1F2F9);
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 21px;
+  }
 
-.itemCard__Price {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
+  &__Price {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 
-.itemCard__Price-Current {
-  color: var(--gray-white, #F1F2F9);
-  font-family: Mont;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 800;
-  line-height: 140%;
-}
+    &_Current {
+      color: var(--gray-white, #F1F2F9);
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 140%;
+    }
 
-.itemCard__Price-Full {
-  color: var(--gray-secondary, #75767F);
-  font-family: Mont;
-  font-size: 22px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  text-decoration-line: strikethrough;
+    &_Full {
+      color: var(--gray-secondary, #75767F);
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      text-decoration-line: line-through;
+    }
+  }
+
+  &__Specs {
+    display: flex;
+    padding: 8px 0px;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+
+    &::before {
+      content: "";
+      height: 1px;
+      width: 100%;
+      background: #3B3E4A;
+      position: absolute;
+      top: -4px;
+    }
+
+    &_Container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      align-self: stretch;
+    }
+
+    &_Category {
+      color: var(--gray-secondary, #75767F);
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+
+    &_Value {
+      color: var(--gray-white, #F1F2F9);
+      text-align: right;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 700;
+      line-height: normal;
+    }
+  }
+
+  &__ButtonWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+  }
 }
