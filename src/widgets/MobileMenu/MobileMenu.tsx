@@ -26,7 +26,12 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
   return (
     <nav className={styles.mobile_menu}>
       <header className={styles.mobile_menu_header}>
-        <Link to="/">
+        <Link
+          onClick={() => {
+            onClose();
+          }}
+          to="/"
+        >
           <img className={styles.mobile_menu_logo} src={logoImg} alt="logo" />
         </Link>
         <button
@@ -57,7 +62,7 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
           </li>
         ))}
       </ul>
-      <div className={styles.mobile_menu_buttons_bottom }>
+      <div className={styles.mobile_menu_buttons_bottom}>
         {icons.map((item, index) => (
           <Link
             onClick={() => {
@@ -71,7 +76,9 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
               <img src={item.icon} alt={item.alt} />
               {item.count && (
                 <span className={styles.mobile_menu_button_count_bg}>
-                  <span className={styles.mobile_menu_button_count}>{item.count}</span>
+                  <span className={styles.mobile_menu_button_count}>
+                    {item.count}
+                  </span>
                 </span>
               )}
             </span>

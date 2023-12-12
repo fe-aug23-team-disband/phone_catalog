@@ -23,7 +23,6 @@ const Header = () => {
     { icon: cartIcon, url: "/cart", alt: "cart" }
   ];
   const handleCloseMenu = () => {
-    console.log("yyt");
     setIsOpenMenu(false);
   };
 

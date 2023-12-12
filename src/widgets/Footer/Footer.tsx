@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import main_styles from "../../styles/main.module.scss";
 import styles from "./Footer.module.scss";
 import logoImg from "./logo.png";
+import topIcon from "./button-top.png";
+import ButtonIcon from "./ButtonIcon";
 
 const Footer = () => {
   return (
@@ -18,8 +20,10 @@ const Footer = () => {
         </nav>
 
         <div className={styles.footer_swipe_top}>
-          <p>Back to top</p>
-          <a href={"#top"}>icon</a>
+          <p className={styles.footer_swipe_top_title}>Back to top</p>
+          <a href={"#top"}>
+            <ButtonIcon icon={topIcon} size="small" />
+          </a>
         </div>
       </div>
     </footer>
