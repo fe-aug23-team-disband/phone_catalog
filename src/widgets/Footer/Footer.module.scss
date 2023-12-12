@@ -1,0 +1,54 @@
+@import "../../styles/utils/variables.scss";
+
+.footer {
+  border-top: 1px solid $elements;
+  background-color: $black;
+  font-size: 12px;
+  font-weight: 800;
+  font-style: normal;
+  letter-spacing: 0.48px;
+  line-height: 11px;
+  text-transform: uppercase;
+  color: $primary-text-color;
+
+  &_inside {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 0;
+  }
+
+  &_logo {
+    &_link {
+      width: 33.33%;
+    }
+    &_img {
+      width: 89px;
+      height: 32px;
+    }
+  }
+
+  &_navigation {
+    width: 33.33%;
+    display: flex;
+    justify-content: space-between;
+    
+    a {
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 800;
+      line-height: 11px;
+      letter-spacing: 0.48px;
+      text-transform: uppercase;
+      color: $primary-text-color;
+      text-decoration: none;
+    }
+  }
+
+  &_swipe_top {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 33.33%;
+  }
+}

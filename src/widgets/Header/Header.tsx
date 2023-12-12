@@ -7,7 +7,6 @@ import cartIcon from "./button-shop.png";
 import menuIcon from "./button-burger-menu.png";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import { useState } from "react";
-// import logoImg2 from "../../../public/images/logo.png";
 
 const Header = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);

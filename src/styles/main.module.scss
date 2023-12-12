@@ -1,6 +1,18 @@
-@import '../styles/mixins/mixins.scss';
-@import '../styles/utils/variables.scss';
-@import '../styles/fonts.module.scss';
+@import "../styles/mixins/mixins.scss";
+@import "../styles/utils/variables.scss";
+@import "../styles/fonts.module.scss";
+
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.appWrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 
 .mainContent {
   @include contentPaddingInline;
@@ -9,5 +21,8 @@
 
 .mainWrapper {
   font-family: "Mont", sans-serif;
+  color: $primary-text-color;
   background-color: $black;
+  flex: 1;
+  margin-top: 1px;
 }
