@@ -5,12 +5,12 @@ import styles from "../styles/main.module.scss";
 
 export const App = () => {
   return (
-    <>
+    <main className={styles.mainWrapper}>
       <Header />
-      <div className={styles.mainWrapper}>
+      <div className={styles.mainContent}>
         <Outlet />
         <Footer />
       </div>
-    </>
+    </main>
   );
 };
