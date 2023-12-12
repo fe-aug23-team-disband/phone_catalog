@@ -1,15 +1,16 @@
 @import "../../styles/mixins/mixins.scss";
+@import "../../styles/utils/variables.scss";
 
 .category__product {
   grid-column: 1 / -1;
 
-  // @include onDesktop {
-  //   grid-column: span 8;
-  // }
+  @include onTablet {
+    grid-column: span 4;
+  }
 
-  // @include onTablet {
-  //   grid-column: span 5;
-  // }
+  @include onDesktop {
+    grid-column: span 8;
+  }
 
   &-title {
     font-size: 20px;
@@ -18,29 +19,36 @@
   }
 
   &-description {
+    color: $secondary-text-color;
     font-size: 14px;
     font-weight: 600;
     line-height: 21px;
-  }
-
-  &:hover .image {
-    transform: scale(1.1);
   }
 }
 
 .category__card {
   overflow: hidden;
-  width: 368px;
-  height: 368px;
+  width: 100%;
+  aspect-ratio: 1/1;
   margin: 24px 0;
-  cursor: pointer;
-  position: relative;
   border-radius: 3px;
-}
-
-.image {
-  position: absolute;
-  right: 0;
-  bottom: 0;
+  position: relative;
+  cursor: pointer;
   transition: all 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: rgba(32, 14, 134, 0.3) 7px 7px;
+  }
+
+  &:hover .image {
+    transform: scale(1.1);
+  }
+
+  .image {
+    width: 83%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: all 0.3s ease-in-out;
+  }
 }

@@ -1,5 +1,5 @@
 @import "../../styles/mixins/mixins.scss";
-@import "../../styles/fonts.module.scss";
+@import "../../styles/utils/variables.scss";
 
 
 h2,
@@ -11,6 +11,7 @@ p {
 
 .category {
   font-family: "Mont", sans-serif;
+  color: $primary-text-color;
 
   &__title {
     font-size: 32px;
@@ -20,57 +21,6 @@ p {
   }
 
   &__products {
-    // @include pageGrid;
-    display: flex;
-    gap: 30px;
+    @include pageGrid;
   }
-
-  /* &__product {
-    grid-column: 1 / -1;
-
-    @include onDesktop {
-      grid-column: span 8;
-    }
-
-    @include onTablet {
-      grid-column: span 5;
-    }
-
-    &-title {
-      font-size: 20px;
-      font-weight: 700;
-      line-height: 26px;
-    }
-
-    &-description {
-      font-size: 14px;
-      font-weight: 600;
-      line-height: 21px;
-    }
-
-    &:hover .image {
-      transform: scale(1.1);
-    }
-  }
-
-  &__card {
-    overflow: hidden;
-    width: 368px;
-    height: 368px;
-    margin: 24px 0;
-    cursor: pointer;
-    position: relative;
-
-    &--color-1 {
-      background-color: #6D6474;
-    }
-
-    &--color-2 {
-      background-color: #8D8D92;
-    }
-
-    &--color-3 {
-      background-color: #973D5F;
-    }
-  } */
 }
