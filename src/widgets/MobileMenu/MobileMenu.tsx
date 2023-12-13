@@ -2,10 +2,10 @@ import React from "react";
 import cn from "classnames";
 import styles from "./MobileMenu.module.scss";
 import { Link, NavLink } from "react-router-dom";
-import logoImg from "../Header/logo.png";
-import menuCloseIcon from "./button-close.png";
-import favoriteIcon from "../Header/button-heart.png";
-import cartIcon from "../Header/button-shop.png";
+import logoImg from "../../static/Header/logo.png";
+import menuCloseIcon from "../../static/MobileMenu/button-close.png";
+import favoriteIcon from "../../static/Header/button-heart.png";
+import cartIcon from "../../static/Header/button-shop.png";
 type Props = {
   onClose: () => void;
 };

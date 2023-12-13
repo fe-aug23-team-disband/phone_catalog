@@ -6,6 +6,7 @@ import { FavouritesPage } from "./pages/FavouritesPage/FavouritesPage";
 import { CartPage } from "./pages/CartPage/CartPage";
 import { NotFoundPage } from "./pages/NotFoundPage/NotFoundPage";
 import { HomePage } from "./pages/HomePage/HomePage";
+import { ItemPage } from "./pages/ItemPage/ItemPage";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -35,6 +36,10 @@ const router = createHashRouter([
       {
         path: "accessories",
         element: <CatalogPage type={"accessories"} />,
+      },
+      {
+        path: "product/:productId",
+        element: <ItemPage />,
       },
       {
         path: "favourites",

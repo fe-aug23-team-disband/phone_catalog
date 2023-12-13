@@ -1,9 +1,9 @@
 import styles from "./Category.module.scss";
 import { CategoryCard } from "../../entities/CategoryCard/CategoryCard";
 
-import ImagePhone from "./categories/banner-phones.png";
-import ImageTablet from "./categories/banner-tablets.png";
-import ImageAccessories from "./categories/banner-accessories.png";
+import ImagePhone from "../../static/Category/banner-phones.png";
+import ImageTablet from "../../static/Category/banner-tablets.png";
+import ImageAccessories from "../../static/Category/banner-accessories.png";
 
 const colors = ["#6D6474", "#8D8D92", "#973D5F"];
 
