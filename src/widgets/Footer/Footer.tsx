@@ -5,7 +5,18 @@ import logoImg from "../../static/Footer/logo.png";
 import topIcon from "../../static/Footer/button-top.png";
 import ButtonIcon from "./ButtonIcon";
 
+
 const Footer = () => {
+  const links = [
+    { to: "https://github.com/fe-aug23-team-disband", label: "Github" },
+    { to: "/contacts", label: "Contacts" },
+    { to: "/rights", label: "Rights" }
+  ];
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={`${styles.footer_inside} ${main_styles.mainContent}`}>
@@ -14,16 +25,16 @@ const Footer = () => {
         </Link>
 
         <nav className={styles.footer_navigation}>
-          <Link to={"/github"}>Github</Link>
-          <Link to={"/contacts"}>Contacts</Link>
-          <Link to={"/rights"}>rights</Link>
+          {links.map((link, index) => (
+            <Link key={index} to={link.to} target="_blank">
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
         <div className={styles.footer_swipe_top}>
           <p className={styles.footer_swipe_top_title}>Back to top</p>
-          <a href={"#top"}>
-            <ButtonIcon icon={topIcon} size="small" />
-          </a>
+          <ButtonIcon icon={topIcon} size="small" onClick={scrollToTop} />
         </div>
       </div>
     </footer>

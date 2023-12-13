@@ -15,15 +15,26 @@
 
   &_inside {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 32px;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 16px;
+
+    @include onTablet {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      padding: 32px;
+    }
   }
 
   &_logo {
     &_link {
-      width: 33.33%;
+      width: 100%;
+      @include onTablet {
+        width: 33.33%;
+      }
     }
+
     &_img {
       width: 89px;
       height: 32px;
@@ -31,9 +42,10 @@
   }
 
   &_navigation {
-    width: 33.33%;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
 
     a {
       font-size: 12px;
@@ -49,14 +61,21 @@
         color: $secondary-text-color;
       }
     }
+
+    @include onTablet {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 33.33%;
+    }
   }
 
   &_swipe_top {
     display: flex;
-    gap: 15px;
     align-items: center;
-    justify-content: flex-end;
-    width: 33.33%;
+    gap: 15px;
+    width: 100%;
+    justify-content: center;
 
     &_title {
       color: #75767f;
@@ -65,32 +84,10 @@
       font-weight: 700;
       text-transform: initial;
     }
-  }
-}
 
-@media (max-width: 640px) {
-  .footer {
-    &_inside {
-      flex-direction: column;
-      gap: 32px;
-      padding: 32px 16px;
-    }
-
-    &_logo {
-      &_link {
-        width: 100%;
-      }
-    }
-
-    &_navigation {
-      width: 100%;
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    &_swipe_top {
-      width: 100%;
-      justify-content: center;
+    @include onTablet {
+      width: 33.33%;
+      justify-content: flex-end;
     }
   }
 }
