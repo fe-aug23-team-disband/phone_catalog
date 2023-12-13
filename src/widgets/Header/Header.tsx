@@ -13,9 +13,9 @@ const Header = () => {
 
   const navItems = [
     { label: "home", to: "/" },
-    { label: "Phones", to: "phones" },
-    { label: "tablets", to: "tablets" },
-    { label: "accessories", to: "accessories", dataQa: "hover" }
+    { label: "Phones", to: "products?category=phones" },
+    { label: "tablets", to: "products?category=tablets" },
+    { label: "accessories", to: "products?category=accessories", dataQa: "hover" }
   ];
 
   const icons = [
