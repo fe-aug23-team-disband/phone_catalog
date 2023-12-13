@@ -3,6 +3,8 @@
 
 .category__product {
   grid-column: 1 / -1;
+  text-decoration: none;
+  color: inherit;
 
   @include onTablet {
     grid-column: span 4;

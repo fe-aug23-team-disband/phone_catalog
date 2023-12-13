@@ -1,0 +1,13 @@
+@import "../../../styles/utils/variables.scss";
+
+.available-color {
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  border: 2px solid $secondary-text-color;
+  padding: 2px;
+}
+
+.active {
+  border: 2px solid $primary-text-color;
+}
