@@ -1,7 +1,13 @@
 {
   "files": {
-    "main.css": "/phone_catalog/static/css/main.3fd29213.css",
-    "main.js": "/phone_catalog/static/js/main.8d898318.js",
+    "main.css": "/phone_catalog/static/css/main.150917c0.css",
+    "main.js": "/phone_catalog/static/js/main.ca749a28.js",
+    "static/media/carousele-banner_3.png": "/phone_catalog/static/media/carousele-banner_3.49709a8824ce53447cb7.png",
+    "static/media/carousele-banner_2.png": "/phone_catalog/static/media/carousele-banner_2.dd8f8bad76d46cf82fab.png",
+    "static/media/carousele-banner.png": "/phone_catalog/static/media/carousele-banner.e7410c42215a1175ed3a.png",
+    "static/media/carousele-banner_mobile_2.png": "/phone_catalog/static/media/carousele-banner_mobile_2.5f5d79d7e012215bd622.png",
+    "static/media/carousele-banner_mobile_3.png": "/phone_catalog/static/media/carousele-banner_mobile_3.0a54f35cde6b9f37e648.png",
+    "static/media/carousele-banner_mobile_1.png": "/phone_catalog/static/media/carousele-banner_mobile_1.4d191e7f17b1aec518be.png",
     "static/media/Mont-Regular.ttf": "/phone_catalog/static/media/Mont-Regular.e797167c18f9897bb607.ttf",
     "static/media/Mont-SemiBold.ttf": "/phone_catalog/static/media/Mont-SemiBold.0b5e68ebb36ca4006e21.ttf",
     "static/media/Mont-Bold.ttf": "/phone_catalog/static/media/Mont-Bold.3675b597d3ffb2b75168.ttf",
@@ -18,14 +24,15 @@
     "static/media/button-close.svg": "/phone_catalog/static/media/button-close.dc168d5971b05e9a33023939e2c1cc61.svg",
     "static/media/button-plus-hover.svg": "/phone_catalog/static/media/button-plus-hover.1377f8b445ceb66e847d.svg",
     "static/media/button-plus.svg": "/phone_catalog/static/media/button-plus.7fbf20b297aa5cdb208d.svg",
+    "static/media/arrow_banner.svg": "/phone_catalog/static/media/arrow_banner.1037ae575cedc2277ef2.svg",
     "index.html": "/phone_catalog/index.html",
     "static/media/button-minus-hover.svg": "/phone_catalog/static/media/button-minus-hover.0365a13e7f5baa53bce8.svg",
     "static/media/button-minus.svg": "/phone_catalog/static/media/button-minus.cec33362a9c8f4101ffa.svg",
-    "main.3fd29213.css.map": "/phone_catalog/static/css/main.3fd29213.css.map",
-    "main.8d898318.js.map": "/phone_catalog/static/js/main.8d898318.js.map"
+    "main.150917c0.css.map": "/phone_catalog/static/css/main.150917c0.css.map",
+    "main.ca749a28.js.map": "/phone_catalog/static/js/main.ca749a28.js.map"
   },
   "entrypoints": [
-    "static/css/main.3fd29213.css",
-    "static/js/main.8d898318.js"
+    "static/css/main.150917c0.css",
+    "static/js/main.ca749a28.js"
   ]
 }
