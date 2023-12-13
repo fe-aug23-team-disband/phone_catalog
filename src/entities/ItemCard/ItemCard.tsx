@@ -1,13 +1,13 @@
-import { PhoneType } from "../../types/PhoneType";
 import styles from "./ItemCard.module.scss";
 import { FavoriteButton } from "../../shared/FavoriteButton/FavoriteButton";
 import { AddToCartButton } from "../../shared/AddToCartButton/AddToCartButton";
+import {ProductShorted} from "../../types/Product";
 
-export const ItemCard = ({ phone }: { phone: PhoneType}) => {
+export const ItemCard = ({ phone }: { phone: ProductShorted}) => {
   return (
     <div className={styles.itemCard}>
       <img
-        src={`${phone.image}`}
+        src={`data:image/png;base64, ${phone.image}`}
         alt={phone.name}
         className={styles.itemCard__Image}
       />
@@ -17,9 +17,9 @@ export const ItemCard = ({ phone }: { phone: PhoneType}) => {
       </div>
 
       <div className={styles.itemCard__Price}>
-        <div className={styles.itemCard__Price_Current}>{phone.price}</div>
+        <div className={styles.itemCard__Price_Current}>{phone.priceDiscount}</div>
 
-        <div className={styles.itemCard__Price_Full}>{phone.fullPrice}</div>
+        <div className={styles.itemCard__Price_Full}>{phone.priceRegular}</div>
       </div>
 
       <div className={styles.itemCard__Specs}>
