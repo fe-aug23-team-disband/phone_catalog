@@ -1,0 +1,82 @@
+@import "../../styles/mixins/mixins.scss";
+@import "../../styles/utils/variables.scss";
+
+.carousel_main {
+  padding: 0px;
+
+  @include onTablet {
+    padding: 0 16px;
+  }
+
+  .slick-list {
+    .slick-track {
+      .slick-slide {
+        div {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+  }
+  .slick-arrow {
+    &.slick-next {
+      z-index: 10;
+      background: $surface-2;
+      height: 100%;
+      border: none;
+      max-height: 400px;
+      width: 32px;
+      &::before {
+        content: "";
+        display: block;
+        background: url("./arrow_banner.svg") center/contain no-repeat;
+        width: 32px;
+        height: 9px;
+      }
+    }
+    &.slick-prev {
+      z-index: 10;
+      background: $surface-2;
+      height: 100%;
+      border: none;
+      max-height: 400px;
+      width: 32px;
+      &::before {
+        content: "";
+        display: block;
+        background: url("./arrow_banner.svg") center/contain no-repeat;
+        width: 32px;
+        height: 9px;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .slick-dots {
+    margin: 0;
+    padding: 0;
+    bottom: -20px;
+    li {
+      margin: 0;
+      padding: 0;
+      width: 28px;
+      height: 8px;
+
+      button {
+        width: 14px;
+        height: 4px;
+        padding: 0;
+        background: $elements;
+        &:before {
+          display: none;
+        }
+      }
+    }
+    li.slick-active {
+      button {
+        background: $primary-text-color;
+      }
+    }
+  }
+}
