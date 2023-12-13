@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/phone_catalog/static/css/main.15a2834c.css",
-    "main.js": "/phone_catalog/static/js/main.03be961f.js",
+    "main.css": "/phone_catalog/static/css/main.569ec8f0.css",
+    "main.js": "/phone_catalog/static/js/main.02e1d3bb.js",
     "static/media/Mont-Regular.ttf": "/phone_catalog/static/media/Mont-Regular.e797167c18f9897bb607.ttf",
     "static/media/Mont-SemiBold.ttf": "/phone_catalog/static/media/Mont-SemiBold.0b5e68ebb36ca4006e21.ttf",
     "static/media/Mont-Bold.ttf": "/phone_catalog/static/media/Mont-Bold.3675b597d3ffb2b75168.ttf",
@@ -9,13 +9,23 @@
     "static/media/banner-tablets.png": "/phone_catalog/static/media/banner-tablets.aaf03956b22bdc78819b.png",
     "static/media/banner-phones.png": "/phone_catalog/static/media/banner-phones.60b525e8ac27dc7f8220.png",
     "static/media/not_found.png": "/phone_catalog/static/media/not_found.5770a2800e95e93ccbfc.png",
+    "static/media/phone.jpg": "/phone_catalog/static/media/phone.0ecc4ec475d94192a97e.jpg",
     "static/media/logo.png": "/phone_catalog/static/media/logo.149bfff5d4be962172aa.png",
+    "static/media/slick.svg": "/phone_catalog/static/media/slick.2630a3e3eab21c607e21.svg",
+    "static/media/slick.eot": "/phone_catalog/static/media/slick.a4e97f5a2a64f0ab1323.eot",
+    "static/media/slick.ttf": "/phone_catalog/static/media/slick.c94f7671dcc99dce43e2.ttf",
+    "static/media/slick.woff": "/phone_catalog/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/button-close.svg": "/phone_catalog/static/media/button-close.dc168d5971b05e9a33023939e2c1cc61.svg",
+    "static/media/button-plus-hover.svg": "/phone_catalog/static/media/button-plus-hover.1377f8b445ceb66e847d.svg",
+    "static/media/button-plus.svg": "/phone_catalog/static/media/button-plus.7fbf20b297aa5cdb208d.svg",
     "index.html": "/phone_catalog/index.html",
-    "main.15a2834c.css.map": "/phone_catalog/static/css/main.15a2834c.css.map",
-    "main.03be961f.js.map": "/phone_catalog/static/js/main.03be961f.js.map"
+    "static/media/button-minus-hover.svg": "/phone_catalog/static/media/button-minus-hover.0365a13e7f5baa53bce8.svg",
+    "static/media/button-minus.svg": "/phone_catalog/static/media/button-minus.cec33362a9c8f4101ffa.svg",
+    "main.569ec8f0.css.map": "/phone_catalog/static/css/main.569ec8f0.css.map",
+    "main.02e1d3bb.js.map": "/phone_catalog/static/js/main.02e1d3bb.js.map"
   },
   "entrypoints": [
-    "static/css/main.15a2834c.css",
-    "static/js/main.03be961f.js"
+    "static/css/main.569ec8f0.css",
+    "static/js/main.02e1d3bb.js"
   ]
 }
