@@ -1,9 +1,9 @@
 import styles from "./Category.module.scss";
 import { CategoryCard } from "../../entities/CategoryCard/CategoryCard";
 
-import ImagePhone from "./categories/banner-phones.png";
-import ImageTablet from "./categories/banner-tablets.png";
-import ImageAccessories from "./categories/banner-accessories.png";
+import ImagePhone from "../../static/Category/banner-phones.png";
+import ImageTablet from "../../static/Category/banner-tablets.png";
+import ImageAccessories from "../../static/Category/banner-accessories.png";
 
 const colors = ["#6D6474", "#8D8D92", "#973D5F"];
 
@@ -12,57 +12,6 @@ export const Category = () => {
     <div className={styles.category}>
       <h2 className={styles.category__title}>Shop by category</h2>
       <div className={styles.category__products}>
-        {/* <article className={`${styles.category__product}`}>
-          <div className={`${styles.category__card} ${styles["category__card--color-1"]}`}>
-            <img
-              className={styles.image}
-              src={ImagePhone}
-              alt="Mobile phones"
-            />
-          </div>
-
-          <h4 className={`${styles["category__product-title"]}`}>
-            Mobile phones
-          </h4>
-          <p className={`${styles["category__product-description"]}`}>
-            95 models
-          </p>
-        </article>
-
-        <article className={`${styles.category__product}`}>
-          <div className={`${styles.category__card} ${styles["category__card--color-2"]}`}>
-            <img
-              className={styles.image}
-              src={ImageTablet}
-              alt="Mobile phones"
-            />
-          </div>
-
-          <h4 className={`${styles["category__product-title"]}`}>
-            Tablets
-          </h4>
-          <p className={`${styles["category__product-description"]}`}>
-            24 models
-          </p>
-        </article>
-
-        <article className={`${styles.category__product}`}>
-          <div className={`${styles.category__card} ${styles["category__card--color-3"]}`}>
-            <img
-              className={styles.image}
-              src={ImageAccessories}
-              alt="Mobile phones"
-            />
-          </div>
-
-          <h4 className={`${styles["category__product-title"]}`}>
-            Accessories
-          </h4>
-          <p className={`${styles["category__product-description"]}`}>
-            100 models
-          </p>
-        </article> */}
-
         <CategoryCard
           backgroundColor={colors[0]}
           image={ImagePhone}
