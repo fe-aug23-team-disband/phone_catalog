@@ -1,0 +1,22 @@
+@import "../../styles/mixins/mixins.scss";
+
+.carousel {
+  display: flex;
+  margin: 0 -15px 88px -15px;
+
+  @include onTablet {
+    margin: 25px;
+    margin-bottom: 96px;
+  }
+
+  &_wrap_item {
+    display: flex;
+    max-width: 1040px;
+    max-height: 400px;
+  }
+  &_banner {
+    width: inherit;
+    height: inherit;
+    object-fit: cover;
+  }
+}
