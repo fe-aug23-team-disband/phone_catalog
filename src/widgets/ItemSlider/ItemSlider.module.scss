@@ -2,4 +2,13 @@
 
 .sliderContainer {
   overflow: hidden;
+  width: 440px;
+
+  @include onTablet {
+    width: 740px;
+  }
+
+  @include onDesktop {
+    width: 100%;
+  }
 }
