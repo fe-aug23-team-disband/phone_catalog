@@ -1,14 +1,16 @@
 @import "../../styles/mixins/mixins.scss";
 
-.sliderContainer {
-  overflow: hidden;
-  width: 440px;
+.sliderTitle {
+  margin-bottom: 24px;
+  height: 44px;
+  color: var(--Gray-White, #F1F2F9);
+  font-family: Mont;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 140%;
 
-  @include onTablet {
-    width: 740px;
-  }
-
-  @include onDesktop {
-    width: 100%;
+  @media (max-width: 360px) {
+    width: 140px;
   }
 }

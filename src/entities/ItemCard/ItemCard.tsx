@@ -13,7 +13,7 @@ export const ItemCard = ({ phone }: { phone: ProductShorted}) => {
       />
 
       <div className={styles.itemCard__Title}>
-        {phone.name}
+        <div className={styles.itemCard__Title_Text}>{phone.name}</div>
       </div>
 
       <div className={styles.itemCard__Price}>
