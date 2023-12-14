@@ -1,8 +1,8 @@
 import React from "react";
 import "../../styles/utils/variables.scss";
-import cn from "classnames";
+// import cn from "classnames";
 import styles from "./MobileMenu.module.scss";
-import { Link, NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logoImg from "../../static/Header/logo.png";
 import menuCloseIcon from "../../static/MobileMenu/button-close.png";
 import favoriteIcon from "../../static/Header/button-heart.png";
@@ -14,9 +14,13 @@ type Props = {
 };
 
 const MobileMenu: React.FC<Props> = ({ onClose }) => {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const category = searchParams.get("category");
+
   const menuItems = [
     { path: `${globalVariables.patchToHome}`, label: "home" },
-    { path: `${globalVariables.patchToPhones}`, label: "Phones" },
+    { path: `${globalVariables.patchToPhones}`, label: "phones" },
     { path: `${globalVariables.patchToTablets}`, label: "tablets" },
     { path: `${globalVariables.patchToAccessories}`, label: "accessories" }
   ];
@@ -28,7 +32,6 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
 
   return (
     <nav className={styles.mobile_menu}>
-
       <header className={styles.mobile_menu_header}>
         <Link
           onClick={() => {
@@ -51,7 +54,21 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
       <ul className={styles.mobile_menu_list}>
         {menuItems.map((item, index) => (
           <li key={index} className={styles.mobile_menu_item}>
-            <NavLink
+            <Link
+              onClick={() => {
+                onClose();
+              }}
+              key={item.label}
+              to={item.path}
+              className={`${styles.mobile_menu_item_link} ${(category ===
+                null &&
+                item.path === "/") ||
+                (category === item.label.toLowerCase() &&
+                  styles.mobile_menu_item_link_active)}`}
+            >
+              {item.label}
+            </Link>
+            {/* <NavLink
               onClick={() => {
                 onClose();
               }}
@@ -63,7 +80,7 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
               to={item.path}
             >
               {item.label}
-            </NavLink>
+            </NavLink> */}
           </li>
         ))}
       </ul>
