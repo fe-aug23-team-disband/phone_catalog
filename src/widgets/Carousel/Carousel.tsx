@@ -21,10 +21,12 @@ export const Carousel = () => {
   const settings = {
     dots: true,
     infinite: true,
+    autoplay: true,
+    arrows: true,
     speed: 500,
     slidesToShow: 1,
+    autoplaySpeed: 5000,
     slidesToScroll: 1,
-    arrows: true,
     responsive: [
       {
         breakpoint: 640,
