@@ -1,4 +1,5 @@
 import styles from "./FavoriteButton.module.scss";
+import heartIcon from "../../static/ItemCard/Button-Heart.svg";
 import React, {useCallback} from "react";
 import {ProductShorted} from "../../types/Product";
 import {useDispatch} from "react-redux";
@@ -13,7 +14,7 @@ export const FavoriteButton: React.FC<{ product: ProductShorted }> = ({ product 
 
   return (
     <button type="button" className={styles.NotFavorite} onClick={handleClick}>
-      <img src="\images\icons\Button-Heart.svg" alt="heart icon" />
+      <img src={heartIcon} alt="heart icon" />
     </button>
   );
 };

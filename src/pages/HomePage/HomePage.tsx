@@ -15,14 +15,14 @@ export const HomePage = () => {
       <Carousel />
 
       {/* i think we need here skeleton on loading and somehow display error */}
-      <AsyncWrapper data={latest} Loader={<p>Loading</p>} Error={<p>Loading</p>}>
+      <AsyncWrapper data={latest} Loader={<p>Loading</p>} Error={<p>Error</p>}>
         <ItemSlider name="Brand new model" />
       </AsyncWrapper>
 
       <Category />
 
       {/* i think we need here skeleton on loading and somehow display error */}
-      <AsyncWrapper data={hotPrice} Loader={<p>Loading</p>} Error={<p>Loading</p>}>
+      <AsyncWrapper data={hotPrice} Loader={<p>Loading</p>} Error={<p>Error</p>}>
         <ItemSlider name="Hot prices" />
       </AsyncWrapper>
     </>
