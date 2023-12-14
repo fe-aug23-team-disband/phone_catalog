@@ -1,21 +1,28 @@
 import React from "react";
-import cn from "classnames";
+import "../../styles/utils/variables.scss";
+// import cn from "classnames";
 import styles from "./MobileMenu.module.scss";
-import { Link, NavLink } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logoImg from "../../static/Header/logo.png";
 import menuCloseIcon from "../../static/MobileMenu/button-close.png";
 import favoriteIcon from "../../static/Header/button-heart.png";
 import cartIcon from "../../static/Header/button-shop.png";
+import globalVariables from "../../static/variables";
+
 type Props = {
   onClose: () => void;
 };
 
 const MobileMenu: React.FC<Props> = ({ onClose }) => {
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const category = searchParams.get("category");
+
   const menuItems = [
-    { path: "/", label: "home" },
-    { path: "/phones", label: "Phones" },
-    { path: "/tablets", label: "tablets" },
-    { path: "/accessories", label: "accessories" }
+    { path: `${globalVariables.patchToHome}`, label: "home" },
+    { path: `${globalVariables.patchToPhones}`, label: "phones" },
+    { path: `${globalVariables.patchToTablets}`, label: "tablets" },
+    { path: `${globalVariables.patchToAccessories}`, label: "accessories" }
   ];
 
   const icons = [
@@ -43,10 +50,25 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
           <img src={menuCloseIcon} alt={"menu"} />
         </button>
       </header>
+
       <ul className={styles.mobile_menu_list}>
         {menuItems.map((item, index) => (
           <li key={index} className={styles.mobile_menu_item}>
-            <NavLink
+            <Link
+              onClick={() => {
+                onClose();
+              }}
+              key={item.label}
+              to={item.path}
+              className={`${styles.mobile_menu_item_link} ${(category ===
+                null &&
+                item.path === "/") ||
+                (category === item.label.toLowerCase() &&
+                  styles.mobile_menu_item_link_active)}`}
+            >
+              {item.label}
+            </Link>
+            {/* <NavLink
               onClick={() => {
                 onClose();
               }}
@@ -58,10 +80,11 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
               to={item.path}
             >
               {item.label}
-            </NavLink>
+            </NavLink> */}
           </li>
         ))}
       </ul>
+
       <div className={styles.mobile_menu_buttons_bottom}>
         {icons.map((item, index) => (
           <Link
