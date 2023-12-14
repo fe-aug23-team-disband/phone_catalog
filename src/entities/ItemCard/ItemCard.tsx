@@ -45,7 +45,7 @@ export const ItemCard = ({ phone }: { phone: ProductShorted}) => {
       <div className={styles.itemCard__ButtonWrapper}>
         <AddToCartButton />
 
-        <FavoriteButton />
+        <FavoriteButton product={phone} />
       </div>
     </div>
   );
