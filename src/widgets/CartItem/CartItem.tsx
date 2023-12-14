@@ -2,6 +2,8 @@ import styles from "./CartItem.module.scss";
 
 import IconRemove from "../../static/CartItem/button-close.svg";
 import ImagePhone from "../../static/CartItem/phone.jpg";
+import ButtonIcon from "../../shared/ButtonIcon/ButtonIcon";
+import IconPlus from "../../static/CartItem/button-plus.svg";
 
 export const CartItem = () => {
   return (
@@ -20,13 +22,11 @@ export const CartItem = () => {
 
       <div className={styles.item__values}>
         <div className={styles.item__count}>
-          <a className={styles.item__button} href="#">
+          <a className={styles.item__button}>
             <div className={`${styles.item__icon} ${styles.item__icon_minus}`} />
           </a>
           <p className={styles.item__amount}>1</p>
-          <a className={styles.item__button} href="#">
-            <div className={`${styles.item__icon} ${styles.item__icon_plus}`} />
-          </a>
+          <ButtonIcon icon={IconPlus} size="small" />
         </div>
 
         <h3 className={styles.item__price}>

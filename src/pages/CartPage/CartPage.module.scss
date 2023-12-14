@@ -1,0 +1,136 @@
+@import '../../styles/mixins/mixins.scss';
+@import '../../styles/utils/variables.scss';
+
+.button_back {
+  display: flex;
+  width: 66px;
+  margin-bottom: 24px;
+  align-items: center;
+  text-decoration: none;
+  font-size: 12px;
+  line-height: 15px;
+  color: $primary-text-color;
+
+  @include onTablet {
+    margin-bottom: 16px;
+  }
+
+  &:hover &__icon {
+    background-image: url("../../static/CartPage/button-back-hover.svg");
+  }
+
+  &:hover &__text {
+    color: #905BFF;
+  }
+
+  &__icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    background-size: cover;
+    background-position: center;
+    background-image: url("../../static/CartPage/button-back.svg");
+  }
+}
+
+.cart {
+  @include pageGrid;
+  row-gap: 32px;
+  font-size: 32px;
+  line-height: 41px;
+
+  &__title{
+    grid-column: span 4;
+    margin: 0;
+    font-size: 32px;
+    line-height: 41px;
+
+    @include onTablet {
+      grid-column: span 12;
+      font-size: 48px;
+      line-height: 56px;
+    }
+
+    @include onDesktop {
+      grid-column: span 24;
+    }
+  }
+
+  &__items {
+    grid-column: span 4;
+
+    @include onTablet {
+      grid-column: span 12;
+    }
+
+    @include onDesktop {
+      grid-column: span 16;
+    }
+  }
+
+  &__order {
+    grid-column: span 4;
+    align-self: flex-start;
+    text-align: center;
+    padding: 24px;
+    border: 1px solid $elements;
+
+    @include onTablet {
+      grid-column: span 12;
+    }
+
+    @include onDesktop {
+      grid-column: span 8;
+      gap: 32px;
+    }
+  }
+
+  &__info {
+    margin-bottom: 16px;
+
+    @include onDesktop {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__price {
+    font-size: 32px;
+    line-height: 41px;
+  }
+
+  &__item_count {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+    color: $secondary-text-color;
+  }
+
+  &__line {
+    width: 100%;
+    margin-bottom: 16px;
+    border-bottom: 1px solid $elements;
+
+    @include onDesktop {
+      margin-bottom: 24px;
+    }
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    border: none;
+    padding: 0;
+    background: #905BFF;
+    font-family: inherit;
+    color: $primary-text-color;
+    font-size: 14px;
+    line-height: 21px;
+
+    &:hover {
+      background: #A378FF;
+    }
+  }
+}
