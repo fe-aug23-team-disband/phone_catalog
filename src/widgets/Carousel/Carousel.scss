@@ -19,6 +19,7 @@
       }
     }
   }
+
   .slick-arrow {
     &.slick-next {
       z-index: 10;
@@ -27,14 +28,16 @@
       border: none;
       max-height: 400px;
       width: 32px;
+
       &::before {
         content: "";
         display: block;
-        background: url("./arrow_banner.svg") center/contain no-repeat;
+        background: url("../../static/Carousel/arrow_banner.svg") center/contain no-repeat;
         width: 32px;
         height: 9px;
       }
     }
+
     &.slick-prev {
       z-index: 10;
       background: $surface-2;
@@ -42,10 +45,11 @@
       border: none;
       max-height: 400px;
       width: 32px;
+
       &::before {
         content: "";
         display: block;
-        background: url("./arrow_banner.svg") center/contain no-repeat;
+        background: url("../../static/Carousel/arrow_banner.svg") center/contain no-repeat;
         width: 32px;
         height: 9px;
         transform: rotate(180deg);
@@ -57,6 +61,7 @@
     margin: 0;
     padding: 0;
     bottom: -20px;
+
     li {
       margin: 0;
       padding: 0;
@@ -68,12 +73,15 @@
         height: 4px;
         padding: 0;
         background: $elements;
+
         &:before {
           display: none;
         }
       }
     }
+
     li.slick-active {
+
       button {
         background: $primary-text-color;
       }

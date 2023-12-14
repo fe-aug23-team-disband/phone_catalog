@@ -1,3 +1,4 @@
+import globalVariables from "../../static/variables";
 import styles from "./Header.module.scss";
 import cn from "classnames";
 import { Link, NavLink } from "react-router-dom";
@@ -12,10 +13,10 @@ const Header = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
 
   const navItems = [
-    { label: "home", to: "/" },
-    { label: "Phones", to: "products?category=phones" },
-    { label: "tablets", to: "products?category=tablets" },
-    { label: "accessories", to: "products?category=accessories", dataQa: "hover" }
+    { path: `${globalVariables.patchToHome}`, label: "home" },
+    { path: `${globalVariables.patchToPhones}`, label: "Phones" },
+    { path: `${globalVariables.patchToTablets}`, label: "tablets" },
+    { path: `${globalVariables.patchToAccessories}`, label: "accessories" }
   ];
 
   const icons = [
@@ -32,6 +33,7 @@ const Header = () => {
         <Link className={styles.header_logo} to="/">
           <img className={styles.header_logo_img} src={logoImg} alt="logo" />
         </Link>
+
         <div className={styles.header_inside_wrapper}>
           <nav className={styles.header_nav}>
             <ul className={styles.header_nav__list}>
@@ -43,7 +45,7 @@ const Header = () => {
                         [styles.header_nav__link_active]: isActive
                       })
                     }
-                    to={item.to}
+                    to={item.path}
                   >
                     {item.label}
                   </NavLink>
