@@ -17,9 +17,9 @@ export const ItemCard = ({ phone }: { phone: ProductShorted}) => {
       </div>
 
       <div className={styles.itemCard__Price}>
-        <div className={styles.itemCard__Price_Current}>{phone.priceDiscount}</div>
+        <div className={styles.itemCard__Price_Current}>${phone.priceDiscount}</div>
 
-        <div className={styles.itemCard__Price_Full}>{phone.priceRegular}</div>
+        <div className={styles.itemCard__Price_Full}>${phone.priceRegular}</div>
       </div>
 
       <div className={styles.itemCard__Specs}>

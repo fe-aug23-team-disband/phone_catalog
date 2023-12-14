@@ -24,6 +24,23 @@ export const ItemSlider: React.FC<Props> = ({
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
+    className: styles.Slider,
+    responsive: [
+      {
+        breakpoint: 1200,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+        }
+      },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+    ],
   };
 
   console.log(data);

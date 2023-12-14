@@ -1,18 +1,24 @@
-$card-width: 272px;
-$padding: 32px;
-
 @import '../../styles/mixins/mixins.scss';
 
 .itemCard {
   display: flex;
   box-sizing: border-box;
-  width: $card-width;
-  padding: $padding;
+  padding: 32px;
+  margin-inline: 8px;
   flex-direction: column;
   align-items: flex-start;
   gap: 8px;
   flex-shrink: 0;
   background:#161827;
+  grid-column: span 3;
+
+  @include onTablet {
+    grid-column: span 5;
+  }
+
+  @include onDesktop {
+    grid-column: span 6;
+  }
 
   &__Image{
     width: 100%;
