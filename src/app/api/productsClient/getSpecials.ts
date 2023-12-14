@@ -1,5 +1,5 @@
 import instance from "../insctance";
-import {Product, ProductShorted} from "../../../../types/Product";
+import {Product, ProductShorted} from "../../../types/Product";
 
 type GetSpecials = (
   props: {

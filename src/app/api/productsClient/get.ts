@@ -1,7 +1,7 @@
-import {Product} from "../../../../types/Product";
+import {Product} from "../../../types/Product";
 import instance from "../insctance";
-import {Categories} from "../../../../types/Categories";
-import {ProductResponse} from "../../../../types/ProductResponse";
+import {Categories} from "../../../types/Categories";
+import {ProductResponse} from "../../../types/ProductResponse";
 
 type GetProducts = (
   props: {

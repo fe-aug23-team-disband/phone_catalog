@@ -1,4 +1,4 @@
-import productClient from "../api/productsClient";
+import productClient from "../../api/productsClient";
 import {defer} from "react-router-dom";
 import {LoaderFunction} from "@remix-run/router";
 

@@ -20,6 +20,8 @@ export const CatalogPage: React.FC<Props> = () => {
 const TestComponent: React.FC = () => {
   const data = useAsyncValue() as ProductResponse;
 
+  console.log(data);
+
   return (
     <p>{data.count}</p>
   );

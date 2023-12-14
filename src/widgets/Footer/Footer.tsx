@@ -3,8 +3,7 @@ import main_styles from "../../styles/main.module.scss";
 import styles from "./Footer.module.scss";
 import logoImg from "../../static/Footer/logo.png";
 import topIcon from "../../static/Footer/button-top.png";
-import ButtonIcon from "./ButtonIcon";
-
+import ButtonIcon from "../../shared/ButtonIcon/ButtonIcon";
 
 const Footer = () => {
   const links = [
