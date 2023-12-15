@@ -1,14 +1,18 @@
 @import "../../styles/mixins/mixins.scss";
+@import "../../styles/utils/variables.scss";
 
 .sliderTitle {
   margin-bottom: 24px;
-  height: 44px;
-  color: var(--Gray-White, #F1F2F9);
+  height: 62px;
+  color: $primary-text-color;
   font-family: Mont;
   font-size: 22px;
+  max-width: 140px;
 
   @include onTablet {
     font-size: 32px;
+    height: 44px;
+    max-width: 100%;
   }
 
   font-style: normal;
