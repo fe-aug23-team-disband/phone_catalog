@@ -15,6 +15,7 @@ const Header = () => {
   const searchParams = new URLSearchParams(location.search);
   const category = searchParams.get("category");
 
+  console.log(location.pathname);
   const navItems = [
     { path: `${globalVariables.patchToHome}`, label: "home" },
     { path: `${globalVariables.patchToPhones}`, label: "phones" },
@@ -46,7 +47,10 @@ const Header = () => {
                     key={item.label}
                     to={item.path}
                     className={`${styles.header_nav__link} ${
-                      (category === null && item.path === "/") ||category === item.label.toLowerCase()? styles.header_nav__link_active : "no"
+                      (category === null && item.path === "/") ||
+                      category === item.label.toLowerCase()
+                        ? styles.header_nav__link_active
+                        : ""
                     }`}
                   >
                     {item.label}
@@ -61,7 +65,9 @@ const Header = () => {
               <Link
                 key={index}
                 to={item.url}
-                className={styles.header_icons_link}
+                className={`${styles.header_icons_link} ${
+                  item.url === location.pathname ? styles.header_icons_link_active : "yo"
+                }`}
               >
                 <span className={styles.header_icon_wrap}>
                   <img src={item.icon} alt={item.alt} />
