@@ -6,6 +6,11 @@
   color: var(--Gray-White, #F1F2F9);
   font-family: Mont;
   font-size: 22px;
+
+  @include onTablet {
+    font-size: 32px;
+  }
+
   font-style: normal;
   font-weight: 800;
   line-height: 140%;
