@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/phone_catalog/static/css/main.abb275d5.css",
+    "main.css": "/phone_catalog/static/css/main.6fc0c836.css",
     "main.js": "/phone_catalog/static/js/main.ae253860.js",
     "static/media/carousele-banner_3.png": "/phone_catalog/static/media/carousele-banner_3.49709a8824ce53447cb7.png",
     "static/media/carousele-banner_2.png": "/phone_catalog/static/media/carousele-banner_2.dd8f8bad76d46cf82fab.png",
@@ -31,11 +31,11 @@
     "static/media/button-back.svg": "/phone_catalog/static/media/button-back.903b674af3cfdc879ff8.svg",
     "index.html": "/phone_catalog/index.html",
     "static/media/button-minus.svg": "/phone_catalog/static/media/button-minus.cec33362a9c8f4101ffa.svg",
-    "main.abb275d5.css.map": "/phone_catalog/static/css/main.abb275d5.css.map",
+    "main.6fc0c836.css.map": "/phone_catalog/static/css/main.6fc0c836.css.map",
     "main.ae253860.js.map": "/phone_catalog/static/js/main.ae253860.js.map"
   },
   "entrypoints": [
-    "static/css/main.abb275d5.css",
+    "static/css/main.6fc0c836.css",
     "static/js/main.ae253860.js"
   ]
 }
