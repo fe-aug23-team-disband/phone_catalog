@@ -1,7 +1,7 @@
 export const ContactsPage = () => {
   return (
     <h1>
-      хуй
+      ContactsPage
     </h1>
   );
 };
