@@ -6,10 +6,13 @@ import favoriteIcon from "../../static/Header/button-heart.png";
 import cartIcon from "../../static/Header/button-shop.png";
 import menuIcon from "../../static/Header/button-burger-menu.png";
 import MobileMenu from "../MobileMenu/MobileMenu";
+import { useAppSelector } from "../../app/store/hooks";
+import { wishlistSelector } from "../../app/store/slices/wishlist.slice";
 import { useState } from "react";
 
 const Header = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
+  const { items } = useAppSelector(wishlistSelector);
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
@@ -24,7 +27,7 @@ const Header = () => {
   ];
 
   const icons = [
-    { icon: favoriteIcon, url: "/favourites", alt: "favourites", count: 7 },
+    { icon: favoriteIcon, url: "/favourites", alt: "favourites", count: items.length },
     { icon: cartIcon, url: "/cart", alt: "cart" }
   ];
 
