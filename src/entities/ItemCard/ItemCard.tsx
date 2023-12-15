@@ -1,9 +1,16 @@
 import styles from "./ItemCard.module.scss";
 import { FavoriteButton } from "../../shared/FavoriteButton/FavoriteButton";
 import { AddToCartButton } from "../../shared/AddToCartButton/AddToCartButton";
-import {ProductShorted} from "../../types/Product";
+import { ProductShorted } from "../../types/Product";
 
-export const ItemCard = ({ phone }: { phone: ProductShorted}) => {
+const Specs = ({ category, value }: { category: string; value: string }) => (
+  <div className={styles.itemCard__Specs_Container}>
+    <div className={styles.itemCard__Specs_Category}>{category}</div>
+    <div className={styles.itemCard__Specs_Value}>{value}</div>
+  </div>
+);
+
+export const ItemCard = ({ phone }: { phone: ProductShorted }) => {
   return (
     <div className={styles.itemCard}>
       <img
@@ -17,29 +24,17 @@ export const ItemCard = ({ phone }: { phone: ProductShorted}) => {
       </div>
 
       <div className={styles.itemCard__Price}>
-        <div className={styles.itemCard__Price_Current}>${phone.priceDiscount}</div>
+        <div className={styles.itemCard__Price_Current}>
+          ${phone.priceDiscount}
+        </div>
 
         <div className={styles.itemCard__Price_Full}>${phone.priceRegular}</div>
       </div>
 
       <div className={styles.itemCard__Specs}>
-        <div className={styles.itemCard__Specs_Container}>
-          <div className={styles.itemCard__Specs_Category}>Screen</div>
-
-          <div className={styles.itemCard__Specs_Value}>{phone.screen}</div>
-        </div>
-
-        <div className={styles.itemCard__Specs_Container}>
-          <div className={styles.itemCard__Specs_Category}>Capacity</div>
-
-          <div className={styles.itemCard__Specs_Value}>{phone.capacity}</div>
-        </div>
-
-        <div className={styles.itemCard__Specs_Container}>
-          <div className={styles.itemCard__Specs_Category}>RAM</div>
-
-          <div className={styles.itemCard__Specs_Value}>{phone.ram}</div>
-        </div>
+        <Specs category="Screen" value={phone.screen} />
+        <Specs category="Capacity" value={phone.capacity} />
+        <Specs category="RAM" value={phone.ram} />
       </div>
 
       <div className={styles.itemCard__ButtonWrapper}>
