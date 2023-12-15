@@ -45,7 +45,7 @@ export const ItemSlider: React.FC<Props> = ({
 }) => {
   const data = useAsyncValue() as ProductShorted[];
   const settings = {
-    infinite: false,
+    infinite: true,
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 4,
