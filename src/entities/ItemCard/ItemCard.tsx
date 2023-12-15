@@ -38,7 +38,7 @@ export const ItemCard = ({ phone }: { phone: ProductShorted }) => {
       </div>
 
       <div className={styles.itemCard__ButtonWrapper}>
-        <AddToCartButton />
+        <AddToCartButton product={phone} />
 
         <FavoriteButton product={phone} />
       </div>
