@@ -1,6 +1,5 @@
 import globalVariables from "../../static/variables";
 import styles from "./Header.module.scss";
-// import cn from "classnames";
 import { Link, useLocation } from "react-router-dom";
 import logoImg from "../../static/Header/logo.png";
 import favoriteIcon from "../../static/Header/button-heart.png";
@@ -32,7 +31,6 @@ const Header = () => {
     setIsOpenMenu(false);
   };
 
-  console.log(category);
   return (
     <>
       <header className={styles.header}>

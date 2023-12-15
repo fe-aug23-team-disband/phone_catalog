@@ -1,6 +1,5 @@
 import React from "react";
 import "../../styles/utils/variables.scss";
-// import cn from "classnames";
 import styles from "./MobileMenu.module.scss";
 import { Link, useLocation } from "react-router-dom";
 import logoImg from "../../static/Header/logo.png";
@@ -68,19 +67,6 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
             >
               {item.label}
             </Link>
-            {/* <NavLink
-              onClick={() => {
-                onClose();
-              }}
-              className={({ isActive }) =>
-                cn(styles.mobile_menu_item_link, {
-                  [styles.mobile_menu_item_link_active]: isActive
-                })
-              }
-              to={item.path}
-            >
-              {item.label}
-            </NavLink> */}
           </li>
         ))}
       </ul>
