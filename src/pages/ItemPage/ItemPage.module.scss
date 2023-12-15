@@ -1,0 +1,28 @@
+@import "../../styles/mixins/mixins.scss";
+@import "../../styles/utils/variables.scss";
+
+iframe {
+  display: none;
+}
+
+.itemPage__content {
+  @include pageGrid;
+}
+
+// .itemPage__top {
+//   // @include pageGrid;
+// }
+
+.itemPage__about-tech {
+  // @include pageGrid;
+  margin-top: 100px;
+  gap: 56px;
+
+  @include onTablet {
+    gap: 64px;
+  }
+
+  @include onDesktop {
+    gap: 0px;
+  }
+}

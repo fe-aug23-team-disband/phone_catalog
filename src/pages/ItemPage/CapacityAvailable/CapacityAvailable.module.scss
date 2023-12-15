@@ -1,0 +1,16 @@
+@import "../../../styles/utils/variables.scss";
+
+.available-capacity {
+  cursor: pointer;
+  font-weight: 600;
+  line-height: 21px;
+  padding: 7px 8px 4px;
+  color: $primary-text-color;
+  border: 1px solid $elements;
+  text-decoration: none;
+
+  &-active {
+    background-color: $primary-text-color;
+    color: $black;
+  }
+}
