@@ -70,9 +70,11 @@
       text-transform: uppercase;
       text-decoration: none;
       color: $secondary-text-color;
+      
       @include onDesktop {
         padding: 26px 0;
       }
+
       &_active {
         color: $primary-text-color;
         &::after {
