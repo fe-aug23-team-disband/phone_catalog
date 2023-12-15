@@ -1,4 +1,4 @@
-import productClient from "../api/productsClient";
+import productClient from "../../api/productsClient";
 import {Categories} from "../../../types/Categories";
 import {defer} from "react-router-dom";
 

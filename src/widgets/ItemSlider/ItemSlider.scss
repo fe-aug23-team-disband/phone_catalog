@@ -1,0 +1,42 @@
+@import "../../styles/mixins/mixins.scss";
+
+.slider-style {
+  .slick-track {
+    display: flex;
+    gap: 16px;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: -63px;
+  right: 10px;
+  z-index: 1;
+  cursor: pointer;
+
+  &-left {
+    width: 32px;
+    height: 32px;
+    background-color: #323542;
+    right: 60px;
+    background-image: url('../../static/Slider/arrow-left-active.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &-right {
+    width: 32px;
+    height: 32px;
+    background-color: #323542;
+    background-image: url('../../static/Slider/arrow-right-active.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
+.disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  background: none;
+  border: 1px solid var(--Gray-Elements, #3B3E4A);
+}

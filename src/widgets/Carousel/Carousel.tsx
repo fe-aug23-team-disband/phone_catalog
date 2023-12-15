@@ -3,12 +3,12 @@ import "./Carousel.scss";
 import Slider from "react-slick";
 import { useMediaQuery } from "react-responsive";
 import styles from "./Carousel.module.scss";
-import baner1 from "./carousele-banner.png";
-import baner2 from "./carousele-banner_2.png";
-import baner3 from "./carousele-banner_3.png";
-import baner_mobile1 from "./carousele-banner_mobile_1.png";
-import baner_mobile2 from "./carousele-banner_mobile_2.png";
-import baner_mobile3 from "./carousele-banner_mobile_3.png";
+import baner1 from "../../static/Carousel/carousele-banner.png";
+import baner2 from "../../static/Carousel/carousele-banner_2.png";
+import baner3 from "../../static/Carousel/carousele-banner_3.png";
+import baner_mobile1 from "../../static/Carousel/carousele-banner_mobile_1.png";
+import baner_mobile2 from "../../static/Carousel/carousele-banner_mobile_2.png";
+import baner_mobile3 from "../../static/Carousel/carousele-banner_mobile_3.png";
 
 export const Carousel = () => {
   const isSmallScreen = useMediaQuery({ maxWidth: 640 });
@@ -21,10 +21,12 @@ export const Carousel = () => {
   const settings = {
     dots: true,
     infinite: true,
+    autoplay: true,
+    arrows: true,
     speed: 500,
     slidesToShow: 1,
+    autoplaySpeed: 5000,
     slidesToScroll: 1,
-    arrows: true,
     responsive: [
       {
         breakpoint: 640,

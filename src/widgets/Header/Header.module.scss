@@ -1,22 +1,31 @@
 @import "../../styles/utils/variables.scss";
+@import "../../styles/mixins/mixins.scss";
 
 .header {
   display: flex;
   align-items: center;
   justify-content: left;
   box-shadow: 0px 1px 0px 0px $surface-2;
-  height: 65px;
+  height: 48px;
   background: $black;
   font-family: "Mont", "Arial", sans-serif;
   font-weight: bold;
+
+  @include onDesktop {
+    height: 65px;
+  }
 
   &_menu {
     display: none;
     margin: 0;
     border: 0;
     border-left: 1px solid $surface-2;
-    padding: 23px;
+    padding: 14px 16px;
     background: $black;
+
+    @include onDesktop {
+      padding: 24px;
+    }
   }
 
   &_inside_wrapper {
@@ -53,7 +62,7 @@
 
     &__link {
       position: relative;
-      padding: 26px 0;
+      padding: 18px 0;
       line-height: 11px;
       letter-spacing: 0.48px;
       font-size: 12px;
@@ -61,6 +70,10 @@
       text-transform: uppercase;
       text-decoration: none;
       color: $secondary-text-color;
+      
+      @include onDesktop {
+        padding: 26px 0;
+      }
 
       &_active {
         color: $primary-text-color;
@@ -84,13 +97,19 @@
 
   &_icons {
     &_link {
-      padding: 22px 24px;
+      display: inline-flex;
+      padding: 16px 16px;
       border-left: 1px solid $surface-2;
+
+      @include onDesktop {
+        padding: 24px 24px;
+      }
     }
   }
 
   &_icon_wrap {
     position: relative;
+    display: inline-flex;
     img {
       position: relative;
       width: 16px;

@@ -1,0 +1,54 @@
+@import "../../styles/utils/variables.scss";
+
+.bredcrumbs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 auto;
+  max-width: $max-width;
+  padding: 24px 32px;
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  color: $primary-text-color;
+
+  &_home_link {
+    display: flex;
+  }
+
+  &_home_img {
+    width: 16px;
+    height: 16px;
+  }
+
+  &_wrap_patch {
+    display: flex;
+    align-items: center;
+
+    a {
+      font-size: 12px;
+      line-height: normal;
+      font-family: Mont;
+      font-style: normal;
+      font-weight: 700;
+      text-decoration: none;
+      text-transform: capitalize;
+      color: $primary-text-color;
+    }
+
+    &:last-child {
+      a {
+        pointer-events: none;
+        color: $secondary-text-color;
+      }
+    }
+  }
+
+  &_separator {
+    display: inline-block;
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    background: url("../../static/Bredcrumbs/bredcrumbs_arrow.png") no-repeat center/cover;
+  }
+}
