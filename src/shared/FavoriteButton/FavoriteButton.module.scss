@@ -1,3 +1,5 @@
+@import '../../styles/utils/variables.scss';
+
 .NotFavorite {
   width: 40px;
   height: 40px;
@@ -5,10 +7,12 @@
   box-sizing: border-box;
   padding: 12px;
   background: var(--gray-surface-2, #323542);
+  transition: $animation-time ease-in-out;
 
   &:hover {
     cursor: pointer;
     background: var(--gray-icons-placeholders, #4A4D58);
+    border-radius: 10%;
   }
 
   &:active {

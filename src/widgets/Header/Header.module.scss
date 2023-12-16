@@ -46,6 +46,7 @@
   }
 
   &_nav {
+
     display: flex;
     align-items: center;
     &__list {
@@ -75,13 +76,19 @@
         padding: 26px 0;
       }
 
+      @include activeLinkBorder(3px, $primary-text-color);
+
       &_active {
         color: $primary-text-color;
-        @include activeLinkBorder(3px,$primary-text-color);
+
+        &::after {
+          transform: scale(1);
+        }
       }
 
       &:hover {
         color: $primary-text-color;
+        transition: $animation-time;
       }
     }
   }

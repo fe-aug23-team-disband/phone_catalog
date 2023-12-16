@@ -1,7 +1,6 @@
 import styles from "./CartItem.module.scss";
 
 import IconRemove from "../../static/CartItem/button-close.svg";
-// import ImagePhone from "../../static/CartItem/phone.jpg";
 import ButtonIcon from "../../shared/ButtonIcon/ButtonIcon";
 import IconPlus from "../../static/CartItem/button-plus.svg";
 import IconMinus from "../../static/CartItem/button-minus-active.svg";
@@ -32,9 +31,9 @@ export const CartItem: React.FC<{ product: Product | ProductShorted, count: numb
   return (
     <div className={styles.item}>
       <div className={styles.item__info}>
-        <a href="#" onClick={handleDelete}>
+        <div onClick={handleDelete}>
           <img className={`${styles.item__icon} ${styles.item__icon_remove}`} src={IconRemove} alt="Remove" />
-        </a>
+        </div>
 
         <img className={styles.item__image_phone} src={`data:image/png;base64, ${product.image}`} alt="Phone" />
 

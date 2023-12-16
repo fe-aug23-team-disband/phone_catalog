@@ -2,6 +2,7 @@ import styles from "./ItemCard.module.scss";
 import { FavoriteButton } from "../../shared/FavoriteButton/FavoriteButton";
 import { AddToCartButton } from "../../shared/AddToCartButton/AddToCartButton";
 import { ProductShorted } from "../../types/Product";
+import { Link } from "react-router-dom";
 
 const Specs = ({ category, value }: { category: string; value: string }) => (
   <div className={styles.itemCard__Specs_Container}>
@@ -13,11 +14,13 @@ const Specs = ({ category, value }: { category: string; value: string }) => (
 export const ItemCard = ({ phone }: { phone: ProductShorted }) => {
   return (
     <div className={styles.itemCard}>
-      <img
-        src={`data:image/png;base64, ${phone.image}`}
-        alt={phone.name}
-        className={styles.itemCard__Image}
-      />
+      <Link to={`products/${phone.namespaceId}`} className={styles.itemCard__link}>
+        <img
+          src={`data:image/png;base64, ${phone.image}`}
+          alt={phone.name}
+          className={styles.itemCard__Image}
+        />
+      </Link>
 
       <div className={styles.itemCard__Title}>
         <div className={styles.itemCard__Title_Text}>{phone.name}</div>

@@ -42,7 +42,7 @@
 //
 
 @mixin activeLinkBorder($bottom:0, $background-color) {
-  &:after {
+  &::after {
     content: "";
     position: absolute;
     display: block;
@@ -52,5 +52,7 @@
     bottom: $bottom;
     left: 0;
     background-color: $background-color;
+    transition: transform $animation-time;
+    transform: scale(0);
   }
 }

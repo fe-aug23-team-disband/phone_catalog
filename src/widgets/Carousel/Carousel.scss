@@ -21,8 +21,13 @@
   }
 
   .slick-arrow {
+    transition: $animation-time;
+
+    &:hover {
+      border-radius: 4px;
+    }
+
     &.slick-next {
-      z-index: 10;
       background: $surface-2;
       height: 100%;
       border: none;
@@ -39,7 +44,6 @@
     }
 
     &.slick-prev {
-      z-index: 10;
       background: $surface-2;
       height: 100%;
       border: none;

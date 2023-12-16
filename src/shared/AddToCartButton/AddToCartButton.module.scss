@@ -1,3 +1,5 @@
+@import '../../styles/utils/variables.scss';
+
 .NotAdded {
   display: flex;
   width: calc(100% - 48px);
@@ -9,8 +11,10 @@
   align-items: center;
   flex-shrink: 0;
   background: var(--Accent, #905BFF);
+  transition: $animation-time ease-in-out;
 
   &:hover {
+    border-radius: 4px;
     cursor: pointer;
     background: #A378FF;
   }

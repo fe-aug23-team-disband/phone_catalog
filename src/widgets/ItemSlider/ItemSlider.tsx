@@ -66,19 +66,26 @@ export const ItemSlider: React.FC<Props> = ({
       {
         breakpoint: 1040,
         settings: {
-          slidesToShow: 3,
+          slidesToShow: 3.5,
           slidesToScroll: 3,
         },
       },
       {
         breakpoint: 870,
         settings: {
+          slidesToShow: 3,
+          slidesToScroll: 2,
+        },
+      },
+      {
+        breakpoint: 790,
+        settings: {
           slidesToShow: 2.5,
           slidesToScroll: 2,
         },
       },
       {
-        breakpoint: 700,
+        breakpoint: 660,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
@@ -105,7 +112,6 @@ export const ItemSlider: React.FC<Props> = ({
     <div className={styles.sliderContainer}>
       <h2 className={styles.sliderTitle}>{name}</h2>
       <Slider {...settings}>
-        {/*{phones.map(phone => <ItemCard phone={phone} key={phone.id} />)}*/}
         {data.reverse().map(phone => <ItemCard phone={phone} key={phone.id} />)}
       </Slider>
     </div>
