@@ -2,15 +2,17 @@
 @import "../../styles/mixins/mixins.scss";
 
 .header {
+  font-family: "Mont", "Arial", sans-serif;
+  font-weight: bold;
+  top: 0;
+  position: sticky;
   display: flex;
   align-items: center;
   justify-content: left;
-  box-shadow: 0px 1px 0px 0px $surface-2;
+  z-index: 1;
   height: 48px;
-  background: $black;
-  font-family: "Mont", "Arial", sans-serif;
-  font-weight: bold;
-
+  background-color: $black;
+  box-shadow: 0px 1px 0px 0px $surface-2;
   @include onDesktop {
     height: 65px;
   }
