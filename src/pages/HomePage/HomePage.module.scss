@@ -1,0 +1,9 @@
+@import "../../styles/mixins/mixins.scss";
+
+.heading {
+  font-size: 32px;
+
+  @include onTablet {
+    font-size: 48px;
+  }
+}

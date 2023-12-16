@@ -1,9 +1,9 @@
 import styles from "./CartPage.module.scss";
 import { CartItem } from "../../widgets/CartItem/CartItem";
 import { Link } from "react-router-dom";
-import {useAppDispatch, useAppSelector} from "../../app/store/hooks";
-import {cartSelector, createOrder} from "../../app/store/slices/cart.slice";
-import {useCallback} from "react";
+import { useAppDispatch, useAppSelector } from "../../app/store/hooks";
+import { cartSelector, createOrder, remove } from "../../app/store/slices/cart.slice";
+import { useCallback } from "react";
 
 export const CartPage = () => {
   const { items, sum, order } = useAppSelector(cartSelector);
@@ -16,6 +16,9 @@ export const CartPage = () => {
   }, [items]);
 
   const handleCheckout = useCallback(() => {
+    for (const item of items) {
+      dispatch(remove({id: item.item.id}));
+    }
     dispatch(createOrder({ items, sum, order }));
   }, []);
 
