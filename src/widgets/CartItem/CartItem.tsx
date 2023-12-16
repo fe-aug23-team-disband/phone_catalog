@@ -17,8 +17,10 @@ export const CartItem: React.FC<{ product: Product | ProductShorted, count: numb
   }, [count]);
 
   const handleRemove = useCallback(() => {
-    dispatch(remove({ id: product.id }));
-  }, []);
+    if (!isRemoveDisabled) {
+      dispatch(remove({ id: product.id }));
+    }
+  }, [isRemoveDisabled]);
 
   const handleAdd = useCallback(() => {
     dispatch(add({ id: product.id }));
@@ -32,10 +34,18 @@ export const CartItem: React.FC<{ product: Product | ProductShorted, count: numb
     <div className={styles.item}>
       <div className={styles.item__info}>
         <div onClick={handleDelete}>
-          <img className={`${styles.item__icon} ${styles.item__icon_remove}`} src={IconRemove} alt="Remove" />
+          <img
+            className={`${styles.item__icon} ${styles.item__icon_remove}`}
+            src={IconRemove}
+            alt="Remove"
+          />
         </div>
 
-        <img className={styles.item__image_phone} src={`data:image/png;base64, ${product.image}`} alt="Phone" />
+        <img
+          className={styles.item__image_phone}
+          src={`data:image/png;base64, ${product.image}`}
+          alt="Phone"
+        />
 
         <p className={styles.item__name}>
           {product.name}

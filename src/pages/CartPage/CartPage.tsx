@@ -27,31 +27,35 @@ export const CartPage = () => {
       </Link>
       <div className={styles.cart}>
         <h1 className={styles.cart__title}>Cart</h1>
-        <div className={styles.cart__items}>
+        {sum === 0
+          ? <h1 className={styles.cart__empty}>Empty</h1>
+          : (
+            <>
+              <div className={styles.cart__items}>
+                {items.map(({ item, count }) => (<CartItem product={item} count={count} key={item.id} />))}
+              </div>
+              <div className={styles.cart__order}>
+                <div className={styles.cart__info}>
+                  <h2 className={styles.cart__price}>
+                    ${ sum }
+                  </h2>
+                  <p className={styles.cart__item_count}>
+                    {`Total for ${countTotalItems()} items`}
+                  </p>
+                </div>
 
-          {items.map(({ item, count }) => (<CartItem product={item} count={count} key={item.id} />))}
+                <div className={styles.cart__line}></div>
 
-        </div>
-        <div className={styles.cart__order}>
-          <div className={styles.cart__info}>
-            <h2 className={styles.cart__price}>
-              { sum }
-            </h2>
-            <p className={styles.cart__item_count}>
-              {`Total for ${countTotalItems()} items`}
-            </p>
-          </div>
-
-          <div className={styles.cart__line}></div>
-
-          <button
-            type="button"
-            className={styles.cart__button}
-            onClick={handleCheckout}
-          >
-            Checkout
-          </button>
-        </div>
+                <button
+                  type="button"
+                  className={styles.cart__button}
+                  onClick={handleCheckout}
+                >
+                  Checkout
+                </button>
+              </div>
+            </>
+          )}
       </div>
     </>
   );

@@ -1,46 +1,79 @@
 @import "../../styles/mixins/mixins.scss";
 @import "../../styles/utils/variables.scss";
 
-.slider-style {
-  .slick-track {
-    display: flex;
-    gap: 16px;
-  }
-}
-
-.arrow {
-  position: absolute;
-  top: -63px;
-  right: 10px;
-  z-index: 1;
-  cursor: pointer;
-  background-color: $surface-2;
-  width: 32px;
-  height: 32px;
-
-  transition: $animation-time;
-
-  background-repeat: no-repeat;
-  background-position: center;
-
-  &-left {
-    right: 60px;
-    background-image: url('../../static/Slider/arrow-left-active.svg');
+.card_slider {
+  .slider-style .slick-slide {
+    margin-left: 16px;
   }
 
-  &-right {
-    background-image: url('../../static/Slider/arrow-right-active.svg');
-  }
+  position: relative;
+  .slick-slider {
+    position: static;
+    .slick-list {
+      margin-left: -16px;
+      margin-right: -16px;
 
-  &:hover {
-    border-radius: 10%;
-    background-color: $icons;
-  }
-}
+      @include onDesktop {
+        margin-right: 0;
+      }
 
-.disabled {
-  opacity: 0.5;
-  pointer-events: none;
-  background: none;
-  border: 1px solid var(--Gray-Elements, #3B3E4A);
+      .slick-track {
+        display: flex;
+      }
+    }
+    .slick {
+      &-prev {
+        position: absolute;
+        top: 24px;
+        right: 50px;
+        left: auto;
+        width: 32px;
+        height: 32px;
+        background: $elements url("../../static/Slider/arrow-left-active.svg")
+          no-repeat center;
+        transition: $animation-time ease-in-out;
+        
+        &::before {
+          display: none;
+        }
+
+        &:hover {
+          border-radius: 10%;
+        }
+      }
+
+      &-next {
+        top: 24px;
+        right: 0px;
+        left: auto;
+        width: 32px;
+        height: 32px;
+        background: $elements url("../../static/Slider/arrow-right-active.svg")
+          no-repeat center;
+        transition: $animation-time ease-in-out;
+
+        &::before {
+          display: none;
+        }
+
+        &:hover {
+          border-radius: 10%;
+        }
+      }
+
+      &-next.slick-disabled {
+        pointer-events: none;
+        background: url("../../static/Slider/arrow-right-disabled.svg")
+          no-repeat center;
+        border: 1px solid $elements;
+      }
+
+      &-prev.slick-disabled {
+        pointer-events: none;
+        background: url("../../static/Slider/arrow-left-disabled.svg") no-repeat
+          center;
+        border: 1px solid $elements;
+      }
+    }
+  }
 }

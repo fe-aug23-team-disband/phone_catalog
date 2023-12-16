@@ -4,6 +4,7 @@ import React, {useCallback} from "react";
 import {add, cartSelector, remove} from "../../app/store/slices/cart.slice";
 import {ProductShorted} from "../../types/Product";
 import { useAppSelector } from "../../app/store/hooks";
+import classNames from "classnames";
 
 export const AddToCartButton: React.FC<{ product: ProductShorted }> = ({ product }) => {
   const dispatcher = useDispatch();
@@ -20,7 +21,16 @@ export const AddToCartButton: React.FC<{ product: ProductShorted }> = ({ product
   }, [items]);
 
   return (
-    <button type="button" className={styles.NotAdded} onClick={handleClick}>
+    <button
+      type="button"
+      className={classNames(
+        styles.NotAdded,
+        {
+          [styles.Added]: isRemoveButton,
+        }
+      )}
+      onClick={handleClick}
+    >
       {isRemoveButton
         ? <div className={styles.Text}>Added to cart</div>
         : <div className={styles.Text}>Add to cart</div>

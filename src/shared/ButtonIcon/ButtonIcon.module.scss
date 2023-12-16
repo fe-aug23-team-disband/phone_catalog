@@ -24,8 +24,11 @@
     justify-content: center;
     background: $surface-2;
     border: 1px solid transparent;
+    transition: $animation-time ease-in-out;
 
     &:hover {
+      cursor: pointer;
+      border-radius: 10%;
       background: $icons;
     }
 
