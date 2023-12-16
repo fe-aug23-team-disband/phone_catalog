@@ -78,7 +78,7 @@
         padding: 26px 0;
       }
 
-      @include activeLinkBorder(3px, $primary-text-color);
+      @include activeLinkBorder(4px, $primary-text-color);
 
       &_active {
         color: $primary-text-color;

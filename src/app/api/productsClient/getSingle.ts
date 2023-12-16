@@ -1,5 +1,5 @@
 import {Product} from "../../../types/Product";
-import instance from "../insctance";
+import instance from "../instance";
 
 type GetProduct = (
   props: {
