@@ -23,9 +23,7 @@
   .slick-arrow {
     transition: $animation-time;
 
-    &:hover {
-      border-radius: 4px;
-    }
+
 
     &.slick-next {
       background: $surface-2;
@@ -40,6 +38,10 @@
         background: url("../../static/Carousel/arrow_banner.svg") center/contain no-repeat;
         width: 32px;
         height: 9px;
+      }
+      &:hover {
+        border-radius: 4px;
+        background-color: $icons;
       }
     }
 
@@ -57,6 +59,10 @@
         width: 32px;
         height: 9px;
         transform: rotate(180deg);
+      }
+      &:hover {
+        border-radius: 4px;
+        background-color: $icons;
       }
     }
   }

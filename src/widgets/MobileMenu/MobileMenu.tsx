@@ -7,6 +7,9 @@ import menuCloseIcon from "../../static/MobileMenu/button-close.png";
 import favoriteIcon from "../../static/Header/button-heart.png";
 import cartIcon from "../../static/Header/button-shop.png";
 import globalVariables from "../../static/variables";
+import { cartSelector } from "../../app/store/slices/cart.slice";
+import { wishlistSelector } from "../../app/store/slices/wishlist.slice";
+import { useAppSelector } from "../../app/store/hooks";
 
 type Props = {
   onClose: () => void;
@@ -16,6 +19,8 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
   const category = searchParams.get("category");
+  const { items: wishlistItems } = useAppSelector(wishlistSelector);
+  const { items: cartItems } = useAppSelector(cartSelector);
 
   const menuItems = [
     { path: `${globalVariables.patchToHome}`, label: "home" },
@@ -25,8 +30,18 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
   ];
 
   const icons = [
-    { icon: favoriteIcon, url: "/favourites", alt: "favourites", count: 7 },
-    { icon: cartIcon, url: "/cart", alt: "cart", count: 10 }
+    {
+      icon: favoriteIcon,
+      url: "/favourites",
+      alt: "favourites",
+      count: wishlistItems.length
+    },
+    {
+      icon: cartIcon,
+      url: "/cart",
+      alt: "cart",
+      count: cartItems.length
+    }
   ];
 
   return (
