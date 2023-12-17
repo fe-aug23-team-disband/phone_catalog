@@ -1,20 +1,28 @@
-export const PriceSection = () => {
-  return (
-    <div className="priseSection__container">
-      <div className="priceSection__prices">
-        <p className="priceSection__price--new"></p>
+import React from "react";
+import styles from "./PriceSection.module.scss";
+import { Product } from "../../../types/Product";
 
-        <p className="priceSection__price--old"></p>
+type Props = {
+  data: Product,
+}
+
+export const PriceSection: React.FC<Props> = ({ data }) => {
+  const { priceDiscount, priceRegular } = data;
+
+  return (
+    <div className={styles.priseSection__container}>
+      <div className={styles.priceSection__price}>
+        <p className={styles["priceSection__price--new"]}>
+          ${priceDiscount}
+        </p>
+
+        <p className={styles["priceSection__price--old"]}>
+          ${priceRegular}
+        </p>
       </div>
 
       <div className="priceSection__buttons">
-        <button className="priceSection__add">
-          Add to cart
-        </button>
-
-        <button className="priceSection__wishes">
-          💗
-        </button>
+        Add buttons
       </div>
     </div>
   );

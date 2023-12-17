@@ -5,24 +5,34 @@ iframe {
   display: none;
 }
 
-.itemPage__content {
-  @include pageGrid;
-}
-
-// .itemPage__top {
-//   // @include pageGrid;
-// }
-
-.itemPage__about-tech {
-  // @include pageGrid;
-  margin-top: 100px;
-  gap: 56px;
-
-  @include onTablet {
-    gap: 64px;
+.itemPage {
+  &__top {
+    @include pageGrid;
   }
 
-  @include onDesktop {
-    gap: 0px;
+  &__about-tech {
+    @include pageGrid;
+    margin-top: 100px;
+    gap: 56px;
+
+    @include onTablet {
+      gap: 64px;
+    }
+
+    @include onDesktop {
+      gap: 0px;
+    }
+  }
+
+  &__title {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 31px;
+
+    @include onTablet {
+      font-size: 32px;
+      line-height: 41px;
+      letter-spacing: -0.01em;
+    }
   }
 }

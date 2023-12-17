@@ -2,10 +2,11 @@
 @import "../../../styles/mixins/mixins.scss";
 
 .phoneProperties {
+  margin-top: 32px;
   display: flex;
   flex-direction: column;
   gap: 8px;
-  
+
   font-size: 12px;
   font-weight: 700;
   line-height: 15px;

@@ -1,32 +1,36 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styles from "./ItemPageTechSpecs.module.scss";
+import { Product } from "../../../types/Product";
+// import { useAsyncValue } from "react-router-dom";
 
-type PhoneInfo = {
-  screen: string,
-  resolution: string,
-  processor: string,
-  ram: string,
-  capacity: string,
-  camera: string,
-  zoom: string,
-  cell: string[],
-};
+// type PhoneInfo = {
+//   screen: string,
+//   resolution: string,
+//   processor: string,
+//   ram: string,
+//   capacity: string,
+//   camera: string,
+//   zoom: string,
+//   cell: string[],
+// };
 
 type Props = {
-  phoneInfoApi: string,
+  phoneInfoApi: Product,
 };
 
 export const ItemPageTechSpecs: React.FC<Props> = ({ phoneInfoApi }) => {
-  const [phoneInfo, setPhoneInfo] = useState<PhoneInfo | null>(null);
+  // const [phoneInfo, setPhoneInfo] = useState<PhoneInfo | null>(null);
 
-  useEffect(() => {
-    const phoneInfoFromApi = JSON.parse(phoneInfoApi);
-    setPhoneInfo(phoneInfoFromApi);
-  }, [phoneInfoApi]);
+  // const data = useAsyncValue() as Product;
 
-  if (!phoneInfo) {
-    return <p></p>;
-  }
+  // useEffect(() => {
+  //   const phoneInfoFromApi = JSON.parse(phoneInfoApi);
+  //   setPhoneInfo(phoneInfoFromApi);
+  // }, [phoneInfoApi]);
+
+  // if (!phoneInfo) {
+  //   return <p></p>;
+  // }
 
   const {
     screen,
@@ -37,7 +41,7 @@ export const ItemPageTechSpecs: React.FC<Props> = ({ phoneInfoApi }) => {
     camera,
     zoom,
     cell,
-  } = phoneInfo;
+  } = phoneInfoApi;
 
   return (
     <div className={`${styles["tech-specs"]}`}>

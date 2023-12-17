@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./PhonesPhoto.module.scss";
 import cn from "classnames";
-import { InterfaceImage } from "../../../types/InterfaceImage";
+import { Image } from "../../../types/Image";
 
 type Props = {
-  images: InterfaceImage[];
-  selectedImage: InterfaceImage | null;
-  onSelected: (image: InterfaceImage) => void;
+  images: Image[];
+  selectedImage: Image | null;
+  onSelected: (image: Image) => void;
 };
 
 export const PhonesPhoto: React.FC<Props> = ({
@@ -15,9 +15,19 @@ export const PhonesPhoto: React.FC<Props> = ({
   selectedImage,
 }) => {
   return (
-    <div className={`${styles.phones}`}>
+    <div className={styles.phones__wrapper}>
+      <div className={`${styles.phones__selected}`}>
+        {selectedImage !== null && (
+          <img
+            src={`data:image/png;base64, ${selectedImage.string}`}
+            alt={`${selectedImage} Selected image`}
+            className={styles["phones__selected-img"]}
+          />
+        )}
+      </div>
+
       <div className={`${styles.phones__list}`}>
-        <ul className={`${styles["phones__list-items"]}`}>
+        <ul className={styles["phones__list-items"]}>
           {images.map(image => {
             const { id, string } = image;
 
@@ -38,16 +48,6 @@ export const PhonesPhoto: React.FC<Props> = ({
             );
           })}
         </ul>
-
-        <div className={`${styles.phones__selected}`}>
-          {selectedImage !== null && (
-            <img
-              src={`data:image/png;base64, ${selectedImage.string}`}
-              alt={`${selectedImage} Selected image`}
-              className="phones__selected-img"
-            />
-          )}
-        </div>
       </div>
     </div>
   );

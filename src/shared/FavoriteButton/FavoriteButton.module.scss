@@ -7,6 +7,11 @@
   background: var(--gray-surface-2, #323542);
 
   &:hover {
+    cursor: pointer;
     background: var(--gray-icons-placeholders, #4A4D58);
+  }
+
+  &:active {
+    background: #505263;
   }
 }

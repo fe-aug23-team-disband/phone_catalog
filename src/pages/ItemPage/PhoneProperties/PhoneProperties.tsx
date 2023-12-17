@@ -1,35 +1,36 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import styles from "./PhoneProperties.module.scss";
+import { Product } from "../../../types/Product";
 
 type Props = {
-  data: string,
+  data: Product,
 };
 
-type PhoneProperty = {
-  screen: string,
-  resolution: string
-  processor: string,
-  ram: string,
-};
+// type PhoneProperty = {
+//   screen: string,
+//   resolution: string
+//   processor: string,
+//   ram: string,
+// };
 
 export const PhoneProperties: React.FC<Props> = ({ data }) => {
-  const [details, setDetails] = useState<PhoneProperty | null>(null);
+  // const [details, setDetails] = useState<PhoneProperty | null>(null);
 
-  useEffect(() => {
-    const dataFromApi = JSON.parse(data);
-    setDetails(dataFromApi);
-  }, [data]);
+  // useEffect(() => {
+  //   const dataFromApi = JSON.parse(data);
+  //   setDetails(dataFromApi);
+  // }, [data]);
 
-  if (!details) {
-    return <p>Loading...</p>;
-  }
+  // if (!details) {
+  //   return <p>Loading...</p>;
+  // }
 
   const {
     screen,
     resolution,
     processor,
     ram,
-  } = details;
+  } = data;
 
   return (
     <div className={`${styles.phoneProperties}`}>

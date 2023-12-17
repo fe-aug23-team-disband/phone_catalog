@@ -2,23 +2,28 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./AvailableColor.module.scss";
 import cn from "classnames";
+import { Color } from "../../../types/Color";
+import { Product } from "../../../types/Product";
 
 type Props = {
-  colors: string[],
-  selectedColor: string,
-  handleColorChange: (v: string) => void,
-  link: string,
+  data: Product,
+  selectedColor: Color | null,
+  handleColorChange: (value: Color) => void,
 };
 
 export const AvailableColor: React.FC<Props> = ({
-  colors,
-  link,
+  data,
   selectedColor,
   handleColorChange,
 }) => {
+  // const { productId } = useParams();
+  // якщо я правильно розумію то тут треба тільки витягнути правильні дані
+
+  const { colors } = data;
+
   return (
-    <div className="available-colors">
-      <div className="available-colors__text">
+    <div className={styles["available-colors"]}>
+      <div className={styles["available-colors__text"]}>
         <p className="available-colors__title">
           Available colors
         </p>
@@ -28,20 +33,23 @@ export const AvailableColor: React.FC<Props> = ({
         </p>
       </div>
 
-      {/* скоріш за все тут треба буде створити окрему компоненту для круга, але поки залишу так */}
-
-      <div className="available-colors__list">
-        {colors.map(color => (
-          <Link
-            key={color}
-            to={link}
-            className={cn(styles["available-color"], {
-              [styles.active]: selectedColor === color,
-            })}
-            style={{ backgroundColor: color }}
-            onClick={() => handleColorChange(color)}
-          />
-        ))}
+      <div className={`${styles["available-colors__list"]}`}>
+        {colors.map(color => {
+          const { id, hex } = color;
+          return (
+            <Link
+              key={id}
+              // тут треба буде замінити посилання
+              to={`/products/${color}`}
+              className={cn(styles["available-color"], {
+                [styles.active]: selectedColor?.id === id,
+              })}
+              onClick={() => handleColorChange(color)}
+            >
+              <div className={styles.circle} style={{ backgroundColor: hex }} />
+            </Link>
+          );
+        })}
       </div>
     </div>
   );

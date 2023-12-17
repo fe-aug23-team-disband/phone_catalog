@@ -1,0 +1,26 @@
+@import '../../styles/mixins/mixins.scss';
+
+.products {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  @include onTablet {
+    justify-content: flex-start;
+  }
+  & > * {
+    max-width: 288px;
+    min-width: 229px;
+
+    @include onTablet {
+      min-width: 230px;
+    }
+
+    @include onDesktop {
+      width: 272px;
+    }
+
+
+  }
+
+}

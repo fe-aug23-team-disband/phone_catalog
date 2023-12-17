@@ -1,36 +1,41 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink /*, useParams*/ } from "react-router-dom";
 import styles from "./CapacityAvailable.module.scss";
 import cn from "classnames";
+import { Product } from "../../../types/Product";
 
 type Props = {
-  capacity: string,
-  link: string,
+  data: Product,
   selectedCapacity: string,
-  onClick: () => void,
+  onClick: (value: string) => void,
 };
 
 export const CapacityAvailable: React.FC<Props> = ({
-  capacity,
-  link,
+  data,
   selectedCapacity,
   onClick,
 }) => {
+  // const { productId } = useParams();
+  const { capacityAvailable } = data;
+
   return (
-    <div className="capacityAvailable">
-      <p className="capacityAvailable__title">
+    <div className={styles.capacityAvailable}>
+      <p className={styles.capacityAvailable__title}>
         Select capacity
       </p>
 
-      <NavLink
-        to={link}
-        className={cn(styles["available-capacity"], {
-          [styles["available-capacity-active"]]: capacity === selectedCapacity
-        })}
-        onClick={onClick}
-      >
-        {capacity}
-      </NavLink>
+      {capacityAvailable.map(capacity => (
+        <NavLink
+          key={capacity}
+          to={""}
+          className={cn(styles["available-capacity"], {
+            [styles["available-capacity-active"]]: capacity === selectedCapacity
+          })}
+          onClick={() => onClick(capacity)}
+        >
+          {capacity}
+        </NavLink>
+      ))}
     </div>
   );
 };

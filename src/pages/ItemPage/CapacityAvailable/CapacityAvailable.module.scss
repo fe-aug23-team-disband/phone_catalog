@@ -1,5 +1,19 @@
 @import "../../../styles/utils/variables.scss";
 
+.capacityAvailable {
+  margin: 24px 0 32px;
+  padding-bottom: 26px;
+  border-bottom: 1px solid $elements;
+
+  &__title {
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 15px;
+    color: $secondary-text-color;
+    margin-bottom: 15px;
+  }
+}
+
 .available-capacity {
   cursor: pointer;
   font-weight: 600;

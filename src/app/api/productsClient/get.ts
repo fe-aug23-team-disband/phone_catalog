@@ -1,19 +1,16 @@
-import {Product, ProductShorted} from "../../../types/Product";
+import {Product} from "../../../types/Product";
 import instance from "../insctance";
+import {Categories} from "../../../types/Categories";
+import {ProductResponse} from "../../../types/ProductResponse";
 
 type GetProducts = (
   props: {
-    category: "phones" | "tablets" | "accessories",
-    page?: number,
-    limit?: number,
-    query?: string
+    category: Categories
+    page: string | null,
+    limit: string | null,
+    query: string | null
   }
-) => Promise<{
-  count: number,
-  nextPage: string,
-  prevPage: string,
-  data: ProductShorted[]
-}>
+) => Promise<ProductResponse>
 
 export const get: GetProducts = async ({
   category,
@@ -25,15 +22,15 @@ export const get: GetProducts = async ({
   searchParams.set("category", category);
 
   if (page) {
-    searchParams.set("page", page.toString());
+    searchParams.set("page", page);
   }
 
   if (limit) {
-    searchParams.set("limit", limit.toString());
+    searchParams.set("limit", limit);
   }
 
   if (query) {
-    searchParams.set("query", query.toString());
+    searchParams.set("query", query);
   }
 
   const response = await instance.get(`/products?${searchParams.toString()}`);
