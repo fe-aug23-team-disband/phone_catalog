@@ -7,7 +7,8 @@ export const App = () => {
   return (
     <div className={styles.appWrapper}>
       <Header />
-      <main id={"top"} className={styles.mainWrapper}>
+      <main className={styles.mainWrapper}>
+        {pathname !== "/" && pathname !== "/cart" && <Bredcrumbs />}
         <div className={styles.mainContent}>
           <Outlet />
         </div>

@@ -9,7 +9,7 @@ interface ButtonIconsProps {
 const ButtonIcon: React.FC<ButtonIconsProps> = ({
   icon,
   size = "medium",
-  onClick
+  onClick,
 }) => {
   const buttonSize =
     {
@@ -19,12 +19,12 @@ const ButtonIcon: React.FC<ButtonIconsProps> = ({
     }[size] || styles.button_size_small;
 
   return (
-    <div
+    <button
       className={`${styles.button_icon_wrapper} ${buttonSize}`}
       onClick={onClick}
     >
       <img className={styles.button_img} src={icon} alt="buttonIcon" />
-    </div>
+    </button>
   );
 };
 

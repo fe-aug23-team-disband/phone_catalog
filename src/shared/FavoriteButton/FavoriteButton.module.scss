@@ -1,17 +1,24 @@
+@import '../../styles/utils/variables.scss';
+
 .NotFavorite {
   width: 40px;
   height: 40px;
   border: none;
   box-sizing: border-box;
   padding: 12px;
-  background: var(--gray-surface-2, #323542);
+  background-color: $surface-2;
+  transition: $animation-time ease-in-out;
 
   &:hover {
     cursor: pointer;
-    background: var(--gray-icons-placeholders, #4A4D58);
+    background-color: $icons;
+    border-radius: 10%;
   }
+}
 
-  &:active {
-    background: #505263;
-  }
+.Favorite {
+  padding: 11px;
+  box-sizing: border-box;
+  background-color: transparent;
+  border: 1px solid $elements;
 }

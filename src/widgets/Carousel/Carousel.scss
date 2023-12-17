@@ -21,8 +21,11 @@
   }
 
   .slick-arrow {
+    transition: $animation-time;
+
+
+
     &.slick-next {
-      z-index: 10;
       background: $surface-2;
       height: 100%;
       border: none;
@@ -36,10 +39,13 @@
         width: 32px;
         height: 9px;
       }
+      &:hover {
+        border-radius: 4px;
+        background-color: $icons;
+      }
     }
 
     &.slick-prev {
-      z-index: 10;
       background: $surface-2;
       height: 100%;
       border: none;
@@ -53,6 +59,10 @@
         width: 32px;
         height: 9px;
         transform: rotate(180deg);
+      }
+      &:hover {
+        border-radius: 4px;
+        background-color: $icons;
       }
     }
   }
