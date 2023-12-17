@@ -4,6 +4,9 @@ import Footer from "../widgets/Footer/Footer";
 import styles from "../styles/main.module.scss";
 
 export const App = () => {
+  const location = useLocation();
+  const pathname = location.pathname;
+
   return (
     <div className={styles.appWrapper}>
       <Header />
