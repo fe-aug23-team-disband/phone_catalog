@@ -16,7 +16,7 @@ export const CapacityAvailable: React.FC<Props> = ({
   onClick,
 }) => {
   const { capacityAvailable } = data;
-  console.log(selectedCapacity);
+
   return (
     <div className={styles.capacityAvailable}>
       <p className={styles.capacityAvailable__title}>
