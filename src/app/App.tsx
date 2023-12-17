@@ -1,13 +1,9 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Header from "../widgets/Header/Header";
 import Footer from "../widgets/Footer/Footer";
 import styles from "../styles/main.module.scss";
-import Bredcrumbs from "../widgets/Bredcrumbs/Bredcrumbs";
 
 export const App = () => {
-  const location = useLocation();
-  const pathname = location.pathname;
-
   return (
     <div className={styles.appWrapper}>
       <Header />
