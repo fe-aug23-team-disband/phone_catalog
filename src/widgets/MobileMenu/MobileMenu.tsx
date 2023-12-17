@@ -98,7 +98,7 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
           >
             <span className={styles.mobile_menu_button_wrap}>
               <img src={item.icon} alt={item.alt} />
-              {item.count && (
+              {item.count !== 0 && (
                 <span className={styles.mobile_menu_button_count_bg}>
                   <span className={styles.mobile_menu_button_count}>
                     {item.count}
