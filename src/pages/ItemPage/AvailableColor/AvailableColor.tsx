@@ -16,9 +16,8 @@ export const AvailableColor: React.FC<Props> = ({
   selectedColor,
   handleColorChange,
 }) => {
-  // const { productId } = useParams();
-  // якщо я правильно розумію то тут треба тільки витягнути правильні дані
 
+  const currentColor = selectedColor?.name || "";
   const { colors } = data;
 
   return (
@@ -35,12 +34,11 @@ export const AvailableColor: React.FC<Props> = ({
 
       <div className={`${styles["available-colors__list"]}`}>
         {colors.map(color => {
-          const { id, hex } = color;
+          const { id, hex, name } = color;
           return (
             <Link
               key={id}
-              // тут треба буде замінити посилання
-              to={`/products/${color}`}
+              to={`/products/${data.namespaceId.replace(currentColor, name)}`}
               className={cn(styles["available-color"], {
                 [styles.active]: selectedColor?.id === id,
               })}

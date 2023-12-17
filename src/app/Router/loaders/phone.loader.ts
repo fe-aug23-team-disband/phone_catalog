@@ -6,7 +6,9 @@ export const productsLoader: LoaderFunction<{ slug: string }> = async ({ params 
   try {
     if (params.slug) {
       const product = productClient.getSingle({ namespaceId: params.slug });
-      return defer({ product });
+      const related = productClient.getRecommended({ namespaceId: params.slug });
+
+      return defer({ product, related });
     }
   } catch (e) {
     return defer({ data: "Nodata" });

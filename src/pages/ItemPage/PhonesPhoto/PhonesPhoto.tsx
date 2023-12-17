@@ -5,7 +5,7 @@ import { Image } from "../../../types/Image";
 
 type Props = {
   images: Image[];
-  selectedImage: Image | null;
+  selectedImage: string | null;
   onSelected: (image: Image) => void;
 };
 
@@ -19,7 +19,7 @@ export const PhonesPhoto: React.FC<Props> = ({
       <div className={`${styles.phones__selected}`}>
         {selectedImage !== null && (
           <img
-            src={`data:image/png;base64, ${selectedImage.string}`}
+            src={`data:image/png;base64, ${selectedImage}`}
             alt={`${selectedImage} Selected image`}
             className={styles["phones__selected-img"]}
           />
@@ -35,7 +35,7 @@ export const PhonesPhoto: React.FC<Props> = ({
               <li
                 key={id}
                 className={cn(styles.phones__item, {
-                  [styles["phones__item-active"]]: image.id === selectedImage?.id,
+                  [styles["phones__item-active"]]: image.string === selectedImage,
                 })}
                 onClick={() => onSelected(image)}
               >

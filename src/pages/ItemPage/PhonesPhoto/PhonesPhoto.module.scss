@@ -8,7 +8,7 @@
     grid-column: 1 / 8;
     display: flex;
     flex-direction: row-reverse;
-    justify-content: start;
+    justify-content: flex-start;
   }
 
   @include onDesktop {
@@ -57,7 +57,7 @@
       flex-direction: column;
       grid-column: span 1;
       grid-row: 1 / -1;
-      align-self: start;
+      align-self: flex-start;
       margin: 0;
     }
   }

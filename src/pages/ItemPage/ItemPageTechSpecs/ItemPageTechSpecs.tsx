@@ -1,36 +1,12 @@
 import React from "react";
 import styles from "./ItemPageTechSpecs.module.scss";
 import { Product } from "../../../types/Product";
-// import { useAsyncValue } from "react-router-dom";
-
-// type PhoneInfo = {
-//   screen: string,
-//   resolution: string,
-//   processor: string,
-//   ram: string,
-//   capacity: string,
-//   camera: string,
-//   zoom: string,
-//   cell: string[],
-// };
 
 type Props = {
   phoneInfoApi: Product,
 };
 
 export const ItemPageTechSpecs: React.FC<Props> = ({ phoneInfoApi }) => {
-  // const [phoneInfo, setPhoneInfo] = useState<PhoneInfo | null>(null);
-
-  // const data = useAsyncValue() as Product;
-
-  // useEffect(() => {
-  //   const phoneInfoFromApi = JSON.parse(phoneInfoApi);
-  //   setPhoneInfo(phoneInfoFromApi);
-  // }, [phoneInfoApi]);
-
-  // if (!phoneInfo) {
-  //   return <p></p>;
-  // }
 
   const {
     screen,

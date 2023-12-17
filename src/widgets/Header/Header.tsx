@@ -26,8 +26,6 @@ const Header = () => {
   const searchParams = new URLSearchParams(location.search);
   const category = searchParams.get("category");
 
-  console.log(location.pathname);
-
   const icons = [
     {
       icon: favoriteIcon,

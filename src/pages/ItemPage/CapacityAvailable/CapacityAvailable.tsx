@@ -15,9 +15,8 @@ export const CapacityAvailable: React.FC<Props> = ({
   selectedCapacity,
   onClick,
 }) => {
-  // const { productId } = useParams();
   const { capacityAvailable } = data;
-
+  console.log(selectedCapacity);
   return (
     <div className={styles.capacityAvailable}>
       <p className={styles.capacityAvailable__title}>
@@ -27,7 +26,7 @@ export const CapacityAvailable: React.FC<Props> = ({
       {capacityAvailable.map(capacity => (
         <NavLink
           key={capacity}
-          to={""}
+          to={`/products/${data.namespaceId.replace(selectedCapacity.toLowerCase(), capacity.toLowerCase())}`}
           className={cn(styles["available-capacity"], {
             [styles["available-capacity-active"]]: capacity === selectedCapacity
           })}

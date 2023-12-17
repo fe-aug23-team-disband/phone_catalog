@@ -6,25 +6,7 @@ type Props = {
   data: Product,
 };
 
-// type PhoneProperty = {
-//   screen: string,
-//   resolution: string
-//   processor: string,
-//   ram: string,
-// };
-
 export const PhoneProperties: React.FC<Props> = ({ data }) => {
-  // const [details, setDetails] = useState<PhoneProperty | null>(null);
-
-  // useEffect(() => {
-  //   const dataFromApi = JSON.parse(data);
-  //   setDetails(dataFromApi);
-  // }, [data]);
-
-  // if (!details) {
-  //   return <p>Loading...</p>;
-  // }
-
   const {
     screen,
     resolution,
