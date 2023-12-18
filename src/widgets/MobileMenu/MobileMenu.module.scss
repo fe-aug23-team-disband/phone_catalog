@@ -81,10 +81,14 @@
       &:hover {
         color: $primary-text-color;
       }
+      @include afterActiveLinkBorder(0px, $primary-text-color);
 
       &_active {
         color: $primary-text-color;
-        @include activeLinkBorder(0px, $primary-text-color);
+
+        &::after {
+          transform: scale(1);
+        }
       }
     }
   }
