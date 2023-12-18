@@ -7,10 +7,11 @@ import { ItemCard } from "../../entities/ItemCard/ItemCard";
 import { ItemCardState } from "../../entities/ItemCardState/ItemCardState";
 import { useAsyncValue } from "react-router";
 import { ProductShorted } from "../../types/Product";
+
 interface Props {
   name: string;
   state?: "loading" | "error";
-
+}
 
 export const ItemSlider: React.FC<Props> = ({ name, state }) => {
   const data = useAsyncValue() as ProductShorted[];
