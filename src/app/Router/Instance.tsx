@@ -1,12 +1,13 @@
-import {createHashRouter, Navigate} from "react-router-dom";
-import {App} from "../App";
-import {HomePage} from "../../pages/HomePage/HomePage";
-import {CatalogPage} from "../../pages/CatalogPage/CatalogPage";
-import {ItemPage} from "../../pages/ItemPage/ItemPage";
-import {FavouritesPage} from "../../pages/FavouritesPage/FavouritesPage";
-import {CartPage} from "../../pages/CartPage/CartPage";
-import {NotFoundPage} from "../../pages/NotFoundPage/NotFoundPage";
-import {productsLoader, productsListLoader, specialsLoader} from "./loaders";
+import { createHashRouter, Navigate } from "react-router-dom";
+import { App } from "../App";
+import { HomePage } from "../../pages/HomePage/HomePage";
+import { CatalogPage } from "../../pages/CatalogPage/CatalogPage";
+import { ItemPage } from "../../pages/ItemPage/ItemPage";
+import { FavouritesPage } from "../../pages/FavouritesPage/FavouritesPage";
+import { CartPage } from "../../pages/CartPage/CartPage";
+import { RightsPage } from "../../pages/RightsPage/RightsPage";
+import { NotFoundPage } from "../../pages/NotFoundPage/NotFoundPage";
+import { productsLoader, productsListLoader, specialsLoader } from "./loaders";
 
 export const router = createHashRouter([
   {
@@ -26,12 +27,12 @@ export const router = createHashRouter([
       {
         path: "products",
         element: <CatalogPage />,
-        loader: productsListLoader
+        loader: productsListLoader,
       },
       {
         path: "products/:slug",
         element: <ItemPage />,
-        loader: productsLoader
+        loader: productsLoader,
       },
 
       {
@@ -41,6 +42,10 @@ export const router = createHashRouter([
       {
         path: "cart",
         element: <CartPage />,
+      },
+      {
+        path: "rights",
+        element: <RightsPage />,
       },
       {
         path: "*",

@@ -9,13 +9,14 @@ import baner3 from "../../static/Carousel/carousele-banner_3.png";
 import baner_mobile1 from "../../static/Carousel/carousele-banner_mobile_1.png";
 import baner_mobile2 from "../../static/Carousel/carousele-banner_mobile_2.png";
 import baner_mobile3 from "../../static/Carousel/carousele-banner_mobile_3.png";
+import { Link } from "react-router-dom";
 
 export const Carousel = () => {
   const isSmallScreen = useMediaQuery({ maxWidth: 640 });
   const banners = [
-    { desktop: baner1, mobile: baner_mobile1 },
-    { desktop: baner2, mobile: baner_mobile2 },
-    { desktop: baner3, mobile: baner_mobile3 }
+    { desktop: baner1, mobile: baner_mobile1, link: "products?category=phones" },
+    { desktop: baner2, mobile: baner_mobile2, link: "products?category=tablets" },
+    { desktop: baner3, mobile: baner_mobile3, link: "products?category=accessories" },
   ];
 
   const settings = {
@@ -40,13 +41,13 @@ export const Carousel = () => {
     <div>
       <Slider {...settings} className={`${styles.carousel} carousel_main`}>
         {banners.map((banner, index) => (
-          <div key={index} className={styles.carousel_wrap_item}>
+          <Link to={banner.link} key={index} className={styles.carousel_wrap_item}>
             <img
               className={styles.carousel_banner}
               src={isSmallScreen ? banner.mobile : banner.desktop}
               alt={`banner${index + 1}`}
             />
-          </div>
+          </Link>
         ))}
       </Slider>
     </div>

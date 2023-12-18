@@ -12,8 +12,9 @@ export type Product = {
   priceRegular: number;
   priceDiscount: number;
 
-  colors: Color[];
+  image: string;
   images?: Image[];
+  colors: Color[];
   description: Description[];
 
   screen: string;

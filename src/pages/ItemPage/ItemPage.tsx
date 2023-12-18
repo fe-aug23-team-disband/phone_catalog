@@ -1,23 +1,32 @@
-import {useLoaderData} from "react-router-dom";
-import {Product} from "../../types/Product";
-import React from "react";
-import {useAsyncValue} from "react-router";
-import {AsyncWrapper} from "../../shared/AsyncWrapper/AsyncWrapper";
+import { useLoaderData } from "react-router-dom";
+import { AsyncWrapper } from "../../shared/AsyncWrapper/AsyncWrapper";
+import { PhoneInfo } from "./PhoneInfo/PhoneInfo";
+import { Product, ProductShorted } from "../../types/Product";
+// import { ItemSlider } from "../../widgets/ItemSlider/ItemSlider";
 
 export const ItemPage = () => {
-  const { product } = useLoaderData() as { product: Promise<Product> };
+  const { product } = useLoaderData() as {
+    product: Promise<Product>;
+    related: Promise<ProductShorted[]>;
+  };
 
   return (
-    <AsyncWrapper data={product} Loader={<p>Loading</p>} Error={<p>Loading</p>}>
-      <TestComponent />
-    </AsyncWrapper>
-  );
-};
+    <>
+      <AsyncWrapper
+        data={product}
+        Loader={"Loading..."}
+        Error={"Error"}
+      >
+        <PhoneInfo />
+      </AsyncWrapper>
 
-const TestComponent: React.FC = () => {
-  const data = useAsyncValue() as Product;
-
-  return (
-    <p>{data.name}</p>
+      {/* <AsyncWrapper
+        data={related}
+        Loader={"Loading..."}
+        Error={"Error"}
+      >
+        <ItemSlider name={"You may also like"} />
+      </AsyncWrapper> */}
+    </>
   );
 };

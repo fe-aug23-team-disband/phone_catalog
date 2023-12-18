@@ -56,6 +56,7 @@
       text-transform: uppercase;
       color: $primary-text-color;
       text-decoration: none;
+      transition: $animation-time;
 
       &:hover {
         color: $secondary-text-color;
@@ -78,7 +79,7 @@
     justify-content: center;
 
     &_title {
-      color: #75767f;
+      color: $secondary-text-color;
       font-size: 12px;
       font-style: normal;
       font-weight: 700;

@@ -1,5 +1,5 @@
 import {Product} from "../../../types/Product";
-import instance from "../insctance";
+import instance from "../instance";
 
 type GetProduct = (
   props: {
@@ -13,7 +13,16 @@ export const getSingle: GetProduct = async ({
   const response = await instance.get(`/products/${namespaceId}`);
 
   if (response.status === 200) {
-    return response.data;
+    const product: Product = response.data;
+
+    delete product.discount;
+
+    if (product.images) {
+      const image = product.images[0].string;
+      return { ...product, image };
+    }
+
+    return { ...product };
   }
 
   return Promise.reject("Server error");

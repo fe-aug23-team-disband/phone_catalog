@@ -12,7 +12,7 @@ export const App = () => {
     <div className={styles.appWrapper}>
       <Header />
       <main className={styles.mainWrapper}>
-        {pathname !== "/" && <Bredcrumbs />}
+        {pathname !== "/" && pathname !== "/cart" && <Bredcrumbs />}
         <div className={styles.mainContent}>
           <Outlet />
         </div>
