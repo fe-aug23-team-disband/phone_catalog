@@ -19,7 +19,7 @@ export const PhonesPhoto: React.FC<Props> = ({
       <div className={`${styles.phones__selected}`}>
         {selectedImage !== null && (
           <img
-            src={`data:image/png;base64, ${selectedImage}`}
+            src={`${selectedImage}`}
             alt={`${selectedImage} Selected image`}
             className={styles["phones__selected-img"]}
           />
@@ -40,7 +40,7 @@ export const PhonesPhoto: React.FC<Props> = ({
                 onClick={() => onSelected(image)}
               >
                 <img
-                  src={`data:image/png;base64, ${string}`}
+                  src={`${string}`}
                   alt="Phone"
                   className={`${styles.phones__image}`}
                 />

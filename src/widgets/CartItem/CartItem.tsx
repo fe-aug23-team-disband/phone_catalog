@@ -43,7 +43,7 @@ export const CartItem: React.FC<{ product: Product | ProductShorted, count: numb
 
         <img
           className={styles.item__image_phone}
-          src={`data:image/png;base64, ${product.image}`}
+          src={`${product.image}`}
           alt="Phone"
         />
 

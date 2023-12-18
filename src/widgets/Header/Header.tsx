@@ -1,6 +1,6 @@
 import globalVariables from "../../static/variables";
 import styles from "./Header.module.scss";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logoImg from "../../static/Header/logo.png";
 import favoriteIcon from "../../static/Header/button-heart.png";
 import cartIcon from "../../static/Header/button-shop.png";
@@ -10,7 +10,8 @@ import { useAppSelector } from "../../app/store/hooks";
 import { useState } from "react";
 import { cartSelector } from "../../app/store/slices/cart.slice";
 import { wishlistSelector } from "../../app/store/slices/wishlist.slice";
-
+import { NavLink } from "react-router-dom";
+import cn from "classnames";
 const navItems = [
   { path: `${globalVariables.patchToHome}`, label: "home" },
   { path: `${globalVariables.patchToPhones}`, label: "phones" },
@@ -22,9 +23,6 @@ const Header = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const { items: wishlistItems } = useAppSelector(wishlistSelector);
   const { items: cartItems } = useAppSelector(cartSelector);
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const category = searchParams.get("category");
 
   const icons = [
     {
@@ -37,7 +35,8 @@ const Header = () => {
       icon: cartIcon,
       url: "/cart",
       alt: "cart",
-      count: cartItems.length}
+      count: cartItems.length
+    }
   ];
 
   const handleCloseMenu = () => {
@@ -55,18 +54,18 @@ const Header = () => {
             <ul className={styles.header_nav__list}>
               {navItems.map(item => (
                 <li className={styles.header_nav__item} key={item.label}>
-                  <Link
+                  <NavLink
+                    className={({ isActive }) =>
+                      cn(styles.header_nav__link, {
+                        [styles.header_nav__link_active]: isActive
+                      })
+                    }
                     key={item.label}
                     to={item.path}
-                    className={`${styles.header_nav__link} ${
-                      (category === null && item.path === "/") ||
-                      category === item.label.toLowerCase()
-                        ? styles.header_nav__link_active
-                        : ""
-                    }`}
                   >
+                    {" "}
                     {item.label}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -74,12 +73,14 @@ const Header = () => {
 
           <div className={styles.header_icons}>
             {icons.map((item, index) => (
-              <Link
+              <NavLink
                 key={index}
                 to={item.url}
-                className={`${styles.header_icons_link} ${
-                  item.url === location.pathname ? styles.header_icons_link_active : ""
-                }`}
+                className={({ isActive }) =>
+                  cn(styles.header_icons_link, {
+                    [styles.header_icons_link_active]: isActive
+                  })
+                }
               >
                 <span className={styles.header_icon_wrap}>
                   <img src={item.icon} alt={item.alt} />
@@ -91,7 +92,7 @@ const Header = () => {
                     </span>
                   )}
                 </span>
-              </Link>
+              </NavLink>
             ))}
           </div>
         </div>
