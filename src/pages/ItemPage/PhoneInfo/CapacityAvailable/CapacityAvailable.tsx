@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink /*, useParams*/ } from "react-router-dom";
+import {NavLink, useLocation /*, useParams*/} from "react-router-dom";
 import styles from "./CapacityAvailable.module.scss";
 import cn from "classnames";
 import { Product } from "../../../../types/Product";
@@ -16,6 +16,8 @@ export const CapacityAvailable: React.FC<Props> = ({
   onClick,
 }) => {
   const { capacityAvailable } = data;
+  const location = useLocation();
+  const category = location.pathname.replace(data.namespaceId, "");
 
   return (
     <div className={styles.capacityAvailable}>
@@ -26,7 +28,7 @@ export const CapacityAvailable: React.FC<Props> = ({
       {capacityAvailable.map(capacity => (
         <NavLink
           key={capacity}
-          to={`/products/${data.namespaceId.replace(selectedCapacity.toLowerCase(), capacity.toLowerCase())}`}
+          to={`../${category}${data.namespaceId.replace(selectedCapacity.toLowerCase(), capacity.toLowerCase())}`}
           className={cn(styles["available-capacity"], {
             [styles["available-capacity-active"]]: capacity === selectedCapacity
           })}

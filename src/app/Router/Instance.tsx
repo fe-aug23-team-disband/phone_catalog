@@ -25,12 +25,22 @@ export const router = createHashRouter([
       },
 
       {
-        path: "products",
+        path: "phones",
         element: <CatalogPage />,
         loader: productsListLoader,
       },
       {
-        path: "products/:slug",
+        path: "tablets",
+        element: <CatalogPage />,
+        loader: productsListLoader,
+      },
+      {
+        path: "accessories",
+        element: <CatalogPage />,
+        loader: productsListLoader,
+      },
+      {
+        path: ":category/:slug",
         element: <ItemPage />,
         loader: productsLoader,
       },

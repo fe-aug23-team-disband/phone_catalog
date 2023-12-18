@@ -26,6 +26,7 @@ export type Product = {
   cell: string[];
 
   discount?: number;
+  category: { name: string }
 
   time_created: string;
   time_updated: string;

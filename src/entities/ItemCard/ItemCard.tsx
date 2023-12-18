@@ -2,7 +2,7 @@ import styles from "./ItemCard.module.scss";
 import { FavoriteButton } from "../../shared/FavoriteButton/FavoriteButton";
 import { AddToCartButton } from "../../shared/AddToCartButton/AddToCartButton";
 import { ProductShorted } from "../../types/Product";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const Specs = ({ category, value }: { category: string; value: string }) => (
   <div className={styles.itemCard__Specs_Container}>
@@ -15,7 +15,7 @@ export const ItemCard = ({ phone }: { phone: ProductShorted }) => {
   return (
     <div className={styles.itemCard}>
       <Link
-        to={`../products/${phone.namespaceId}`}
+        to={`../${phone.category.name}/${phone.namespaceId}`}
         className={styles.itemCard__link}
       >
         <img
