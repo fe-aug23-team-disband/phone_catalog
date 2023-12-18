@@ -4,17 +4,25 @@ import "./PageChangeButton.scss";
 interface Props {
   direction: "prev" | "next";
   selected: number;
+  onPageChange: React.Dispatch<React.SetStateAction<string>>;
+  maxPage?: string;
 }
 
-export const PageChangeButton: React.FC<Props> = ({ direction, selected }) => {
+export const PageChangeButton: React.FC<Props> = ({ direction, selected, onPageChange, maxPage }) => {
   return (
-    <button type="button" className={cn("pageChangeButton",
-      {
-        "left-disabled": direction === "prev" && selected === 1,
-        "right-disabled": direction === "next" && selected === 5,
-        "left": direction === "prev",
-        "right": direction === "next",
-      }
-    )}></button>
+    <button
+      type="button"
+      className={cn(
+        "pageChangeButton",
+        {
+          "left-disabled": direction === "prev" && selected === 1,
+          "right-disabled": direction === "next" && selected === +(maxPage || 1),
+          "left": direction === "prev",
+          "right": direction === "next",
+        }
+      )}
+      disabled={selected === +(maxPage || 1)}
+      onClick={() => onPageChange((prevPage: string) => (direction === "prev" ? (+prevPage - 1) : (+prevPage + 1)).toString())}
+    />
   );
 };

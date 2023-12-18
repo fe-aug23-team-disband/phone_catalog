@@ -23,6 +23,8 @@ export const AddToCartButton: React.FC<{ product: ProductShorted }> = ({ product
     }
   }, [items]);
 
+  console.log(product);
+
   return (
     <button
       type="button"
