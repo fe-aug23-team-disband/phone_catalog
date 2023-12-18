@@ -23,7 +23,7 @@ export const PriceSection: React.FC<Props> = ({ data }) => {
         </p>
       </div>
 
-      <div className="priceSection__buttons">
+      <div className={styles.priceSection__buttons}>
         <AddToCartButton product={data} />
         <FavoriteButton product={data} />
       </div>

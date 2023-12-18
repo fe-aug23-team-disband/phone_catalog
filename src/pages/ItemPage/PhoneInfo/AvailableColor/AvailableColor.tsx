@@ -39,6 +39,7 @@ export const AvailableColor: React.FC<Props> = ({
           return (
             <Link
               key={id}
+              title={name}
               to={`../${category}${data.namespaceId.replace(currentColor, name)}`}
               className={cn(styles["available-color"], {
                 [styles.active]: selectedColor?.id === id,
