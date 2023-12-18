@@ -6,7 +6,11 @@ import {ProductShorted} from "../../types/Product";
 import { useAppSelector } from "../../app/store/hooks";
 import classNames from "classnames";
 
-export const AddToCartButton: React.FC<{ product: ProductShorted }> = ({ product }) => {
+interface Props {
+  product: ProductShorted;
+}
+
+export const AddToCartButton: React.FC<Props> = ({ product }) => {
   const dispatcher = useDispatch();
   const { items } = useAppSelector(cartSelector);
   const [isRemoveButton, setIsRemoveButton] = useState(() => {

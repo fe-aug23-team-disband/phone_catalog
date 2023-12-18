@@ -4,14 +4,16 @@ import "slick-carousel/slick/slick-theme.css";
 import styles from "./ItemSlider.module.scss";
 import "./ItemSlider.scss";
 import { ItemCard } from "../../entities/ItemCard/ItemCard";
+import { ItemCardState } from "../../entities/ItemCardState/ItemCardState";
 import { useAsyncValue } from "react-router";
 import { ProductShorted } from "../../types/Product";
+
 interface Props {
   name: string;
-  state?: "error" | "loading";
+  state?: "loading" | "error";
 }
 
-export const ItemSlider: React.FC<Props> = ({ name }) => {
+export const ItemSlider: React.FC<Props> = ({ name, state }) => {
   const data = useAsyncValue() as ProductShorted[];
 
   const settings = {
@@ -78,9 +80,14 @@ export const ItemSlider: React.FC<Props> = ({ name }) => {
     <div className={`${styles.sliderContainer} card_slider`}>
       <h2 className={styles.sliderTitle}>{name}</h2>
       <Slider {...settings}>
-        {data.reverse().map(phone => (
-          <ItemCard phone={phone} key={phone.id} />
-        ))}
+        {state
+          ? [1, 2, 3, 4, 5].map(id => (
+            <ItemCardState state={state} key={id} />
+          ))
+          : data.map(phone => (
+            <ItemCard phone={phone} key={phone.id} />
+          ))
+        }
       </Slider>
     </div>
   );

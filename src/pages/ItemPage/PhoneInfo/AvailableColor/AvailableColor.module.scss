@@ -1,8 +1,14 @@
+@import "../../../../styles/mixins/mixins.scss";
 @import "../../../../styles/utils/variables.scss";
 
 .available-colors {
+  margin-top: 40px;
   padding-bottom: 26px;
   border-bottom: 1px solid $elements;
+
+  @include onTablet {
+    margin: 0;
+  }
 
   &__text {
     font-size: 12px;

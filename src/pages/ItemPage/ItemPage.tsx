@@ -22,8 +22,8 @@ export const ItemPage = () => {
 
       <AsyncWrapper
         data={related}
-        Loader={"Loading..."}
-        Error={"Error"}
+        Loader={<ItemSlider name={"You may also like"} state="loading" />}
+        Error={<ItemSlider name={"You may also like"} state="error" />}
       >
         <ItemSlider name={"You may also like"} />
       </AsyncWrapper>

@@ -1,7 +1,9 @@
 import styles from "./CartPage.module.scss";
+import EmptyImage from "../../static/CartPage/empty-cart.svg";
 import { CartItem } from "../../widgets/CartItem/CartItem";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/store/hooks";
+
 import {
   cartSelector,
   createOrder,
@@ -58,7 +60,18 @@ export const CartPage = () => {
       <div className={styles.cart}>
         <h1 className={styles.cart__title}>Cart</h1>
         {items.length === 0
-          ? <h1 className={styles.cart__empty}>Empty</h1>
+          ? (
+            <div className={styles.cart__empty}>
+              <h1 className={styles.cart__empty_description}>
+                The cart is currently empty
+              </h1>
+              <img
+                className={styles.cart__empty_image}
+                src={EmptyImage}
+                alt="EmptyCart"
+              />
+            </div>
+          )
           : (
             <>
               <div className={styles.cart__items}>
