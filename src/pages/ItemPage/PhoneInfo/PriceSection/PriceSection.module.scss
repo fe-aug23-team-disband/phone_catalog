@@ -28,11 +28,6 @@
 }
 
 .priceSection__buttons {
-  &--add {
-
-  }
-
-  &--fav {
-    
-  }
+  display: flex;
+  gap: 8px;
 }
