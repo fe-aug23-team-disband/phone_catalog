@@ -58,6 +58,7 @@ export const CartItem: React.FC<{ product: Product | ProductShorted, count: numb
             size="small"
             onClick={handleRemove}
             icon={isRemoveDisabled ? IconMinusDisabled : IconMinus}
+            isDisabled={isRemoveDisabled}
           />
 
           <p className={styles.item__amount}>{count}</p>

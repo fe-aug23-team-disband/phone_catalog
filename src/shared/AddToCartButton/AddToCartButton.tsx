@@ -1,8 +1,8 @@
 import styles from "./AddToCartButton.module.scss";
 import {useDispatch} from "react-redux";
-import React, {useCallback, useState} from "react";
+import React, { useState } from "react";
 import {add, cartSelector, removeAll} from "../../app/store/slices/cart.slice";
-import {ProductShorted} from "../../types/Product";
+import { ProductShorted} from "../../types/Product";
 import { useAppSelector } from "../../app/store/hooks";
 import classNames from "classnames";
 
@@ -17,7 +17,9 @@ export const AddToCartButton: React.FC<Props> = ({ product }) => {
     return items.find(item => item.item.id === product.id) !== undefined;
   });
 
-  const handleClick = useCallback(() => {
+  console.log(items);
+
+  const handleClick = () => {
     if (isRemoveButton) {
       dispatcher(removeAll({ id: product.id }));
       setIsRemoveButton(false);
@@ -25,9 +27,7 @@ export const AddToCartButton: React.FC<Props> = ({ product }) => {
       dispatcher(add({ item: product }));
       setIsRemoveButton(true);
     }
-  }, [items]);
-
-  console.log(product);
+  };
 
   return (
     <button

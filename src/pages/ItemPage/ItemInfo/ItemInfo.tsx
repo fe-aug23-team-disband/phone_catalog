@@ -12,11 +12,13 @@ import { PhonesPhoto } from "./PhonesPhoto/PhonesPhoto";
 import { PhonesMainInfo } from "./PhonesMainInfo/PhonesMainInfo";
 import { useAsyncValue } from "react-router-dom";
 
-export const PhoneInfo = () => {
+export const ItemInfo = () => {
   const phoneInfoFromApi = useAsyncValue() as Product;
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedImage, setSelectedImage] = useState<string>(phoneInfoFromApi.image);
+  const [selectedCapacity, setSelectedCapacity] = useState<string>(phoneInfoFromApi.ram);
   const [selectedColor, setSelectedColor] = useState<Color | null>(null);
-  const [selectedCapacity, setSelectedCapacity] = useState<string>("");
+
+  console.log(phoneInfoFromApi);
 
   const handleImageClick = (image: Image) => {
     setSelectedImage(image.string);
@@ -33,14 +35,14 @@ export const PhoneInfo = () => {
   useEffect(() => {
     setSelectedImage(phoneInfoFromApi.image);
 
-    const currentColor = phoneInfoFromApi.namespaceId
-      .split("-")
-      .pop();
+    const splitedNamespace = phoneInfoFromApi.namespaceId.split(phoneInfoFromApi.capacity.toLowerCase());
 
-    setSelectedColor(phoneInfoFromApi.colors.find(color => color.name === currentColor) || null);
+    const currentColor = splitedNamespace.pop()?.slice(1).split("-").join("");
+
+    setSelectedColor(phoneInfoFromApi.colors.find(color => color.name.split(" ").join("") === currentColor) || null);
 
     setSelectedCapacity(phoneInfoFromApi.capacity);
-  }, [phoneInfoFromApi]);
+  }, [phoneInfoFromApi, selectedColor, selectedCapacity]);
 
   return (
     <div className={`${styles.itemPage}`}>

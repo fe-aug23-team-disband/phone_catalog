@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, useLocation} from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import styles from "./AvailableColor.module.scss";
 import cn from "classnames";
 import { Color } from "../../../../types/Color";
@@ -17,8 +17,7 @@ export const AvailableColor: React.FC<Props> = ({
   handleColorChange,
 }) => {
   const location = useLocation();
-  const category = location.pathname.replace(data.namespaceId, "");
-  const currentColor = selectedColor?.name || "";
+  const category = location.pathname.slice(1).split("/")[0];
   const { colors } = data;
 
   return (
@@ -36,11 +35,14 @@ export const AvailableColor: React.FC<Props> = ({
       <div className={`${styles["available-colors__list"]}`}>
         {colors.map(color => {
           const { id, hex, name } = color;
+
+          const colorToChange = data.namespaceId.split("-").pop();
+
           return (
             <Link
               key={id}
               title={name}
-              to={`../${category}${data.namespaceId.replace(currentColor, name)}`}
+              to={`../${category}/${data.namespaceId.replace(colorToChange || "", name)}`}
               className={cn(styles["available-color"], {
                 [styles.active]: selectedColor?.id === id,
               })}

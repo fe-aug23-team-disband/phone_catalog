@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { AsyncWrapper } from "../../shared/AsyncWrapper/AsyncWrapper";
-import { PhoneInfo } from "./PhoneInfo/PhoneInfo";
+import { ItemInfo } from "./ItemInfo/ItemInfo";
 import { Product, ProductShorted } from "../../types/Product";
 import { ItemSlider } from "../../widgets/ItemSlider/ItemSlider";
 
@@ -17,7 +17,7 @@ export const ItemPage = () => {
         Loader={"Loading..."}
         Error={"Error"}
       >
-        <PhoneInfo />
+        <ItemInfo />
       </AsyncWrapper>
 
       <AsyncWrapper

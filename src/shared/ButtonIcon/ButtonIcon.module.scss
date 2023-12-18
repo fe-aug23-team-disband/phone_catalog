@@ -31,6 +31,13 @@
       cursor: pointer;
       background: $icons;
     }
+    &__disabled {
+
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+
 
     &:active {
       background: #0f1121;

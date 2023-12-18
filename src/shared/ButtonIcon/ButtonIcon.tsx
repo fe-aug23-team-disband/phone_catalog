@@ -1,17 +1,20 @@
 import React from "react";
 import styles from "./ButtonIcon.module.scss";
+import classNames from "classnames";
 interface ButtonIconsProps {
   icon: string;
   size?: "small" | "medium" | "large";
   onClick?: () => void;
   customStyles?: string;
+  isDisabled?: boolean;
 }
 
 const ButtonIcon: React.FC<ButtonIconsProps> = ({
   icon,
   size = "medium",
   onClick,
-  customStyles
+  customStyles,
+  isDisabled
 }) => {
   const buttonSize =
     {
@@ -22,8 +25,14 @@ const ButtonIcon: React.FC<ButtonIconsProps> = ({
 
   return (
     <button
-      className={`${styles.button_icon_wrapper} ${buttonSize} ${customStyles}`}
+      className={classNames(
+        `${styles.button_icon_wrapper} ${buttonSize} ${customStyles}`,
+        {
+          [styles.button_icon_wrapper__disabled]: isDisabled
+        }
+      )}
       onClick={onClick}
+      disabled={isDisabled}
     >
       <img className={styles.button_img} src={icon} alt="buttonIcon" />
     </button>
