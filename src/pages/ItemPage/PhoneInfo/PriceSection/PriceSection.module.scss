@@ -1,4 +1,4 @@
-@import "../../../styles/utils/variables.scss";
+@import "../../../../styles/utils/variables.scss";
 
 .priseSection__container {
   margin: 32px 0;
@@ -24,5 +24,15 @@
     line-height: 28px;
     color: $secondary-text-color;
     text-decoration: line-through;
+  }
+}
+
+.priceSection__buttons {
+  &--add {
+
+  }
+
+  &--fav {
+    
   }
 }

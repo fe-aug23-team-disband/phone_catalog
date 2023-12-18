@@ -5,8 +5,8 @@ import { PhoneProperties } from "../PhoneProperties/PhoneProperties";
 import { AvailableColor } from "../AvailableColor/AvailableColor";
 import { CapacityAvailable } from "../CapacityAvailable/CapacityAvailable";
 import { PriceSection } from "../PriceSection/PriceSection";
-import { Product } from "../../../types/Product";
-import { Color } from "../../../types/Color";
+import { Product } from "../../../../types/Product";
+import { Color } from "../../../../types/Color";
 
 type Props = {
   phoneInfo: Product,

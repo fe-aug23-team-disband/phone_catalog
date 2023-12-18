@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink /*, useParams*/ } from "react-router-dom";
 import styles from "./CapacityAvailable.module.scss";
 import cn from "classnames";
-import { Product } from "../../../types/Product";
+import { Product } from "../../../../types/Product";
 
 type Props = {
   data: Product,

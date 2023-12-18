@@ -1,6 +1,6 @@
 import React, { Fragment } from "react";
 import styles from "./ItemPageAbout.module.scss";
-import { Description } from "../../../types/Description";
+import { Description } from "../../../../types/Description";
 
 type Props = {
   description: Description[],

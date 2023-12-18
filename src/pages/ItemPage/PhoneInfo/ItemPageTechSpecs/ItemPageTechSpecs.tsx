@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./ItemPageTechSpecs.module.scss";
-import { Product } from "../../../types/Product";
+import { Product } from "../../../../types/Product";
 
 type Props = {
   phoneInfoApi: Product,

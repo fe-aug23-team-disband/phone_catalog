@@ -1,6 +1,6 @@
 import { useLoaderData } from "react-router-dom";
 import { AsyncWrapper } from "../../shared/AsyncWrapper/AsyncWrapper";
-import { PhoneInfo } from "./PhoneInfo";
+import { PhoneInfo } from "./PhoneInfo/PhoneInfo";
 import { Product, ProductShorted } from "../../types/Product";
 // import { ItemSlider } from "../../widgets/ItemSlider/ItemSlider";
 

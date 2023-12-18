@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "./PriceSection.module.scss";
-import { Product } from "../../../types/Product";
+import { Product } from "../../../../types/Product";
+import { AddToCartButton } from "../../../../shared/AddToCartButton/AddToCartButton";
+import { FavoriteButton } from "../../../../shared/FavoriteButton/FavoriteButton";
 
 type Props = {
   data: Product,
@@ -22,7 +24,8 @@ export const PriceSection: React.FC<Props> = ({ data }) => {
       </div>
 
       <div className="priceSection__buttons">
-        Add buttons
+        <AddToCartButton product={data} />
+        <FavoriteButton product={data} />
       </div>
     </div>
   );

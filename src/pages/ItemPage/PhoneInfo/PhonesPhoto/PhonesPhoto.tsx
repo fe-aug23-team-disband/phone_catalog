@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./PhonesPhoto.module.scss";
 import cn from "classnames";
-import { Image } from "../../../types/Image";
+import { Image } from "../../../../types/Image";
 
 type Props = {
   images: Image[];

@@ -1,6 +1,6 @@
 // import React, { useEffect, useState } from "react";
 import styles from "./PhoneProperties.module.scss";
-import { Product } from "../../../types/Product";
+import { Product } from "../../../../types/Product";
 
 type Props = {
   data: Product,

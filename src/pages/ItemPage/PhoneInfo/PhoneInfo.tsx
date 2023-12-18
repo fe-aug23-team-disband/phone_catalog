@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 
-import { Color } from "../../types/Color";
-import { Product } from "../../types/Product";
-import { Image } from "../../types/Image";
+import { Color } from "../../../types/Color";
+import { Product } from "../../../types/Product";
+import { Image } from "../../../types/Image";
 
-import styles from "./ItemPage.module.scss";
+import styles from "../ItemPage.module.scss";
 
 import { ItemPageAbout } from "./ItemPageAbout/ItemPageAbout";
 import { ItemPageTechSpecs } from "./ItemPageTechSpecs/ItemPageTechSpecs";

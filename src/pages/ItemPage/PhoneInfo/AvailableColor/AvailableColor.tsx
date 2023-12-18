@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import styles from "./AvailableColor.module.scss";
 import cn from "classnames";
-import { Color } from "../../../types/Color";
-import { Product } from "../../../types/Product";
+import { Color } from "../../../../types/Color";
+import { Product } from "../../../../types/Product";
 
 type Props = {
   data: Product,
