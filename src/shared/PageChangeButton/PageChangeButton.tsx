@@ -15,8 +15,8 @@ export const PageChangeButton: React.FC<Props> = ({ direction, selected, onPageC
       className={cn(
         "pageChangeButton",
         {
-          "left-disabled": direction === "prev" && selected === 1,
-          "right-disabled": direction === "next" && selected === +(maxPage || 1),
+          "left-disabled": direction === "prev" && selected === 0,
+          "right-disabled": direction === "next" && selected === +(maxPage || 0) - 1,
           "left": direction === "prev",
           "right": direction === "next",
         }

@@ -23,9 +23,15 @@ export const CategoryProducts: React.FC = () => {
     };
   }, [searchParams]);
 
-  const [currentPage, setCurrentPage] = useState(params.page + 1);
+  const [currentPage, setCurrentPage] = useState(params.page);
   const [limit, setLimit] = useState(params.limit);
   const [query] = useState(params.query);
+
+  useEffect(() => {
+    console.log(currentPage, limit);
+    setCurrentPage("0");
+    setLimit(params.limit);
+  }, [category]);
 
   useEffect(() => {
     setSearchParams(params => {
@@ -79,9 +85,9 @@ export const CategoryProducts: React.FC = () => {
             className={styles.selectors__Items}
             onChange={event => handleLimitChange(event.target.value)}
           >
-            <option value="16">16</option>
-            <option value="24">24</option>
-            <option value="48">48</option>
+            {[16, 24, 48].map(
+              number => <option key={number} value={number} selected={+limit === number}>{number}</option>
+            )}
           </select>
         </div>
       </div>
@@ -91,29 +97,33 @@ export const CategoryProducts: React.FC = () => {
         ))}
       </div>
 
-      <div className={styles.pagination}>
-        <PageChangeButton
-          direction="prev"
-          selected={+currentPage}
-          onPageChange={setCurrentPage}
-        />
-        <div className={styles.pagination__Pages}>
-          {pages.map(pageNumber => (
-            <PageButton
-              key={pageNumber}
-              pageNumber={pageNumber}
+      {pages.length > 1
+        && (
+          <div className={styles.pagination}>
+            <PageChangeButton
+              direction="prev"
               selected={+currentPage}
               onPageChange={setCurrentPage}
             />
-          ))}
-        </div>
-        <PageChangeButton
-          direction="next"
-          selected={+currentPage}
-          onPageChange={setCurrentPage}
-          maxPage={pages.length.toString()}
-        />
-      </div>
+            <div className={styles.pagination__Pages}>
+              {pages.map(pageNumber => (
+                <PageButton
+                  key={pageNumber}
+                  pageNumber={pageNumber}
+                  selected={+currentPage}
+                  onPageChange={setCurrentPage}
+                />
+              ))}
+            </div>
+            <PageChangeButton
+              direction="next"
+              selected={+currentPage}
+              onPageChange={setCurrentPage}
+              maxPage={pages.length.toString()}
+            />
+          </div>
+        )
+      }
     </>
   );
 };

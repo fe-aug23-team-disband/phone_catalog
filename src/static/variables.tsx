@@ -8,9 +8,9 @@ interface TypeVariables {
 
 //patch
 const patchToHome = "/";
-const patchToPhones = "/phones";
-const patchToTablets = "/tablets";
-const patchToAccessories = "/accessories";
+const patchToPhones = "/phones?page=0&limit=16";
+const patchToTablets = "/tablets?page=0&limit=16";
+const patchToAccessories = "/accessories?page=0&limit=16";
 
 const globalVariables: TypeVariables = {
   //patch
