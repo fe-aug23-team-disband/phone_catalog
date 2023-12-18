@@ -1,7 +1,8 @@
-import {useAppSelector} from "../../app/store/hooks";
-import {wishlistSelector} from "../../app/store/slices/wishlist.slice";
+import { useAppSelector } from "../../app/store/hooks";
+import { wishlistSelector } from "../../app/store/slices/wishlist.slice";
 import { ItemCard } from "../../entities/ItemCard/ItemCard";
 import styles from "./FavouritesPage.module.scss";
+import EmptyImage from "../../static/FavouritesPage/empty-icon.svg";
 
 export const FavouritesPage = () => {
   const { items } = useAppSelector(wishlistSelector);
@@ -14,8 +15,18 @@ export const FavouritesPage = () => {
       </h1>
 
       {items.length === 0
-        ? <h1 className={styles.heading__empty}>Empty</h1>
-        : (
+        ? (
+          <div className={styles.empty}>
+            <h1 className={styles.empty__description}>
+              The favourites list is currently empty
+            </h1>
+            <img
+              className={styles.empty__image}
+              src={EmptyImage}
+              alt="EmptyFavourites"
+            />
+          </div>
+        ) : (
           <div className={styles.container}>
             {items.map(item => <ItemCard key={item.id} phone={item} />)}
           </div>
