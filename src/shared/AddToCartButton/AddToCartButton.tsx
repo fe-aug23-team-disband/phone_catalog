@@ -8,10 +8,9 @@ import classNames from "classnames";
 
 interface Props {
   product: ProductShorted;
-  state?: "loading" | "error";
 }
 
-export const AddToCartButton: React.FC<Props> = ({ product, state }) => {
+export const AddToCartButton: React.FC<Props> = ({ product }) => {
   const dispatcher = useDispatch();
   const { items } = useAppSelector(cartSelector);
   const [isRemoveButton, setIsRemoveButton] = useState(() => {
@@ -34,20 +33,14 @@ export const AddToCartButton: React.FC<Props> = ({ product, state }) => {
       className={classNames(
         styles.NotAdded,
         {
-          [styles.Added]: isRemoveButton || state === "error",
+          [styles.Added]: isRemoveButton,
         }
       )}
       onClick={handleClick}
-      disabled={state ? true : false}
     >
-      {product
-        ? (isRemoveButton
-          ? <div className={styles.Text}>Added to cart</div>
-          : <div className={styles.Text}>Add to cart</div>)
-        : (state === "loading"
-          ? <div className={styles.Text}>Loading</div>
-          : <div className={styles.Text}>Error</div>
-        )
+      {isRemoveButton
+        ? <div className={styles.Text}>Added to cart</div>
+        : <div className={styles.Text}>Add to cart</div>
       }
     </button>
   );

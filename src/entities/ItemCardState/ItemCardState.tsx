@@ -1,6 +1,6 @@
 import styles from "./ItemCardState.module.scss";
 import { FavoriteButton } from "../../shared/FavoriteButton/FavoriteButton";
-import { AddToCartButton } from "../../shared/AddToCartButton/AddToCartButton";
+import { AddToCartButtonState } from "../../shared/AddToCardButtonState/AddToCartButtonState";
 import errorImage from "../../static/ItemCard/1741327.png";
 
 const Specs = ({ category, state }: { category: string; state: "loading" | "error" }) => (
@@ -52,7 +52,7 @@ export const ItemCardState = ({ state }: { state: "loading" | "error" }) => {
       </div>
 
       <div className={styles.itemCard__ButtonWrapper}>
-        <AddToCartButton state={state} />
+        <AddToCartButtonState state={state} />
 
         <FavoriteButton state={state} />
       </div>
