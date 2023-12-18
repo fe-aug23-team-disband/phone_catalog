@@ -8,6 +8,8 @@ import { PageButton } from "../../../shared/PageButton/PageButton";
 import { PageChangeButton } from "../../../shared/PageChangeButton/PageChangeButton";
 import { getNumbers } from "../../../shared/utils/getNumbers";
 
+const limits = [16, 24, 48];
+
 export const CategoryProducts: React.FC = () => {
   const location = useLocation();
   const category = location.pathname.slice(1);
@@ -21,17 +23,11 @@ export const CategoryProducts: React.FC = () => {
       limit: searchParams.get("limit") || "16",
       query: searchParams.get("query") || ""
     };
-  }, [searchParams]);
+  }, [searchParams, category]);
 
   const [currentPage, setCurrentPage] = useState(params.page);
   const [limit, setLimit] = useState(params.limit);
   const [query] = useState(params.query);
-
-  useEffect(() => {
-    console.log(currentPage, limit);
-    setCurrentPage("0");
-    setLimit(params.limit);
-  }, [category]);
 
   useEffect(() => {
     setSearchParams(params => {
@@ -43,6 +39,11 @@ export const CategoryProducts: React.FC = () => {
       return params;
     });
   }, [currentPage, limit, query]);
+
+  useEffect(() => {
+    setCurrentPage(() => "0");
+    setLimit(() => params.limit);
+  }, [category]);
 
   const handleLimitChange = (value: string) => {
     setCurrentPage("0");
@@ -85,9 +86,8 @@ export const CategoryProducts: React.FC = () => {
             className={styles.selectors__Items}
             onChange={event => handleLimitChange(event.target.value)}
           >
-            {[16, 24, 48].map(
-              number => <option key={number} value={number} selected={+limit === number}>{number}</option>
-            )}
+            {limits.map(number =>
+              <option key={number} value={number} selected={number === +limit}>{number}</option>)}
           </select>
         </div>
       </div>

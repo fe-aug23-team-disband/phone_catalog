@@ -13,9 +13,11 @@ interface Props {
 export const AddToCartButton: React.FC<Props> = ({ product }) => {
   const dispatcher = useDispatch();
   const { items } = useAppSelector(cartSelector);
-  const [isRemoveButton, setIsRemoveButton] = useState(() => {
-    return items.find(item => item.item.id === product.id) !== undefined;
+  const [isRemoveButton, setIsRemoveButton] = useState<boolean>(() => {
+    return !!items.find(item => item.item.id === product.id);
   });
+
+  console.log(isRemoveButton);
 
   const handleClick = () => {
     if (isRemoveButton) {
