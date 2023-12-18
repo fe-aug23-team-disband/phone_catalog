@@ -8,6 +8,7 @@ import { useAsyncValue } from "react-router";
 import { ProductShorted } from "../../types/Product";
 interface Props {
   name: string;
+  state?: "error" | "loading";
 }
 
 export const ItemSlider: React.FC<Props> = ({ name }) => {

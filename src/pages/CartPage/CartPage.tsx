@@ -1,17 +1,21 @@
 import styles from "./CartPage.module.scss";
 import { CartItem } from "../../widgets/CartItem/CartItem";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/store/hooks";
-
-import { cartSelector, createOrder } from "../../app/store/slices/cart.slice";
-import { useCallback, useState } from "react";
+import {
+  cartSelector,
+  createOrder,
+  remove
+} from "../../app/store/slices/cart.slice";
+import { useCallback, useEffect, useState } from "react";
 import Modal from "../../shared/Modal/Modal";
-import { remove } from "../../app/store/slices/wishlist.slice";
+import globalVariables from "../../static/variables";
 
 export const CartPage = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
   const { items, sum, order } = useAppSelector(cartSelector);
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
 
   const countTotalItems = useCallback(() => {
@@ -21,14 +25,27 @@ export const CartPage = () => {
   }, [items]);
 
   const handleCheckout = useCallback(() => {
-    for (const item of items) {
-      dispatch(remove({id: item.item.id}));
-    }
-
-    dispatch(createOrder({ items, sum, order }));
     setIsOpenModal(false);
     setIsSecondModalOpen(true);
+
   }, []);
+
+  useEffect(() => {
+
+    if (isSecondModalOpen === true) {
+      const timeoutId = setTimeout(() => {
+        setIsSecondModalOpen(false);
+        for (const item of items) {
+          dispatch(remove({ id: item.item.id }));
+        }
+        dispatch(createOrder({ items, sum, order }));
+        navigate(globalVariables.patchToPhones);
+      }, 3000);
+
+      return () => clearTimeout(timeoutId);
+    }
+
+  }, [isSecondModalOpen]);
 
   return (
     <>
