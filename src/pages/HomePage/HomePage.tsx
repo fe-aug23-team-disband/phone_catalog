@@ -23,8 +23,8 @@ export const HomePage = () => {
       {/* i think we need here skeleton on loading and somehow display error */}
       <AsyncWrapper
         data={latest}
-        Loader={"Loading..."}
-        Error={"Error"}
+        Loader={<ItemSlider name="Brand new model" state="loading" />}
+        Error={<ItemSlider name="Brand new model" state="error" />}
       >
         <ItemSlider name="Brand new model" />
       </AsyncWrapper>
@@ -34,8 +34,8 @@ export const HomePage = () => {
       {/* i think we need here skeleton on loading and somehow display error */}
       <AsyncWrapper
         data={hotPrice}
-        Loader={"Loading..."}
-        Error={"Error"}
+        Loader={<ItemSlider name="Hot prices" state="loading" />}
+        Error={<ItemSlider name="Hot prices" state="error" />}
       >
         <ItemSlider name="Hot prices" />
       </AsyncWrapper>
