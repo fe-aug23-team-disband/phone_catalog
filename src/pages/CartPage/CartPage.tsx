@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/store/hooks";
 
 import { cartSelector, createOrder, remove } from "../../app/store/slices/cart.slice";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useState } from "react";
 import Modal from "../../shared/Modal/Modal";
 
 export const CartPage = () => {
