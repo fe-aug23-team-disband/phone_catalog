@@ -8,17 +8,24 @@ import {add, remove, wishlistSelector} from "../../app/store/slices/wishlist.sli
 import { useAppSelector } from "../../app/store/hooks";
 import classNames from "classnames";
 
-export const FavoriteButton: React.FC<{ product: ProductShorted }> = ({ product }) => {
+interface Props {
+  product?: ProductShorted;
+  state?: "loading" | "error";
+}
+
+export const FavoriteButton: React.FC<Props> = ({ product, state }) => {
   const dispatcher = useDispatch();
   const { items } = useAppSelector(wishlistSelector);
 
-  const isRemoveButton = items.find(item => item.id === product.id);
+  const isRemoveButton = (product) ? items.find(item => item.id === product.id) : null;
 
   const handleClick = useCallback(() => {
-    if (isRemoveButton) {
-      dispatcher(remove({ id: product.id }));
-    } else {
-      dispatcher(add({ item: product }));
+    if (product) {
+      if (isRemoveButton) {
+        dispatcher(remove({ id: product.id }));
+      } else {
+        dispatcher(add({ item: product }));
+      }
     }
   }, [items]);
 
@@ -32,6 +39,7 @@ export const FavoriteButton: React.FC<{ product: ProductShorted }> = ({ product 
         }
       )}
       onClick={handleClick}
+      disabled={state ? true : false}
     >
       <img src={isRemoveButton ? heartIconActive : heartIcon} alt="heart icon" />
     </button>

@@ -6,7 +6,12 @@ import {ProductShorted} from "../../types/Product";
 import { useAppSelector } from "../../app/store/hooks";
 import classNames from "classnames";
 
-export const AddToCartButton: React.FC<{ product: ProductShorted }> = ({ product }) => {
+interface Props {
+  product?: ProductShorted;
+  state?: "loading" | "error";
+}
+
+export const AddToCartButton: React.FC<Props> = ({ product, state }) => {
   const dispatcher = useDispatch();
   const { items } = useAppSelector(cartSelector);
   const [isRemoveButton, setIsRemoveButton] = useState(() => {
@@ -29,14 +34,20 @@ export const AddToCartButton: React.FC<{ product: ProductShorted }> = ({ product
       className={classNames(
         styles.NotAdded,
         {
-          [styles.Added]: isRemoveButton,
+          [styles.Added]: isRemoveButton || state === "error",
         }
       )}
       onClick={handleClick}
+      disabled={state ? true : false}
     >
-      {isRemoveButton
-        ? <div className={styles.Text}>Added to cart</div>
-        : <div className={styles.Text}>Add to cart</div>
+      {product
+        ? (isRemoveButton
+          ? <div className={styles.Text}>Added to cart</div>
+          : <div className={styles.Text}>Add to cart</div>)
+        : (state === "loading"
+          ? <div className={styles.Text}>Loading</div>
+          : <div className={styles.Text}>Error</div>
+        )
       }
     </button>
   );
