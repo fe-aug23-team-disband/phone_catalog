@@ -1,4 +1,4 @@
-import instance from "../insctance";
+import instance from "../instance";
 
 type PostProduct = (
   props: {

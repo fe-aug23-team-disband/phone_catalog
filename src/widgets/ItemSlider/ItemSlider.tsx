@@ -14,6 +14,7 @@ interface Props {
 
 export const ItemSlider: React.FC<Props> = ({ name }) => {
   const data = useAsyncValue() as ProductShorted[];
+
   const settings = {
     infinite: false,
     speed: 500,

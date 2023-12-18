@@ -1,19 +1,17 @@
 import styles from "./CartPage.module.scss";
-import { useNavigate } from "react-router-dom";
 import { CartItem } from "../../widgets/CartItem/CartItem";
 import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/store/hooks";
-import { cartSelector, createOrder } from "../../app/store/slices/cart.slice";
+
+import { cartSelector, createOrder, remove } from "../../app/store/slices/cart.slice";
 import { useCallback, useEffect, useState } from "react";
 import Modal from "../../shared/Modal/Modal";
-import globalVariables from "../../static/variables";
 
 export const CartPage = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);
   const { items, sum, order } = useAppSelector(cartSelector);
   const dispatch = useAppDispatch();
-  const navigate = useNavigate();
 
   const countTotalItems = useCallback(() => {
     return items.reduce((acc, { count }) => {
@@ -22,21 +20,15 @@ export const CartPage = () => {
   }, [items]);
 
   const handleCheckout = useCallback(() => {
-    // navigate(globalVariables.patchToPhones);
+    for (const item of items) {
+      dispatch(remove({id: item.item.id}));
+    }
+
     dispatch(createOrder({ items, sum, order }));
     setIsOpenModal(false);
     setIsSecondModalOpen(true);
   }, []);
 
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      setIsSecondModalOpen(false);
-
-      navigate(globalVariables.patchToPhones);
-    }, 4500);
-
-    return () => clearTimeout(timeoutId);
-  }, [navigate]);
   return (
     <>
       <Link to=".." className={styles.button_back}>

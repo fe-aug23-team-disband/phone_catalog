@@ -48,8 +48,6 @@ const CategoryProducts: React.FC = () => {
 
   const data = useAsyncValue() as ProductResponse;
 
-  console.log(data, data.data);
-
   return (
     <>
       {category === "phones" && <h1 className={styles.title}>Mobile phones</h1>}

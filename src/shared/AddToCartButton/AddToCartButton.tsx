@@ -9,7 +9,6 @@ import classNames from "classnames";
 export const AddToCartButton: React.FC<{ product: ProductShorted }> = ({ product }) => {
   const dispatcher = useDispatch();
   const { items } = useAppSelector(cartSelector);
-  console.log(items);
   const isRemoveButton = items.find(item => item.item.id === product.id);
 
   const handleClick = useCallback(() => {

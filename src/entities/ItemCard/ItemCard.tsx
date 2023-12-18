@@ -14,7 +14,10 @@ const Specs = ({ category, value }: { category: string; value: string }) => (
 export const ItemCard = ({ phone }: { phone: ProductShorted }) => {
   return (
     <div className={styles.itemCard}>
-      <Link to={`products/${phone.namespaceId}`} className={styles.itemCard__link}>
+      <Link
+        to={`../products/${phone.namespaceId}`}
+        className={styles.itemCard__link}
+      >
         <img
           src={`data:image/png;base64, ${phone.image}`}
           alt={phone.name}
