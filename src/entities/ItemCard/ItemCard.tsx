@@ -19,7 +19,7 @@ export const ItemCard = ({ phone }: { phone: ProductShorted }) => {
         className={styles.itemCard__link}
       >
         <img
-          src={`data:image/png;base64, ${phone.image}`}
+          src={`${phone.image}`}
           alt={phone.name}
           className={styles.itemCard__Image}
         />
