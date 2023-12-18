@@ -14,9 +14,9 @@ import { Link } from "react-router-dom";
 export const Carousel = () => {
   const isSmallScreen = useMediaQuery({ maxWidth: 640 });
   const banners = [
-    { desktop: baner1, mobile: baner_mobile1, link: "products?category=phones" },
-    { desktop: baner2, mobile: baner_mobile2, link: "products?category=tablets" },
-    { desktop: baner3, mobile: baner_mobile3, link: "products?category=accessories" },
+    { desktop: baner1, mobile: baner_mobile1, link: "phones" },
+    { desktop: baner2, mobile: baner_mobile2, link: "tablets" },
+    { desktop: baner3, mobile: baner_mobile3, link: "accessories" },
   ];
 
   const settings = {

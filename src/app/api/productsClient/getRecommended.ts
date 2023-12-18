@@ -13,7 +13,16 @@ export const getRecommended: GetProduct = async ({
   const response = await instance.get(`/products/${namespaceId}/recommended`);
 
   if (response.status === 200) {
-    return response.data;
+    return response.data.map((item: Product) => {
+      delete item.discount;
+
+      if (item.images) {
+        const image = item.images[0].string;
+        return { ...item, image };
+      }
+
+      return { ...item };
+    });
   }
 
   return Promise.reject("Server error");

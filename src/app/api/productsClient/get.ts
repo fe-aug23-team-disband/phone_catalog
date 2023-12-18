@@ -19,7 +19,7 @@ export const get: GetProducts = async ({
   query
 }) => {
   const searchParams = new URLSearchParams();
-  searchParams.set("category", category);
+  // searchParams.set("category", category);
 
   if (page) {
     searchParams.set("page", page);
@@ -33,12 +33,13 @@ export const get: GetProducts = async ({
     searchParams.set("query", query);
   }
 
-  const response = await instance.get(`/products?${searchParams.toString()}`);
+  // const response = await instance.get(`/products?${searchParams.toString()}`);
+  const response = await instance.get(`/${category}?${searchParams.toString()}`);
 
   if (response.status === 200) {
-    const { count, nextPage, prevPage, data } = response.data;
+    const { total, onPage, nextPage, prevPage, data } = response.data;
 
-    return { count, nextPage, prevPage, data: data.map((item: Product) => {
+    return { total, onPage, nextPage, prevPage, data: data.map((item: Product) => {
       delete item.discount;
 
       if (item.images) {

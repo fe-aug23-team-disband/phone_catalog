@@ -12,7 +12,9 @@ export const getSpecials: GetSpecials = async ({ special, category }) => {
   const response = await instance.get(`/products/specials/${special}?category=${category}`);
 
   if (response.status === 200) {
-    const products = response.data;
+    const products = response.data.rows;
+
+    // console.log(products[0]);
 
     return products.map((item: Product) => {
       delete item.discount;

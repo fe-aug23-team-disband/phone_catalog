@@ -2,7 +2,6 @@ import styles from "./CartPage.module.scss";
 import { CartItem } from "../../widgets/CartItem/CartItem";
 import { Link, useNavigate } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/store/hooks";
-
 import {
   cartSelector,
   createOrder,
@@ -11,6 +10,7 @@ import {
 import { useCallback, useEffect, useState } from "react";
 import Modal from "../../shared/Modal/Modal";
 import globalVariables from "../../static/variables";
+
 export const CartPage = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [isSecondModalOpen, setIsSecondModalOpen] = useState(false);

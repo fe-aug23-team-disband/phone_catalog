@@ -14,7 +14,7 @@ export const Category = () => {
       <div className={styles.category__products}>
         <CategoryCard
           backgroundColor={colors[0]}
-          link={"products?category=phones"}
+          link={"phones"}
           image={ImagePhone}
           title="Mobile phones"
           amount={92}
@@ -22,7 +22,7 @@ export const Category = () => {
 
         <CategoryCard
           backgroundColor={colors[1]}
-          link={"products?category=tablets"}
+          link={"tablets"}
           image={ImageTablet}
           title="Tablets"
           amount={24}
@@ -30,7 +30,7 @@ export const Category = () => {
 
         <CategoryCard
           backgroundColor={colors[2]}
-          link={"products?category=accessories"}
+          link={"accessories"}
           image={ImageAccessories}
           title="Accessories"
           amount={18}

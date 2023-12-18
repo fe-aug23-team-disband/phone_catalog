@@ -23,8 +23,7 @@ export const CatalogPage: React.FC<Props> = () => {
 
 const CategoryProducts: React.FC = () => {
   const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const category = searchParams.get("category");
+  const category = location.pathname.slice(1);
 
   const page: number = 5;
   let pagiArray;
@@ -54,7 +53,7 @@ const CategoryProducts: React.FC = () => {
       {category === "tablets" && <h1 className={styles.title}>Tablets</h1>}
       {category === "accessories" && <h1 className={styles.title}>Accessories</h1>}
 
-      <p className={styles.modelCount}>{data.count} models</p>
+      <p className={styles.modelCount}>{data.onPage} models</p>
 
       <div className={styles.selectors}>
         <div className={styles.selectors__Wrapper}>
