@@ -12,6 +12,8 @@ export const HomePage = () => {
     hotPrice: Promise<ProductShorted>;
   };
 
+  // console.log()
+
   return (
     <>
       <h1 className={styles.heading}>Welcome to Nice Gadgets store!</h1>

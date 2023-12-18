@@ -67,12 +67,7 @@ export const cart = createSlice({
     remove: (state, action: PayloadAction<{ id: string }>) => {
       const position = state.items.find(({ item }) => item.id === action.payload.id);
 
-      if (position && position.count <= 1) {
-        state.items = state.items.filter(({ item }) => item.id !== position.item.id);
-        state.sum -= position.item.priceDiscount
-          ? position.item.priceDiscount
-          : position.item.priceRegular;
-      } else if (position) {
+      if (position) {
         position.count -= 1;
         state.sum -= position.item.priceDiscount
           ? position.item.priceDiscount

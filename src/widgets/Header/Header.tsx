@@ -78,7 +78,7 @@ const Header = () => {
                 key={index}
                 to={item.url}
                 className={`${styles.header_icons_link} ${
-                  item.url === location.pathname ? styles.header_icons_link_active : "yo"
+                  item.url === location.pathname ? styles.header_icons_link_active : ""
                 }`}
               >
                 <span className={styles.header_icon_wrap}>

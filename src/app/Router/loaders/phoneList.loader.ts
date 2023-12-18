@@ -5,10 +5,11 @@ import {defer} from "react-router-dom";
 export const productsListLoader = async ({ request }: { request: Request }) => {
   const url = new URL(request.url);
   const searchParams = url.searchParams;
+  const category = url.pathname.slice(1);
 
   try {
     const data = productClient.get({
-      category: searchParams.get("category") as Categories,
+      category: category as Categories,
       page: searchParams.get("page"),
       limit: searchParams.get("limit"),
       query: searchParams.get("query"),

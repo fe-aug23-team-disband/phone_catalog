@@ -4,12 +4,14 @@ interface ButtonIconsProps {
   icon: string;
   size?: "small" | "medium" | "large";
   onClick?: () => void;
+  customStyles?: string;
 }
 
 const ButtonIcon: React.FC<ButtonIconsProps> = ({
   icon,
   size = "medium",
   onClick,
+  customStyles
 }) => {
   const buttonSize =
     {
@@ -20,7 +22,7 @@ const ButtonIcon: React.FC<ButtonIconsProps> = ({
 
   return (
     <button
-      className={`${styles.button_icon_wrapper} ${buttonSize}`}
+      className={`${styles.button_icon_wrapper} ${buttonSize} ${customStyles}`}
       onClick={onClick}
     >
       <img className={styles.button_img} src={icon} alt="buttonIcon" />

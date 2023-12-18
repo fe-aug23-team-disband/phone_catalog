@@ -1,7 +1,8 @@
 import {ProductShorted} from "./Product";
 
 export type ProductResponse = {
-  count: number,
+  total: number,
+  onPage: number,
   nextPage: string,
   prevPage: string,
   data: ProductShorted[]
