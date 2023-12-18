@@ -5,29 +5,35 @@ import homeImg from "../../static/Bredcrumbs/button-home.png";
 
 const Bredcrumbs: React.FC = () => {
   const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const category = searchParams.get("category");
-  const pathname = location.pathname;
-  const modifiedPathSlice = pathname ? pathname.slice(1) : null;
+  const { pathname } = location;
+
+  const res: string[] = [];
+
+  pathname.split("/").map(path => {
+    if (path !== "") {
+      res.push(path);
+    }
+  });
 
   return (
     <div className={styles.bredcrumbs}>
       <Link to={"/"} className={styles.bredcrumbs_home_link}>
-        <img className={styles.bredcrumbs_home_img} src={homeImg} alt={"home_Img"} />
+        <img
+          className={styles.bredcrumbs_home_img}
+          src={homeImg}
+          alt={"home_Img"}
+        />
       </Link>
 
-      {pathname !== "/products" && pathname !== "/" && (
-        <div className={styles.bredcrumbs_wrap_patch}>
-          <span className={styles.bredcrumbs_separator}></span>
-          <Link to={pathname}>{modifiedPathSlice}</Link>
-        </div>
-      )}
-
-      {category && (
-        <div className={styles.bredcrumbs_wrap_patch}>
-          <span className={styles.bredcrumbs_separator}></span>
-          <Link to={`/products?category=${category}`}>{category}</Link>
-        </div>
+      {res.length !== 0 && (
+        <>
+          {res.map(item => (
+            <div key={item} className={styles.bredcrumbs_wrap_patch}>
+              <span className={styles.bredcrumbs_separator}></span>
+              <Link to={`/${item}`}>{item}</Link>
+            </div>
+          ))}
+        </>
       )}
     </div>
   );
