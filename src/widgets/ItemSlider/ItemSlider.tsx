@@ -1,5 +1,4 @@
 import Slider from "react-slick";
-import { PhoneType } from "../../types/PhoneType";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./ItemSlider.module.scss";
@@ -9,7 +8,6 @@ import { useAsyncValue } from "react-router";
 import { ProductShorted } from "../../types/Product";
 interface Props {
   name: string;
-  data?: PhoneType;
 }
 
 export const ItemSlider: React.FC<Props> = ({ name }) => {

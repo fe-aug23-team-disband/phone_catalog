@@ -3,9 +3,10 @@ import { CartItem } from "../../widgets/CartItem/CartItem";
 import { Link } from "react-router-dom";
 import { useAppDispatch, useAppSelector } from "../../app/store/hooks";
 
-import { cartSelector, createOrder, remove } from "../../app/store/slices/cart.slice";
+import { cartSelector, createOrder } from "../../app/store/slices/cart.slice";
 import { useCallback, useState } from "react";
 import Modal from "../../shared/Modal/Modal";
+import { remove } from "../../app/store/slices/wishlist.slice";
 
 export const CartPage = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
