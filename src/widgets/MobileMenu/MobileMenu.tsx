@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styles/utils/variables.scss";
 import styles from "./MobileMenu.module.scss";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logoImg from "../../static/Header/logo.png";
 import menuCloseIcon from "../../static/MobileMenu/button-close.png";
 import favoriteIcon from "../../static/Header/button-heart.png";
@@ -10,15 +10,14 @@ import globalVariables from "../../static/variables";
 import { cartSelector } from "../../app/store/slices/cart.slice";
 import { wishlistSelector } from "../../app/store/slices/wishlist.slice";
 import { useAppSelector } from "../../app/store/hooks";
+import { NavLink } from "react-router-dom";
+import cn from "classnames";
 
 type Props = {
   onClose: () => void;
 };
 
 const MobileMenu: React.FC<Props> = ({ onClose }) => {
-  const location = useLocation();
-  const searchParams = new URLSearchParams(location.search);
-  const category = searchParams.get("category");
   const { items: wishlistItems } = useAppSelector(wishlistSelector);
   const { items: cartItems } = useAppSelector(cartSelector);
 
@@ -68,20 +67,25 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
       <ul className={styles.mobile_menu_list}>
         {menuItems.map((item, index) => (
           <li key={index} className={styles.mobile_menu_item}>
-            <Link
+            <NavLink
               onClick={() => {
                 onClose();
               }}
               key={item.label}
               to={item.path}
-              className={`${styles.mobile_menu_item_link} ${(category ===
-                null &&
-                item.path === "/") ||
-                (category === item.label.toLowerCase() &&
-                  styles.mobile_menu_item_link_active)}`}
+              // className={`${styles.mobile_menu_item_link} ${(category ===
+              //   null &&
+              //   item.path === "/") ||
+              //   (category === item.label.toLowerCase() &&
+              //     styles.mobile_menu_item_link_active)}`}
+              className={({ isActive }) =>
+                cn(styles.mobile_menu_item_link, {
+                  [styles.mobile_menu_item_link_active]: isActive
+                })
+              }
             >
               {item.label}
-            </Link>
+            </NavLink>
           </li>
         ))}
       </ul>
