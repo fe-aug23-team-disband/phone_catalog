@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/phone_catalog/static/css/main.67fe0fdf.css",
-    "main.js": "/phone_catalog/static/js/main.4ede22b7.js",
+    "main.js": "/phone_catalog/static/js/main.5b881938.js",
     "static/media/carousele-banner_3.png": "/phone_catalog/static/media/carousele-banner_3.8482dc6c56cc88ad27a8.png",
     "static/media/carousele-banner_2.png": "/phone_catalog/static/media/carousele-banner_2.0e9cf27e26669c70429c.png",
     "static/media/carousele-banner.png": "/phone_catalog/static/media/carousele-banner.e7410c42215a1175ed3a.png",
@@ -35,10 +35,10 @@
     "static/media/button-minus-active.svg": "/phone_catalog/static/media/button-minus-active.0365a13e7f5baa53bce8c439c4e812c3.svg",
     "static/media/button-minus.svg": "/phone_catalog/static/media/button-minus.cec33362a9c8f4101ffad2ac15b68f25.svg",
     "main.67fe0fdf.css.map": "/phone_catalog/static/css/main.67fe0fdf.css.map",
-    "main.4ede22b7.js.map": "/phone_catalog/static/js/main.4ede22b7.js.map"
+    "main.5b881938.js.map": "/phone_catalog/static/js/main.5b881938.js.map"
   },
   "entrypoints": [
     "static/css/main.67fe0fdf.css",
-    "static/js/main.4ede22b7.js"
+    "static/js/main.5b881938.js"
   ]
 }
