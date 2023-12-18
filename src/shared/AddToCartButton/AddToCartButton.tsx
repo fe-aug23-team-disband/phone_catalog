@@ -7,7 +7,7 @@ import { useAppSelector } from "../../app/store/hooks";
 import classNames from "classnames";
 
 interface Props {
-  product?: ProductShorted;
+  product: ProductShorted;
   state?: "loading" | "error";
 }
 
