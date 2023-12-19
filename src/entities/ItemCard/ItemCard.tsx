@@ -6,7 +6,6 @@ import {Link} from "react-router-dom";
 import { scrollToTop } from "../../shared/ScrollToTop/ScrollToTop";
 import { getCategory } from "../../shared/utils/getCategory";
 
-
 const Specs = ({ category, value }: { category: string; value: string }) => (
   <div className={styles.itemCard__Specs_Container}>
     <div className={styles.itemCard__Specs_Category}>{category}</div>
