@@ -1,5 +1,6 @@
 import cn from "classnames";
 import "./PageButton.scss";
+import { scrollToTop } from "../ScrollToTop/ScrollToTop";
 
 interface Props {
   pageNumber: number;
@@ -8,6 +9,12 @@ interface Props {
 }
 
 export const PageButton: React.FC<Props> = ({pageNumber, selected, onPageChange}) => {
+  const handlePageClick = () => {
+    scrollToTop();
+
+    onPageChange(pageNumber.toString());
+  };
+
   return (
     <button
       type="button"
@@ -17,7 +24,7 @@ export const PageButton: React.FC<Props> = ({pageNumber, selected, onPageChange}
           "selected": selected === pageNumber
         }
       )}
-      onClick={() => onPageChange(pageNumber.toString())}
+      onClick={handlePageClick}
     >
       {pageNumber + 1}
     </button>

@@ -1,5 +1,6 @@
 import cn from "classnames";
 import "./PageChangeButton.scss";
+import { scrollToTop } from "../ScrollToTop/ScrollToTop";
 
 interface Props {
   direction: "prev" | "next";
@@ -10,6 +11,16 @@ interface Props {
 
 export const PageChangeButton: React.FC<Props> = ({ direction, selected, onPageChange, maxPage }) => {
   const isMaxPage = selected === +(maxPage || 0) - 1;
+
+  const handlePageChange = () => {
+    scrollToTop();
+
+    onPageChange((prevPage: string) => {
+      return (direction === "prev"
+        ? (+prevPage - 1)
+        : (+prevPage + 1)).toString();
+    });
+  };
 
   return (
     <button
@@ -25,7 +36,7 @@ export const PageChangeButton: React.FC<Props> = ({ direction, selected, onPageC
       )}
       disabled={isMaxPage && direction === "next"
         || selected === 0 && direction === "prev"}
-      onClick={() => onPageChange((prevPage: string) => (direction === "prev" ? (+prevPage - 1) : (+prevPage + 1)).toString())}
+      onClick={handlePageChange}
     />
   );
 };
