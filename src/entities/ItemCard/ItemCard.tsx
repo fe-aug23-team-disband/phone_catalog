@@ -21,32 +21,35 @@ export const ItemCard = ({ phone }: { phone: ProductShorted }) => {
         to={`../${getCategory(phone.namespaceId)}/${phone.namespaceId}`}
         className={styles.itemCard__link}
         onClick={scrollToTop}
-      >
-        <img
-          src={`${phone.image}`}
-          alt={phone.name}
-          className={styles.itemCard__Image}
-        />
+        draggable="false"
+      />
 
-        <div className={styles.itemCard__Title}>
-          <div className={styles.itemCard__Title_Text}>{phone.name}</div>
+      <img
+        src={`${phone.image}`}
+        alt={phone.name}
+        className={styles.itemCard__Image}
+      />
+
+      <div className={styles.itemCard__Title}>
+        <div className={styles.itemCard__Title_Text}>{phone.name}</div>
+      </div>
+
+      <div className={styles.itemCard__Price}>
+        <div className={styles.itemCard__Price_Current}>
+          ${phone.priceDiscount}
         </div>
 
-        <div className={styles.itemCard__Price}>
-          <div className={styles.itemCard__Price_Current}>
-            ${phone.priceDiscount}
-          </div>
+        <div className={styles.itemCard__Price_Full}>${phone.priceRegular}</div>
+      </div>
 
-          <div className={styles.itemCard__Price_Full}>${phone.priceRegular}</div>
-        </div>
+      <div className={styles.itemCard__divider}></div>
 
-        <div className={styles.itemCard__Specs}>
-          <Specs category="Screen" value={phone.screen} />
-          <Specs category="Capacity" value={phone.capacity} />
-          <Specs category="RAM" value={phone.ram} />
-        </div>
+      <div className={styles.itemCard__Specs}>
+        <Specs category="Screen" value={phone.screen} />
+        <Specs category="Capacity" value={phone.capacity} />
+        <Specs category="RAM" value={phone.ram} />
 
-      </Link>
+      </div>
       <div className={styles.itemCard__ButtonWrapper}>
         <AddToCartButton product={phone} />
 

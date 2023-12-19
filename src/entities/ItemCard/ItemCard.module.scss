@@ -3,6 +3,7 @@
 
 .itemCard {
   display: flex;
+  position: relative;
   box-sizing: border-box;
   padding: 32px;
   flex-direction: column;
@@ -14,14 +15,27 @@
   height: 100%;
   transition: $animation-time;
 
+  &__link {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      cursor: grab;
+    }
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
   &:hover {
     box-shadow: inset 0 0 15px 5px $surface-2;
     transform: scale(101%);
-  }
-
-  &__link {
-    text-decoration: none;
-    margin: 0 auto;
   }
 
   &__Image {
@@ -67,23 +81,20 @@
     }
   }
 
+  &__divider {
+    height: 1px;
+    width: 100%;
+    background: #3B3E4A;
+    top: -4px;
+  }
+
   &__Specs {
     display: flex;
     padding: 8px 0px;
     flex-direction: column;
-    position: relative;
     align-items: center;
     gap: 8px;
     align-self: stretch;
-
-    &::before {
-      content: "";
-      height: 1px;
-      width: 100%;
-      background: #3B3E4A;
-      position: absolute;
-      top: -4px;
-    }
 
     &_Container {
       display: flex;
@@ -113,9 +124,20 @@
 
   &__ButtonWrapper {
     display: flex;
+    position: relative;
     justify-content: center;
     align-items: center;
     gap: 8px;
     align-self: stretch;
   }
+}
+
+.link {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
