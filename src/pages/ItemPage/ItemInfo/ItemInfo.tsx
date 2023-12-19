@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Color } from "../../../types/Color";
 import { Product } from "../../../types/Product";
 import { Image } from "../../../types/Image";
 
 import styles from "../ItemPage.module.scss";
+import ErrorImage from "../../../static/ItemPageState/error-state.png";
+import LoadingImage from "../../../static/ItemPageState/loading-state.png";
 
 import { ItemPageAbout } from "./ItemPageAbout/ItemPageAbout";
 import { ItemPageTechSpecs } from "./ItemPageTechSpecs/ItemPageTechSpecs";
@@ -12,10 +14,14 @@ import { PhonesPhoto } from "./PhonesPhoto/PhonesPhoto";
 import { PhonesMainInfo } from "./PhonesMainInfo/PhonesMainInfo";
 import { useAsyncValue } from "react-router-dom";
 
-export const ItemInfo = () => {
+type Props = {
+  state?: "loading" | "error",
+};
+
+export const ItemInfo: React.FC<Props> = ({ state }) => {
   const phoneInfoFromApi = useAsyncValue() as Product;
-  const [selectedImage, setSelectedImage] = useState<string>(phoneInfoFromApi.image);
-  const [selectedCapacity, setSelectedCapacity] = useState<string>(phoneInfoFromApi.ram);
+  const [selectedImage, setSelectedImage] = useState<string>(phoneInfoFromApi?.image || "");
+  const [selectedCapacity, setSelectedCapacity] = useState<string>(phoneInfoFromApi?.ram || "");
   const [selectedColor, setSelectedColor] = useState<Color | null>(null);
 
   console.log(phoneInfoFromApi);
@@ -33,44 +39,64 @@ export const ItemInfo = () => {
   };
 
   useEffect(() => {
-    setSelectedImage(phoneInfoFromApi.image);
+    if (phoneInfoFromApi) {
+      setSelectedImage(phoneInfoFromApi.image);
 
-    const splitedNamespace = phoneInfoFromApi.namespaceId.split(phoneInfoFromApi.capacity.toLowerCase());
+      const splitedNamespace = phoneInfoFromApi.namespaceId.split(phoneInfoFromApi.capacity.toLowerCase());
 
-    const currentColor = splitedNamespace.pop()?.slice(1).split("-").join("");
+      const currentColor = splitedNamespace.pop()?.slice(1).split("-").join("");
 
-    setSelectedColor(phoneInfoFromApi.colors.find(color => color.name.split(" ").join("") === currentColor) || null);
+      setSelectedColor(phoneInfoFromApi.colors.find(color => color.name.split(" ").join("") === currentColor) || null);
 
-    setSelectedCapacity(phoneInfoFromApi.capacity);
+      setSelectedCapacity(phoneInfoFromApi.capacity);
+    }
   }, [phoneInfoFromApi, selectedColor, selectedCapacity]);
 
   return (
     <div className={`${styles.itemPage}`}>
-      <h2 className={`${styles.itemPage__title}`}>{phoneInfoFromApi.name}</h2>
+      {!state && (
+        <h2 className={`${styles.itemPage__title}`}>{phoneInfoFromApi.name}</h2>
+      )}
 
-      <div className={`${styles.itemPage__content}`}>
-        <div className={`${styles.itemPage__top}`}>
-          <PhonesPhoto
-            images={phoneInfoFromApi.images || []}
-            selectedImage={selectedImage}
-            onSelected={handleImageClick}
-          />
+      {!state
+        ? (
+          <div className={`${styles.itemPage__content}`}>
+            <div className={`${styles.itemPage__top}`}>
+              <PhonesPhoto
+                images={phoneInfoFromApi.images || []}
+                selectedImage={selectedImage}
+                onSelected={handleImageClick}
+              />
 
-          <PhonesMainInfo
-            phoneInfo={phoneInfoFromApi}
-            selectedColor={selectedColor}
-            handleColorChange={handleColorClick}
-            selectedCapacity={selectedCapacity}
-            handleCapacityChange={handleCapacityClick}
-          />
-        </div>
+              <PhonesMainInfo
+                phoneInfo={phoneInfoFromApi}
+                selectedColor={selectedColor}
+                handleColorChange={handleColorClick}
+                selectedCapacity={selectedCapacity}
+                handleCapacityChange={handleCapacityClick}
+              />
+            </div>
 
-        <div className={`${styles["itemPage__about-tech"]}`}>
-          <ItemPageAbout description={phoneInfoFromApi.description} />
+            <div className={`${styles["itemPage__about-tech"]}`}>
+              <ItemPageAbout description={phoneInfoFromApi.description} />
 
-          <ItemPageTechSpecs phoneInfoApi={phoneInfoFromApi} />
-        </div>
-      </div>
+              <ItemPageTechSpecs phoneInfoApi={phoneInfoFromApi} />
+            </div>
+          </div>
+        ) : (state === "error" ? (
+          <div className={styles["itemPage__state-error"]}>
+            <img src={ErrorImage} alt="Error" />
+          </div>
+        ) : (
+          <div className={styles["itemPage__state-loading"]}>
+            <div className={styles.animation}>
+              <p className={styles.loading}>Loading...</p>
+
+              <img src={LoadingImage} alt="deer" className={styles["infinite-rotate"]} />
+            </div>
+          </div>
+        )
+        )}
     </div>
   );
 };

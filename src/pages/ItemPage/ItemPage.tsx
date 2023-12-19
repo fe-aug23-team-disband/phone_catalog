@@ -14,8 +14,8 @@ export const ItemPage = () => {
     <>
       <AsyncWrapper
         data={product}
-        Loader={"Loading..."}
-        Error={"Error"}
+        Loader={<ItemInfo state="loading" />}
+        Error={<ItemInfo state="error" />}
       >
         <ItemInfo />
       </AsyncWrapper>
