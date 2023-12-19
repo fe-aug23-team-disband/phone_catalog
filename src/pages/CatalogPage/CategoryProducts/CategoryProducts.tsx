@@ -73,7 +73,7 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
             ? "Loading models"
             : "Could not load models"
           )
-          : `${data.onPage} models`
+          : `${data.total} models`
         }
       </p>
 
