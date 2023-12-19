@@ -6,7 +6,6 @@ import EmptyImage from "../../static/FavouritesPage/empty-icon.svg";
 
 export const FavouritesPage = () => {
   const { items } = useAppSelector(wishlistSelector);
-  console.log(items);
 
   return (
     <>

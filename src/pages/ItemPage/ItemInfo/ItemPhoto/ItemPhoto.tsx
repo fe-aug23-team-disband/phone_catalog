@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./PhonesPhoto.module.scss";
+import styles from "./ItemPhoto.module.scss";
 import cn from "classnames";
 import { Image } from "../../../../types/Image";
 
@@ -9,7 +9,7 @@ type Props = {
   onSelected: (image: Image) => void;
 };
 
-export const PhonesPhoto: React.FC<Props> = ({
+export const ItemPhoto: React.FC<Props> = ({
   images,
   onSelected,
   selectedImage,

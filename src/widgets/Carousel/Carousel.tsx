@@ -3,21 +3,35 @@ import "./Carousel.scss";
 import Slider from "react-slick";
 import { useMediaQuery } from "react-responsive";
 import styles from "./Carousel.module.scss";
-import baner1 from "../../static/Carousel/carousele-banner.png";
-import baner2 from "../../static/Carousel/carousele-banner_2.png";
-import baner3 from "../../static/Carousel/carousele-banner_3.png";
-import baner_mobile1 from "../../static/Carousel/carousele-banner_mobile_1.png";
-import baner_mobile2 from "../../static/Carousel/carousele-banner_mobile_2.png";
-import baner_mobile3 from "../../static/Carousel/carousele-banner_mobile_3.png";
 import { scrollToTop } from "../../shared/ScrollToTop/ScrollToTop";
+
+import Phones_Banner_Desktop from "../../static/Carousel/banner-phones-desktop.png";
+import Tablets_Banner_Desktop from "../../static/Carousel/banner-tablets-desktop.png";
+import Accessories_Banner_Desktop from "../../static/Carousel/banner-accessories-desktop.png";
+import Phones_Banner_Mobile from "../../static/Carousel/banner-phones-mobile.png";
+import Tablets_Banner_Mobile from "../../static/Carousel/banner-tablets-mobile.png";
+import Accessories_Banner_Mobile from "../../static/Carousel/banner-accessories-mobile.png";
+
 import { Link } from "react-router-dom";
 
 export const Carousel = () => {
   const isSmallScreen = useMediaQuery({ maxWidth: 640 });
   const banners = [
-    { desktop: baner1, mobile: baner_mobile1, link: "phones" },
-    { desktop: baner2, mobile: baner_mobile2, link: "tablets" },
-    { desktop: baner3, mobile: baner_mobile3, link: "accessories" },
+    {
+      desktop: Phones_Banner_Desktop,
+      mobile: Phones_Banner_Mobile,
+      link: "phones"
+    },
+    {
+      desktop: Tablets_Banner_Desktop,
+      mobile: Tablets_Banner_Mobile,
+      link: "tablets"
+    },
+    {
+      desktop: Accessories_Banner_Desktop,
+      mobile: Accessories_Banner_Mobile,
+      link: "accessories"
+    },
   ];
 
   const settings = {

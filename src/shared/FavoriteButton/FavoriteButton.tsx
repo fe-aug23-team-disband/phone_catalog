@@ -1,7 +1,7 @@
 import styles from "./FavoriteButton.module.scss";
 import heartIcon from "../../static/ItemCard/Button-Heart.svg";
 import heartIconActive from "../../static/ItemCard/Button-Heart-Active.svg";
-import React, {useCallback} from "react";
+import React, { useEffect, useState} from "react";
 import {ProductShorted} from "../../types/Product";
 import {useDispatch} from "react-redux";
 import {add, remove, wishlistSelector} from "../../app/store/slices/wishlist.slice";
@@ -16,10 +16,15 @@ interface Props {
 export const FavoriteButton: React.FC<Props> = ({ product, state }) => {
   const dispatcher = useDispatch();
   const { items } = useAppSelector(wishlistSelector);
+  const [isRemoveButton, setIsRemoveButton] = useState<boolean>(() => {
+    return items.find(item => item.id === product?.id) !== undefined;
+  });
 
-  const isRemoveButton = (product) ? items.find(item => item.id === product.id) : null;
+  useEffect(() => {
+    setIsRemoveButton(items.find(item => item.id === product?.id) !== undefined);
+  }, [state, product, items]);
 
-  const handleClick = useCallback(() => {
+  const handleClick = () => {
     if (product) {
       if (isRemoveButton) {
         dispatcher(remove({ id: product.id }));
@@ -27,7 +32,7 @@ export const FavoriteButton: React.FC<Props> = ({ product, state }) => {
         dispatcher(add({ item: product }));
       }
     }
-  }, [items]);
+  };
 
   return (
     <button

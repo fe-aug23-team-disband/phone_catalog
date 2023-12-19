@@ -4,6 +4,8 @@ import { AddToCartButton } from "../../shared/AddToCartButton/AddToCartButton";
 import { ProductShorted } from "../../types/Product";
 import {Link} from "react-router-dom";
 import { scrollToTop } from "../../shared/ScrollToTop/ScrollToTop";
+import { getCategory } from "../../shared/utils/getCategory";
+
 
 const Specs = ({ category, value }: { category: string; value: string }) => (
   <div className={styles.itemCard__Specs_Container}>
@@ -13,10 +15,11 @@ const Specs = ({ category, value }: { category: string; value: string }) => (
 );
 
 export const ItemCard = ({ phone }: { phone: ProductShorted }) => {
+
   return (
     <div className={styles.itemCard}>
       <Link
-        to={`../${phone.category.name}/${phone.namespaceId}`}
+        to={`../${getCategory(phone.namespaceId)}/${phone.namespaceId}`}
         className={styles.itemCard__link}
         onClick={scrollToTop}
       >

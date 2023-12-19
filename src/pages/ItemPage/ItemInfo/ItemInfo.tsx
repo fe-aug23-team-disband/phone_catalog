@@ -8,20 +8,19 @@ import styles from "../ItemPage.module.scss";
 
 import { ItemPageAbout } from "./ItemPageAbout/ItemPageAbout";
 import { ItemPageTechSpecs } from "./ItemPageTechSpecs/ItemPageTechSpecs";
-import { PhonesPhoto } from "./PhonesPhoto/PhonesPhoto";
-import { PhonesMainInfo } from "./PhonesMainInfo/PhonesMainInfo";
+import { ItemPhoto } from "./ItemPhoto/ItemPhoto";
+import { ItemMainInfo } from "./ItemMainInfo/ItemMainInfo";
 import { useAsyncValue } from "react-router-dom";
 
 export const ItemInfo = () => {
-  const phoneInfoFromApi = useAsyncValue() as Product;
-  const [selectedImage, setSelectedImage] = useState<string>(phoneInfoFromApi.image);
-  const [selectedCapacity, setSelectedCapacity] = useState<string>(phoneInfoFromApi.ram);
+  const itemInfoFromApi = useAsyncValue() as Product;
+
+  const [selectedImage, setSelectedImage] = useState<string>(itemInfoFromApi.image);
+  const [selectedCapacity, setSelectedCapacity] = useState<string>(itemInfoFromApi.ram);
   const [selectedColor, setSelectedColor] = useState<Color | null>(null);
 
-  console.log(phoneInfoFromApi);
-
   const handleImageClick = (image: Image) => {
-    setSelectedImage(image.string);
+    setSelectedImage(() => image.string);
   };
 
   const handleColorClick = (color: Color) => {
@@ -33,31 +32,31 @@ export const ItemInfo = () => {
   };
 
   useEffect(() => {
-    setSelectedImage(phoneInfoFromApi.image);
+    setSelectedImage(() => itemInfoFromApi.image);
 
-    const splitedNamespace = phoneInfoFromApi.namespaceId.split(phoneInfoFromApi.capacity.toLowerCase());
+    const splitedNamespace = itemInfoFromApi.namespaceId.split(itemInfoFromApi.capacity.toLowerCase());
 
     const currentColor = splitedNamespace.pop()?.slice(1).split("-").join("");
 
-    setSelectedColor(phoneInfoFromApi.colors.find(color => color.name.split(" ").join("") === currentColor) || null);
+    setSelectedColor(() => itemInfoFromApi.colors.find(color => color.name.split(" ").join("") === currentColor) || null);
 
-    setSelectedCapacity(phoneInfoFromApi.capacity);
-  }, [phoneInfoFromApi, selectedColor, selectedCapacity]);
+    setSelectedCapacity(() => itemInfoFromApi.capacity);
+  }, [itemInfoFromApi, selectedColor, selectedCapacity]);
 
   return (
     <div className={`${styles.itemPage}`}>
-      <h2 className={`${styles.itemPage__title}`}>{phoneInfoFromApi.name}</h2>
+      <h2 className={`${styles.itemPage__title}`}>{itemInfoFromApi.name}</h2>
 
       <div className={`${styles.itemPage__content}`}>
         <div className={`${styles.itemPage__top}`}>
-          <PhonesPhoto
-            images={phoneInfoFromApi.images || []}
+          <ItemPhoto
+            images={itemInfoFromApi.images || []}
             selectedImage={selectedImage}
             onSelected={handleImageClick}
           />
 
-          <PhonesMainInfo
-            phoneInfo={phoneInfoFromApi}
+          <ItemMainInfo
+            itemInfo={itemInfoFromApi}
             selectedColor={selectedColor}
             handleColorChange={handleColorClick}
             selectedCapacity={selectedCapacity}
@@ -66,9 +65,9 @@ export const ItemInfo = () => {
         </div>
 
         <div className={`${styles["itemPage__about-tech"]}`}>
-          <ItemPageAbout description={phoneInfoFromApi.description} />
+          <ItemPageAbout description={itemInfoFromApi.description} />
 
-          <ItemPageTechSpecs phoneInfoApi={phoneInfoFromApi} />
+          <ItemPageTechSpecs phoneInfoApi={itemInfoFromApi} />
         </div>
       </div>
     </div>
