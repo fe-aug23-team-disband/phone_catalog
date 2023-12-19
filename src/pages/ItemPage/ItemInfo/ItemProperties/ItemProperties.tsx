@@ -1,12 +1,11 @@
-// import React, { useEffect, useState } from "react";
-import styles from "./PhoneProperties.module.scss";
+import styles from "./ItemProperties.module.scss";
 import { Product } from "../../../../types/Product";
 
 type Props = {
   data: Product,
 };
 
-export const PhoneProperties: React.FC<Props> = ({ data }) => {
+export const ItemProperties: React.FC<Props> = ({ data }) => {
   const {
     screen,
     resolution,
