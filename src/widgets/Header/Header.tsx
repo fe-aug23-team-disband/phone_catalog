@@ -11,6 +11,7 @@ import { useState } from "react";
 import { cartSelector } from "../../app/store/slices/cart.slice";
 import { wishlistSelector } from "../../app/store/slices/wishlist.slice";
 import { NavLink } from "react-router-dom";
+import { scrollToTop } from "../../shared/ScrollToTop/ScrollToTop";
 import cn from "classnames";
 const navItems = [
   { path: `${globalVariables.patchToHome}`, label: "home" },
@@ -46,7 +47,7 @@ const Header = () => {
   return (
     <>
       <header className={styles.header}>
-        <Link className={styles.header_logo} to="/">
+        <Link className={styles.header_logo} to="/" onClick={scrollToTop}>
           <img className={styles.header_logo_img} src={logoImg} alt="logo" />
         </Link>
         <div className={styles.header_inside_wrapper}>
@@ -62,6 +63,7 @@ const Header = () => {
                     }
                     key={item.label}
                     to={item.path}
+                    onClick={scrollToTop}
                   >
                     {" "}
                     {item.label}
@@ -81,6 +83,7 @@ const Header = () => {
                     [styles.header_icons_link_active]: isActive
                   })
                 }
+                onClick={scrollToTop}
               >
                 <span className={styles.header_icon_wrap}>
                   <img src={item.icon} alt={item.alt} />
