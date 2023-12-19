@@ -9,6 +9,7 @@ import baner3 from "../../static/Carousel/carousele-banner_3.png";
 import baner_mobile1 from "../../static/Carousel/carousele-banner_mobile_1.png";
 import baner_mobile2 from "../../static/Carousel/carousele-banner_mobile_2.png";
 import baner_mobile3 from "../../static/Carousel/carousele-banner_mobile_3.png";
+import { scrollToTop } from "../../shared/ScrollToTop/ScrollToTop";
 import { Link } from "react-router-dom";
 
 export const Carousel = () => {
@@ -41,7 +42,12 @@ export const Carousel = () => {
     <div>
       <Slider {...settings} className={`${styles.carousel} carousel_main`}>
         {banners.map((banner, index) => (
-          <Link to={banner.link} key={index} className={styles.carousel_wrap_item}>
+          <Link
+            to={banner.link}
+            key={index}
+            className={styles.carousel_wrap_item}
+            onClick={scrollToTop}
+          >
             <img
               className={styles.carousel_banner}
               src={isSmallScreen ? banner.mobile : banner.desktop}

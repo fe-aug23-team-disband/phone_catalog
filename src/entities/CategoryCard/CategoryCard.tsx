@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "./CategoryCard.module.scss";
+import { scrollToTop } from "../../shared/ScrollToTop/ScrollToTop";
 
 type Props = {
   backgroundColor: string,
@@ -21,6 +22,7 @@ export const CategoryCard: React.FC<Props> = ({
     <NavLink
       to={link}
       className={styles["category__product"]}
+      onClick={scrollToTop}
     >
       <div className={styles["category__card"]} style={{ backgroundColor: backgroundColor }}>
         <img className={styles.image} src={image} alt={title} />

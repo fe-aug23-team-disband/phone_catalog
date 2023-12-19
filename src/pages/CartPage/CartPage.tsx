@@ -43,6 +43,8 @@ export const CartPage = () => {
         }
 
         navigate(globalVariables.patchToPhones);
+
+        window.scrollTo(0, 0);
       }, 3000);
 
       return () => clearTimeout(timeoutId);
