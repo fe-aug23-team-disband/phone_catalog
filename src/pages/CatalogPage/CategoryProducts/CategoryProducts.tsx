@@ -7,10 +7,17 @@ import { ProductResponse } from "../../../types/ProductResponse";
 import { PageButton } from "../../../shared/PageButton/PageButton";
 import { PageChangeButton } from "../../../shared/PageChangeButton/PageChangeButton";
 import { getNumbers } from "../../../shared/utils/getNumbers";
+import { ItemCardState } from "../../../entities/ItemCardState/ItemCardState";
 
 const limits = [16, 24, 48];
 
-export const CategoryProducts: React.FC = () => {
+const arrayRange = (start: number, stop: number, step: number) =>
+  Array.from(
+    { length: (stop - start) / step + 1 },
+    (value, index) => start + index * step
+  );
+
+export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ state }) => {
   const location = useLocation();
   const category = location.pathname.slice(1);
 
@@ -28,6 +35,8 @@ export const CategoryProducts: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(params.page);
   const [limit, setLimit] = useState(params.limit);
   const [query] = useState(params.query);
+
+  const stateArray = arrayRange(1, +limit, 1);
 
   useEffect(() => {
     setSearchParams(params => {
@@ -50,7 +59,7 @@ export const CategoryProducts: React.FC = () => {
     setLimit(value);
   };
 
-  const pages = getNumbers(0, (data.total / +params.limit));
+  const pages = (state) ? [] : getNumbers(0, (data.total / +params.limit));
 
   return (
     <>
@@ -58,7 +67,15 @@ export const CategoryProducts: React.FC = () => {
       {category === "tablets" && <h1 className={styles.title}>Tablets</h1>}
       {category === "accessories" && <h1 className={styles.title}>Accessories</h1>}
 
-      <p className={styles.modelCount}>{data.onPage} models</p>
+      <p className={styles.modelCount}>
+        {state
+          ? (state === "loading"
+            ? "Loading models"
+            : "Could not load models"
+          )
+          : `${data.total} models`
+        }
+      </p>
 
       <div className={styles.selectors}>
         <div className={styles.selectors__Wrapper}>
@@ -92,9 +109,14 @@ export const CategoryProducts: React.FC = () => {
         </div>
       </div>
       <div className={styles.products}>
-        {data.data.map(item => (
-          <ItemCard key={item.id} phone={item} />
-        ))}
+        {state
+          ? stateArray.map(id => (
+            <ItemCardState key={id} state={state} />
+          ))
+          : data.data.map(item => (
+            <ItemCard key={item.id} phone={item} />
+          ))
+        }
       </div>
 
       {pages.length > 1

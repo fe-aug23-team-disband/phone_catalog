@@ -8,7 +8,11 @@ export const CatalogPage = () => {
   const { data } = useLoaderData() as { data: Promise<ProductResponse> };
 
   return (
-    <AsyncWrapper data={data} Loader={<p>Loading</p>} Error={<p>Loading</p>}>
+    <AsyncWrapper
+      data={data}
+      Loader={<CategoryProducts state="loading" />}
+      Error={<CategoryProducts state="error" />}
+    >
       <CategoryProducts />
     </AsyncWrapper>
   );
