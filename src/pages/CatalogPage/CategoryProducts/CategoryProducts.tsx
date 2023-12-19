@@ -59,7 +59,7 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
     setLimit(value);
   };
 
-  const pages = (state) ? [0, 1, 2, 3, 4] : getNumbers(0, (data.total / +params.limit));
+  const pages = (state) ? [] : getNumbers(0, (data.total / +params.limit));
 
   return (
     <>
