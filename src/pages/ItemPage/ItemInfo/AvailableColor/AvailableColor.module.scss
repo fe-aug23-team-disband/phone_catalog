@@ -4,7 +4,7 @@
 .available-colors {
   margin-top: 40px;
   padding-bottom: 26px;
-  border-bottom: 1px solid $elements;
+  border-bottom: 1px solid $separator-color;
 
   @include onTablet {
     margin: 0;
@@ -28,7 +28,7 @@
 
 
 .available-color {
-  border: 2px solid $elements;
+  border: 2px solid $separator-color;
   width: 32px;
   height: 32px;
   border-radius: 50%;

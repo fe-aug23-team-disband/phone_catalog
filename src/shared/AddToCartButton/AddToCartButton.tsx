@@ -17,8 +17,6 @@ export const AddToCartButton: React.FC<Props> = ({ product }) => {
     return !!items.find(item => item.item.id === product.id);
   });
 
-  console.log(isRemoveButton);
-
   const handleClick = () => {
     if (isRemoveButton) {
       dispatcher(removeAll({ id: product.id }));

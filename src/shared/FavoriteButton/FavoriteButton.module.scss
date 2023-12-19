@@ -1,18 +1,24 @@
-@import '../../styles/utils/variables.scss';
+@import "../../styles/utils/variables.scss";
 
 .NotFavorite {
   width: 40px;
   height: 40px;
   border: none;
   box-sizing: border-box;
-  padding: 12px;
-  background-color: $surface-2;
+  padding: 11px;
+  background-color: $bg-color-controllers;
   transition: $animation-time ease-in-out;
+  border: 1px solid transparent;
 
   &:hover {
     cursor: pointer;
-    background-color: $icons;
+    background-color: $bg-color-controllers-hov;
     border-radius: 10%;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -20,5 +26,5 @@
   padding: 11px;
   box-sizing: border-box;
   background-color: transparent;
-  border: 1px solid $elements;
+  border: 1px solid $separator-color;
 }

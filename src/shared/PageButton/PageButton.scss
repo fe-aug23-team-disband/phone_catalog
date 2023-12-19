@@ -1,8 +1,10 @@
+@import "../../styles/utils/variables.scss";
+
 .pageButton {
   width: 32px;
   height: 32px;
-  background: var(--Gray-Surface-1, #161827);
-  color: var(--Gray-White, #F1F2F9);
+  background: $bg-color-product;
+  color: $primary-text-color;
   text-align: center;
   font-size: 14px;
   font-style: normal;
@@ -11,14 +13,14 @@
   border: none;
 
   &:hover {
-    background: var(--Gray-Elements, #3B3E4A);
+    background: $separator-color
   }
 }
 
 .selected {
-  background: var(--Accent, #905BFF);
+  background: $accent-color;
 
   &:hover {
-    background: var(--Accent, #905BFF);
+    background: $accent-color;
   }
 }

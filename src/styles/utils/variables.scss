@@ -1,15 +1,75 @@
-$primary-text-color: #f1f2f9;
-$secondary-text-color: #75767f;
-$surface-1: #161827;
-$surface-2: #323542;
-$elements: #3b3e4a;
-$icons: #4a4d58;
-$black: #0f1121;
-$red: #eb5757;
-$green: #27ae60;
-$accent: #e8e9ee;
-$primary: #a378ff;
+//colors
+$accent-color: var(--accent-color);
+$accent-color-hov: var(--accent-color-hov);
 
+$primary-text-color: var(--primary-text-color);
+$secondary-text-color: var(--secondary-text-color);
+
+$separator-color: var(--separator-color);
+
+$bg-color-main: var(--bg-color-main);
+$bg-color-product: var(--bg-color-product);
+$bg-color-controllers: var(--bg-color-controllers);
+$bg-color-controllers-hov: var(--bg-color-controllers-hov);
+
+$red: var(--error_color);
+$green: var(--success_color);
+
+// $primary: var(--accent-color-hov);
+
+// $primary-text-color: var(--primary-text-color);
+// $secondary-text-color: var(--secondary-text-color);
+
+// $elements: var(--separator-color);
+
+// $black: var(--bg-color-main);
+// $surface-1: var(--bg-color-product);
+// $surface-2: var(--bg-color-controllers);
+// $icons: var(--bg-color-controllers-hov);
+
+// $red: var(--error_color);
+// $green: var(--success_color);
+
+
+:root,
+[data-theme="dark"] {
+  --accent-color: #905bff;
+  --accent-color-hov: #a378ff;
+
+  --primary-text-color: #f1f2f9;
+  --secondary-text-color: #75767f;
+
+  --separator-color: #3b3e4a;
+
+  --bg-color-main: #0f1121;
+  --bg-color-product: #161827;
+  --bg-color-controllers: #323542;
+  --bg-color-controllers-hov: #4a4d58;
+
+  --error_color: #eb5757;
+  --success_color: #27ae60;
+}
+
+[data-theme="light"] {
+  --accent-color: #f86800;
+  --accent-color-hov: #f98837;
+
+  --primary-text-color: #0f0f11;
+  --secondary-text-color: #89939a;
+
+  --separator-color: #e2e6e9;
+
+  --bg-color-main: #fafbfc;
+  --bg-color-product:  #FFF;
+  --bg-color-controllers: #e9ecee;
+  --bg-color-controllers-hov: #f1f5f8;
+
+  // --error_color: #eb5757;
+  --error_color: #f86800;
+  --success_color: #27ae60;
+}
+
+//other
 $max-width: 1136px;
 $animation-time: 0.3s;
 

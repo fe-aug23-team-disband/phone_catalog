@@ -2,8 +2,8 @@
 @import "../../styles/mixins/mixins.scss";
 
 .footer {
-  border-top: 1px solid $elements;
-  background-color: $black;
+  border-top: 1px solid $separator-color;
+  background-color: $bg-color-main;
   font-size: 12px;
   font-family: "Mont", "Arial", sans-serif;
   font-weight: 800;

@@ -2,16 +2,23 @@ import globalVariables from "../../static/variables";
 import styles from "./Header.module.scss";
 import { Link } from "react-router-dom";
 import logoImg from "../../static/Header/logo.png";
+import logoImg_light from "../../static/Header/logo_light.png";
 import favoriteIcon from "../../static/Header/button-heart.png";
+import favoriteIcon_light from "../../static/ItemCard/heartIcon_light.png";
+import lightThemeIcon from "../../static/Header/themeLightIcon.svg";
+import darkThemeIcon from "../../static/Header/themeDarkIcon.svg";
 import cartIcon from "../../static/Header/button-shop.png";
+import cartIcon_light from "../../static/Header/button-shop_light.png";
 import menuIcon from "../../static/Header/button-burger-menu.png";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import { useAppSelector } from "../../app/store/hooks";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { cartSelector } from "../../app/store/slices/cart.slice";
 import { wishlistSelector } from "../../app/store/slices/wishlist.slice";
 import { NavLink } from "react-router-dom";
 import cn from "classnames";
+import { ThemeContext } from "../../app/providers/ThemeProvider";
+
 const navItems = [
   { path: `${globalVariables.patchToHome}`, label: "home" },
   { path: `${globalVariables.patchToPhones}`, label: "phones" },
@@ -23,16 +30,17 @@ const Header = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const { items: wishlistItems } = useAppSelector(wishlistSelector);
   const { items: cartItems } = useAppSelector(cartSelector);
+  const { theme, setTheme } = useContext(ThemeContext);
 
   const icons = [
     {
-      icon: favoriteIcon,
+      icon: `${theme === globalVariables.themeLight ? favoriteIcon_light : favoriteIcon}`,
       url: "/favourites",
       alt: "favourites",
       count: wishlistItems.length
     },
     {
-      icon: cartIcon,
+      icon: `${theme === globalVariables.themeLight ? cartIcon_light : cartIcon}`,
       url: "/cart",
       alt: "cart",
       count: cartItems.length
@@ -43,11 +51,15 @@ const Header = () => {
     setIsOpenMenu(false);
   };
 
+  const hanlerChangeTheme = () => {
+    setTheme(theme === globalVariables.themeDark ? globalVariables.themeLight : globalVariables.themeDark);
+  };
+
   return (
     <>
       <header className={styles.header}>
         <Link className={styles.header_logo} to="/">
-          <img className={styles.header_logo_img} src={logoImg} alt="logo" />
+          <img className={styles.header_logo_img} src={`${theme === globalVariables.themeLight ? logoImg_light : logoImg}`} alt="logo" />
         </Link>
         <div className={styles.header_inside_wrapper}>
           <nav className={styles.header_nav}>
@@ -72,6 +84,14 @@ const Header = () => {
           </nav>
 
           <div className={styles.header_icons}>
+            <div
+              onClick={hanlerChangeTheme}
+              className={styles.header_icons_link}
+            >
+              <span className={styles.header_icon_wrap}>
+                <img src={`${theme === globalVariables.themeLight ? darkThemeIcon : lightThemeIcon}`} alt={"theme"} />
+              </span>
+            </div>
             {icons.map((item, index) => (
               <NavLink
                 key={index}

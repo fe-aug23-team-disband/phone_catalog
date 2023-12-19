@@ -29,7 +29,7 @@
         left: auto;
         width: 32px;
         height: 32px;
-        background: $elements url("../../static/Slider/arrow-left-active.svg")
+        background: $separator-color url("../../static/Slider/arrow-left-active.svg")
           no-repeat center;
         transition: $animation-time ease-in-out;
 
@@ -39,7 +39,7 @@
 
         &:hover {
           border-radius: 10%;
-          background-color: $icons;
+          background-color: $bg-color-controllers-hov;
         }
       }
 
@@ -49,7 +49,7 @@
         left: auto;
         width: 32px;
         height: 32px;
-        background: $elements url("../../static/Slider/arrow-right-active.svg")
+        background: $separator-color url("../../static/Slider/arrow-right-active.svg")
           no-repeat center;
         transition: $animation-time ease-in-out;
 
@@ -59,7 +59,7 @@
 
         &:hover {
           border-radius: 10%;
-          background-color: $icons;
+          background-color: $bg-color-controllers-hov;
         }
       }
 
@@ -67,14 +67,14 @@
         pointer-events: none;
         background: url("../../static/Slider/arrow-right-disabled.svg")
           no-repeat center;
-        border: 1px solid $elements;
+        border: 1px solid $separator-color;
       }
 
       &-prev.slick-disabled {
         pointer-events: none;
         background: url("../../static/Slider/arrow-left-disabled.svg") no-repeat
           center;
-        border: 1px solid $elements;
+        border: 1px solid $separator-color;
       }
     }
   }
