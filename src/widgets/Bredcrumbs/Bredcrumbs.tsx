@@ -27,12 +27,16 @@ const Bredcrumbs: React.FC = () => {
 
       {res.length !== 0 && (
         <>
-          {res.map(item => (
-            <div key={item} className={styles.bredcrumbs_wrap_patch}>
-              <span className={styles.bredcrumbs_separator}></span>
-              <Link to={`/${item}`}>{item}</Link>
-            </div>
-          ))}
+          {res.map(item => {
+            const normalizedName = item.split("-").join(" ");
+
+            return (
+              <div key={item} className={styles.bredcrumbs_wrap_patch}>
+                <span className={styles.bredcrumbs_separator}></span>
+                <Link to={`/${item}`}>{normalizedName}</Link>
+              </div>
+            );
+          })}
         </>
       )}
     </div>
