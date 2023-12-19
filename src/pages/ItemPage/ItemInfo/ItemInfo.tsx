@@ -23,8 +23,6 @@ export const ItemInfo = () => {
     setSelectedImage(() => image.string);
   };
 
-  console.log(itemInfoFromApi);
-
   const handleColorClick = (color: Color) => {
     setSelectedColor(color);
   };
