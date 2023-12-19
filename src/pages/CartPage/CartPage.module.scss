@@ -57,9 +57,14 @@
   }
 
   &__empty{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     grid-column: span 4;
     align-items: center;
     text-align: center;
+    height: 40vh;
+
     @include onTablet {
       grid-column: span 12;
     }
