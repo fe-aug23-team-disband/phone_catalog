@@ -54,7 +54,7 @@
     padding: 0;
 
     @include onTablet {
-      flex-direction: column;
+      flex-direction: column-reverse;
       grid-column: span 1;
       grid-row: 1 / -1;
       align-self: flex-start;
@@ -76,6 +76,13 @@
   height: 49px;
 
   overflow: hidden;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+    background-color: rgba($color: $primary-text-color, $alpha: 0.05);
+  }
 
   @include onTablet {
     width: 35px;
