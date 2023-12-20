@@ -27,7 +27,7 @@ const Modal: FC<ModalProps> = ({
   showCloselBtn = true
 }) => {
   const { theme } = useContext(ThemeContext);
-  const hanlerCloseModal = () => {
+  const handlerCloseModal = () => {
     setIsOpenModal(false);
   };
 
@@ -45,7 +45,7 @@ const Modal: FC<ModalProps> = ({
             <ButtonIcon
               size="small"
               icon={`${theme === globalVariables.themeLight ? closeIconLight : closeIcon}`}
-              onClick={hanlerCloseModal}
+              onClick={handlerCloseModal}
               customStyles={styled.modal_button_close}
             />
           </div>
@@ -59,7 +59,7 @@ const Modal: FC<ModalProps> = ({
             <div className={styled.modal_buttons_wrapper}>
               <button
                 className={styled.modal_button_cancel}
-                onClick={hanlerCloseModal}
+                onClick={handlerCloseModal}
               >
                 {cancelBtnTitle}
               </button>

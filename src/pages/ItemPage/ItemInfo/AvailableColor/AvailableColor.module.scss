@@ -32,6 +32,11 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
+  transition: $animation-time ease-in-out;
+
+  &:hover:not(.active) {
+    border-color: $secondary-text-color;
+  }
 }
 
 .circle {
