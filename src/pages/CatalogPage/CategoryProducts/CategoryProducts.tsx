@@ -8,6 +8,7 @@ import { PageButton } from "../../../shared/ui/PageButton/PageButton";
 import { PageChangeButton } from "../../../shared/ui/PageChangeButton/PageChangeButton";
 import { getNumbers } from "../../../shared/utils/getNumbers";
 import { ItemCardState } from "../../../entities/ItemCardState/ItemCardState";
+import crossIcon from "../../../static/Catalog/cross.svg";
 
 const limits = [16, 24, 48];
 
@@ -83,6 +84,11 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
     }
   };
 
+  const handleCrossClick = () => {
+    setQuery("");
+    searchParams.delete("query");
+  };
+
   return (
     <>
       {category === "phones" && <h1 className={styles.title}>Mobile phones</h1>}
@@ -110,11 +116,11 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
             onChange={handleSortChange}
             defaultValue={"name"}
           >
-            <option value="time">Newest</option>
-            <option value="time-desc">Oldest</option>
-            <option value="price">Price ascending</option>
-            <option value="price-desc">Price descending</option>
-            <option value="name">Alphabet</option>
+            <option className={styles.selectors__Option} value="time">Newest</option>
+            <option className={styles.selectors__Option} value="time-desc">Oldest</option>
+            <option className={styles.selectors__Option} value="price">Price ascending</option>
+            <option className={styles.selectors__Option} value="price-desc">Price descending</option>
+            <option className={styles.selectors__Option} value="name">Alphabet</option>
           </select>
         </div>
 
@@ -128,20 +134,29 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
             onChange={event => handleLimitChange(event.target.value)}
           >
             {limits.map(number =>
-              <option key={number} value={number} selected={number === +limit}>{number}</option>)}
+              <option className={styles.selectors__Option} key={number} value={number} selected={number === +limit}>{number}</option>)}
           </select>
         </div>
 
         <div className={styles.selectors__Wrapper}>
           <label htmlFor="searchBar" className={styles.selectors__Label}>Search</label>
 
-          <input
-            className={styles.selectors__Search}
-            type="text"
-            onChange={handleQueryChange}
-            value={query}
-            placeholder="Input text..."
-          />
+          <div className={styles.selectors__Search}>
+            <input
+              className={styles.selectors__Search__Input}
+              type="text"
+              onChange={handleQueryChange}
+              value={query}
+              placeholder="Input text..."
+            />
+            <button
+              type="button"
+              className={styles.selectors__Search__Button}
+              onClick={handleCrossClick}
+            >
+              <img src={crossIcon} alt="delete" />
+            </button>
+          </div>
         </div>
       </div>
       <div className={styles.products}>
