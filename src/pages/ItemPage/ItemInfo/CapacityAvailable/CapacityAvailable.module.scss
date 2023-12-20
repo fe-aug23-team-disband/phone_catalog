@@ -3,7 +3,7 @@
 .capacityAvailable {
   margin: 24px 0 32px;
   padding-bottom: 26px;
-  border-bottom: 1px solid $elements;
+  border-bottom: 1px solid $separator-color;
 
   &__title {
     font-size: 12px;
@@ -20,11 +20,11 @@
   line-height: 21px;
   padding: 7px 8px 4px;
   color: $primary-text-color;
-  border: 1px solid $elements;
+  border: 1px solid $separator-color;
   text-decoration: none;
   margin-right: 8px;
   &-active {
     background-color: $primary-text-color;
-    color: $black;
+    color: $bg-color-main;
   }
 }

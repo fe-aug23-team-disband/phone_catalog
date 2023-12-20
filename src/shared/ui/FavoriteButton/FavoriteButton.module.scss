@@ -5,14 +5,21 @@
   height: 40px;
   border: none;
   box-sizing: border-box;
-  padding: 12px;
-  background-color: $surface-2;
+  padding: 11px;
+  background-color: $bg-color-controllers;
   transition: $animation-time ease-in-out;
+  border: 1px solid transparent;
+  border-radius: $button-border-radius;
 
   &:hover {
     cursor: pointer;
-    background-color: $icons;
-    border-radius: 10%;
+    background-color: $bg-color-controllers-hov;
+    border-radius: $button-border-radius;
+  }
+
+  img {
+    width: 16px;
+    height: 16px;
   }
 }
 
@@ -20,5 +27,5 @@
   padding: 11px;
   box-sizing: border-box;
   background-color: transparent;
-  border: 1px solid $elements;
+  border: 1px solid $separator-color;
 }

@@ -1,12 +1,18 @@
 import styles from "./FavoriteButton.module.scss";
 import heartIcon from "../../../static/ItemCard/Button-Heart.svg";
+import heartIcon_light from "../../../static/ItemCard/heartIcon_light.png";
 import heartIconActive from "../../../static/ItemCard/Button-Heart-Active.svg";
-import React, { useEffect, useState} from "react";
-import {ProductShorted} from "../../../types/Product";
-import {useDispatch} from "react-redux";
-import {add, remove, wishlistSelector} from "../../../app/store/slices/wishlist.slice";
+import React, { useContext, useEffect, useState } from "react";
+import { ProductShorted } from "../../../types/Product";
+import { useDispatch } from "react-redux";
+import {
+  add,
+  remove,
+  wishlistSelector
+} from "../../../app/store/slices/wishlist.slice";
 import { useAppSelector } from "../../../app/store/hooks";
 import classNames from "classnames";
+import { ThemeContext } from "../../../app/providers/ThemeProvider";
 
 interface Props {
   product?: ProductShorted;
@@ -14,6 +20,7 @@ interface Props {
 }
 
 export const FavoriteButton: React.FC<Props> = ({ product, state }) => {
+  const { theme } = useContext(ThemeContext);
   const dispatcher = useDispatch();
   const { items } = useAppSelector(wishlistSelector);
   const [isRemoveButton, setIsRemoveButton] = useState<boolean>(() => {
@@ -21,7 +28,9 @@ export const FavoriteButton: React.FC<Props> = ({ product, state }) => {
   });
 
   useEffect(() => {
-    setIsRemoveButton(items.find(item => item.id === product?.id) !== undefined);
+    setIsRemoveButton(
+      items.find(item => item.id === product?.id) !== undefined
+    );
   }, [state, product, items]);
 
   const handleClick = () => {
@@ -37,16 +46,23 @@ export const FavoriteButton: React.FC<Props> = ({ product, state }) => {
   return (
     <button
       type="button"
-      className={classNames(
-        styles.NotFavorite,
-        {
-          [styles.Favorite]: isRemoveButton,
-        }
-      )}
+      className={classNames(styles.NotFavorite, {
+        [styles.Favorite]: isRemoveButton
+      })}
       onClick={handleClick}
       disabled={state ? true : false}
     >
-      <img src={isRemoveButton ? heartIconActive : heartIcon} alt="heart icon" />
+      {theme === "light" ? (
+        <img
+          src={isRemoveButton ? heartIconActive : heartIcon_light}
+          alt="heart icon"
+        />
+      ) : (
+        <img
+          src={isRemoveButton ? heartIconActive : heartIcon}
+          alt="heart icon"
+        />
+      )}
     </button>
   );
 };
