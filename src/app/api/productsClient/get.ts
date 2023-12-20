@@ -9,6 +9,8 @@ type GetProducts = (
     page: string | null,
     limit: string | null,
     query: string | null
+    sortBy: string | null,
+    desc: string | null
   }
 ) => Promise<ProductResponse>
 
@@ -16,10 +18,11 @@ export const get: GetProducts = async ({
   category,
   page,
   limit,
-  query
+  query,
+  sortBy,
+  desc
 }) => {
   const searchParams = new URLSearchParams();
-  // searchParams.set("category", category);
 
   if (page) {
     searchParams.set("page", page);
@@ -33,7 +36,14 @@ export const get: GetProducts = async ({
     searchParams.set("query", query);
   }
 
-  // const response = await instance.get(`/products?${searchParams.toString()}`);
+  if (sortBy) {
+    searchParams.set("sortBy", sortBy);
+  }
+
+  if (desc) {
+    searchParams.set("desc", desc);
+  }
+
   const response = await instance.get(`/${category}?${searchParams.toString()}`);
 
   if (response.status === 200) {
