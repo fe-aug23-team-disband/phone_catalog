@@ -101,6 +101,7 @@
       display: inline-flex;
       padding: 16px 16px;
       border-left: 1px solid $bg-color-controllers;
+      cursor: pointer;
 
       @include onDesktop {
         padding: 24px 24px;
