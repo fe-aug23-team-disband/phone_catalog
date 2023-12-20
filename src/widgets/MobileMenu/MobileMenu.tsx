@@ -1,23 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../styles/utils/variables.scss";
 import styles from "./MobileMenu.module.scss";
 import { Link } from "react-router-dom";
 import logoImg from "../../static/Header/logo.png";
+import logoImgLight from "../../static/Header/logo_light.png";
 import menuCloseIcon from "../../static/MobileMenu/button-close.png";
+import menuCloseIconLight from "../../static/MobileMenu/button-close_light.png";
 import favoriteIcon from "../../static/Header/button-heart.png";
+import favoriteIconLight from "../../static/Header/heartIcon_light.png";
 import cartIcon from "../../static/Header/button-shop.png";
+import cartIconLight from "../../static/Header/button-shop_light.png";
 import globalVariables from "../../static/variables";
 import { cartSelector } from "../../app/store/slices/cart.slice";
 import { wishlistSelector } from "../../app/store/slices/wishlist.slice";
 import { useAppSelector } from "../../app/store/hooks";
 import { NavLink } from "react-router-dom";
 import cn from "classnames";
+import { ThemeContext } from "../../app/providers/ThemeProvider";
 
 type Props = {
   onClose: () => void;
 };
 
 const MobileMenu: React.FC<Props> = ({ onClose }) => {
+  const { theme, setTheme } = useContext(ThemeContext);
   const { items: wishlistItems } = useAppSelector(wishlistSelector);
   const { items: cartItems } = useAppSelector(cartSelector);
 
@@ -30,13 +36,17 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
 
   const icons = [
     {
-      icon: favoriteIcon,
+      icon: `${
+        theme === globalVariables.themeLight ? favoriteIconLight : favoriteIcon
+      }`,
       url: "/favourites",
       alt: "favourites",
       count: wishlistItems.length
     },
     {
-      icon: cartIcon,
+      icon: `${
+        theme === globalVariables.themeLight ? cartIconLight : cartIcon
+      }`,
       url: "/cart",
       alt: "cart",
       count: cartItems.length
@@ -52,7 +62,13 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
           }}
           to="/"
         >
-          <img className={styles.mobile_menu_logo} src={logoImg} alt="logo" />
+          <img
+            className={styles.mobile_menu_logo}
+            src={`${
+              theme === globalVariables.themeLight ? logoImgLight : logoImg
+            }`}
+            alt="logo"
+          />
         </Link>
         <button
           onClick={() => {
@@ -60,7 +76,14 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
           }}
           className={styles.mobile_menu_close}
         >
-          <img src={menuCloseIcon} alt={"menu"} />
+          <img
+            src={`${
+              theme === globalVariables.themeLight
+                ? menuCloseIconLight
+                : menuCloseIcon
+            }`}
+            alt={"menu"}
+          />
         </button>
       </header>
 
@@ -73,11 +96,6 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
               }}
               key={item.label}
               to={item.path}
-              // className={`${styles.mobile_menu_item_link} ${(category ===
-              //   null &&
-              //   item.path === "/") ||
-              //   (category === item.label.toLowerCase() &&
-              //     styles.mobile_menu_item_link_active)}`}
               className={({ isActive }) =>
                 cn(styles.mobile_menu_item_link, {
                   [styles.mobile_menu_item_link_active]: isActive

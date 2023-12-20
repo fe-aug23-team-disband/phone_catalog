@@ -5,8 +5,46 @@
   .slider-style .slick-slide {
     margin-left: 16px;
   }
-
   position: relative;
+  &.card_slider_light {
+    .slick-slider {
+      .slick {
+        &-prev {
+          background: $separator-color
+            url("../../static/Slider/arrow-left-disabled.svg") no-repeat center;
+
+          &:hover {
+            border-radius: 10%;
+            background-color: $bg-color-controllers-hov;
+          }
+        }
+
+        &-next {
+          background: $separator-color
+            url("../../static/Slider/arrow-right-disabled.svg") no-repeat center;
+          transition: $animation-time ease-in-out;
+
+          &:hover {
+            border-radius: 10%;
+            background-color: $bg-color-controllers-hov;
+          }
+        }
+
+        &-next.slick-disabled {
+          background: url("../../static/Slider/arrow-right-disabled.svg")
+            no-repeat center;
+          border: 1px solid $separator-color;
+        }
+
+        &-prev.slick-disabled {
+          background: url("../../static/Slider/arrow-left-disabled.svg")
+            no-repeat center;
+          border: 1px solid $separator-color;
+        }
+      }
+    }
+  }
+
   .slick-slider {
     position: static;
     .slick-list {
@@ -29,8 +67,8 @@
         left: auto;
         width: 32px;
         height: 32px;
-        background: $separator-color url("../../static/Slider/arrow-left-active.svg")
-          no-repeat center;
+        background: $separator-color
+          url("../../static/Slider/arrow-left-active.svg") no-repeat center;
         transition: $animation-time ease-in-out;
 
         &::before {
@@ -49,8 +87,8 @@
         left: auto;
         width: 32px;
         height: 32px;
-        background: $separator-color url("../../static/Slider/arrow-right-active.svg")
-          no-repeat center;
+        background: $separator-color
+          url("../../static/Slider/arrow-right-active.svg") no-repeat center;
         transition: $animation-time ease-in-out;
 
         &::before {

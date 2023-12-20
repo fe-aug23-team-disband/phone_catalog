@@ -23,6 +23,12 @@
   border: 1px solid $separator-color;
   text-decoration: none;
   margin-right: 8px;
+  transition: $animation-time ease-in-out;
+
+  &:hover:not(.available-capacity-active) {
+    background-color: $bg-color-controllers;
+  }
+
   &-active {
     background-color: $primary-text-color;
     color: $bg-color-main;

@@ -7,6 +7,8 @@ import { ItemCard } from "../../entities/ItemCard/ItemCard";
 import { ItemCardState } from "../../entities/ItemCardState/ItemCardState";
 import { useAsyncValue } from "react-router";
 import { ProductShorted } from "../../types/Product";
+import { useContext } from "react";
+import { ThemeContext } from "../../app/providers/ThemeProvider";
 
 interface Props {
   name: string;
@@ -15,6 +17,7 @@ interface Props {
 
 export const ItemSlider: React.FC<Props> = ({ name, state }) => {
   const data = useAsyncValue() as ProductShorted[];
+  const { theme } = useContext(ThemeContext);
 
   const settings = {
     infinite: false,
@@ -28,29 +31,29 @@ export const ItemSlider: React.FC<Props> = ({ name, state }) => {
       {
         breakpoint: 1199,
         settings: {
-          swipe: true,
-        },
+          swipe: true
+        }
       },
       {
         breakpoint: 1040,
         settings: {
           slidesToShow: 3.5,
-          slidesToScroll: 3,
-        },
+          slidesToScroll: 3
+        }
       },
       {
         breakpoint: 870,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 2,
-        },
+          slidesToScroll: 2
+        }
       },
       {
         breakpoint: 790,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 2,
-        },
+          slidesToScroll: 2
+        }
       },
       {
         breakpoint: 740,
@@ -84,17 +87,18 @@ export const ItemSlider: React.FC<Props> = ({ name, state }) => {
   };
 
   return (
-    <div className={`${styles.sliderContainer} card_slider`}>
+    <div
+      className={`${styles.sliderContainer} ${
+        theme === "light"
+          ? "card_slider card_slider_light"
+          : "card_slider"
+      }`}
+    >
       <h2 className={styles.sliderTitle}>{name}</h2>
       <Slider {...settings}>
         {state
-          ? [1, 2, 3, 4, 5].map(id => (
-            <ItemCardState state={state} key={id} />
-          ))
-          : data.map(phone => (
-            <ItemCard phone={phone} key={phone.id} />
-          ))
-        }
+          ? [1, 2, 3, 4, 5].map(id => <ItemCardState state={state} key={id} />)
+          : data.map(phone => <ItemCard phone={phone} key={phone.id} />)}
       </Slider>
     </div>
   );
