@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/phone_catalog/static/css/main.5862c15c.css",
-    "main.js": "/phone_catalog/static/js/main.d5d75909.js",
+    "main.css": "/phone_catalog/static/css/main.990ae5fa.css",
+    "main.js": "/phone_catalog/static/js/main.4a93f241.js",
     "static/media/banner-tablets-desktop.png": "/phone_catalog/static/media/banner-tablets-desktop.0e9cf27e26669c70429c.png",
     "static/media/banner-phones-desktop.png": "/phone_catalog/static/media/banner-phones-desktop.e7410c42215a1175ed3a.png",
     "static/media/banner-accessories-mobile.png": "/phone_catalog/static/media/banner-accessories-mobile.87d30deaaf6a23797a63.png",
@@ -18,6 +18,7 @@
     "static/media/not_found.png": "/phone_catalog/static/media/not_found.5770a2800e95e93ccbfc.png",
     "static/media/1741327.png": "/phone_catalog/static/media/1741327.687cd2f0abe49e80ae8c.png",
     "static/media/logo.png": "/phone_catalog/static/media/logo.149bfff5d4be962172aa.png",
+    "static/media/logo_light.png": "/phone_catalog/static/media/logo_light.85cc803a6436a984f48e.png",
     "static/media/empty-cart.svg": "/phone_catalog/static/media/empty-cart.c008792ed2f0a058457d6eda18a04894.svg",
     "static/media/slick.svg": "/phone_catalog/static/media/slick.2630a3e3eab21c607e21.svg",
     "static/media/slick.eot": "/phone_catalog/static/media/slick.a4e97f5a2a64f0ab1323.eot",
@@ -25,9 +26,12 @@
     "static/media/empty-icon.svg": "/phone_catalog/static/media/empty-icon.1eed90381a086a37d292bab89a777603.svg",
     "static/media/Button-Heart.svg": "/phone_catalog/static/media/Button-Heart.40477fe0fa486830b14a246f03f905a3.svg",
     "static/media/slick.woff": "/phone_catalog/static/media/slick.295183786cd8a1389865.woff",
+    "static/media/themeLightIcon.svg": "/phone_catalog/static/media/themeLightIcon.d4bf988b945c18a3327588acd21821d8.svg",
     "static/media/Button-Heart-Active.svg": "/phone_catalog/static/media/Button-Heart-Active.e06f68523386b982e85a9ceaf23038bb.svg",
+    "static/media/themeDarkIcon.svg": "/phone_catalog/static/media/themeDarkIcon.ae8c2e064d4774c3b4c0e7c3038decdf.svg",
     "static/media/button-close.svg": "/phone_catalog/static/media/button-close.dc168d5971b05e9a33023939e2c1cc61.svg",
     "static/media/button-plus.svg": "/phone_catalog/static/media/button-plus.1377f8b445ceb66e847d5523fd24dc45.svg",
+    "static/media/arrow_banner_right_light.svg": "/phone_catalog/static/media/arrow_banner_right_light.f7112511149d0f94a86f.svg",
     "static/media/arrow_banner.svg": "/phone_catalog/static/media/arrow_banner.1037ae575cedc2277ef2.svg",
     "static/media/arrow-left-active.svg": "/phone_catalog/static/media/arrow-left-active.53e25b3fe481140514f0.svg",
     "static/media/arrow-left-disabled.svg": "/phone_catalog/static/media/arrow-left-disabled.42403ae1a93c700f0b10.svg",
@@ -38,11 +42,11 @@
     "index.html": "/phone_catalog/index.html",
     "static/media/button-minus-active.svg": "/phone_catalog/static/media/button-minus-active.0365a13e7f5baa53bce8c439c4e812c3.svg",
     "static/media/button-minus.svg": "/phone_catalog/static/media/button-minus.cec33362a9c8f4101ffad2ac15b68f25.svg",
-    "main.5862c15c.css.map": "/phone_catalog/static/css/main.5862c15c.css.map",
-    "main.d5d75909.js.map": "/phone_catalog/static/js/main.d5d75909.js.map"
+    "main.990ae5fa.css.map": "/phone_catalog/static/css/main.990ae5fa.css.map",
+    "main.4a93f241.js.map": "/phone_catalog/static/js/main.4a93f241.js.map"
   },
   "entrypoints": [
-    "static/css/main.5862c15c.css",
-    "static/js/main.d5d75909.js"
+    "static/css/main.990ae5fa.css",
+    "static/js/main.4a93f241.js"
   ]
 }
