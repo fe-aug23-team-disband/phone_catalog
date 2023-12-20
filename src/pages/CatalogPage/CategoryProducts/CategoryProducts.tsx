@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { ChangeEvent, useEffect, useMemo, useState } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { useAsyncValue } from "react-router";
 import { ItemCard } from "../../../entities/ItemCard/ItemCard";
@@ -37,7 +37,7 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
   const [currentPage, setCurrentPage] = useState(params.page);
   const [limit, setLimit] = useState(params.limit);
   const [sort, setSort] = useState({ type: "", isDesc: false });
-  const [query] = useState(params.query);
+  const [query, setQuery] = useState(params.query);
 
   const stateArray = arrayRange(1, +limit, 1);
 
@@ -72,6 +72,15 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
       type,
       isDesc: order === "desc"
     });
+  };
+
+  const handleQueryChange = (event: ChangeEvent<HTMLInputElement>) => {
+    if (!event.target.value) {
+      setQuery("");
+      searchParams.delete("query");
+    } else {
+      setQuery(event.target.value);
+    }
   };
 
   return (
@@ -121,6 +130,18 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
             {limits.map(number =>
               <option key={number} value={number} selected={number === +limit}>{number}</option>)}
           </select>
+        </div>
+
+        <div className={styles.selectors__Wrapper}>
+          <label htmlFor="searchBar" className={styles.selectors__Label}>Search</label>
+
+          <input
+            className={styles.selectors__Search}
+            type="text"
+            onChange={handleQueryChange}
+            value={query}
+            placeholder="Input text..."
+          />
         </div>
       </div>
       <div className={styles.products}>
