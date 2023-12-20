@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/phone_catalog/static/css/main.c3a481b8.css",
-    "main.js": "/phone_catalog/static/js/main.52c7f56d.js",
+    "main.css": "/phone_catalog/static/css/main.5862c15c.css",
+    "main.js": "/phone_catalog/static/js/main.d5d75909.js",
     "static/media/banner-tablets-desktop.png": "/phone_catalog/static/media/banner-tablets-desktop.0e9cf27e26669c70429c.png",
     "static/media/banner-phones-desktop.png": "/phone_catalog/static/media/banner-phones-desktop.e7410c42215a1175ed3a.png",
     "static/media/banner-accessories-mobile.png": "/phone_catalog/static/media/banner-accessories-mobile.87d30deaaf6a23797a63.png",
@@ -13,6 +13,7 @@
     "static/media/Mont-Bold.ttf": "/phone_catalog/static/media/Mont-Bold.3675b597d3ffb2b75168.ttf",
     "static/media/banner-accessories.png": "/phone_catalog/static/media/banner-accessories.a778e7f3bc9dba6e3b3b.png",
     "static/media/banner-tablets.png": "/phone_catalog/static/media/banner-tablets.aaf03956b22bdc78819b.png",
+    "static/media/mentor.png": "/phone_catalog/static/media/mentor.1057aaa11cedef691dd0.png",
     "static/media/banner-phones.png": "/phone_catalog/static/media/banner-phones.60b525e8ac27dc7f8220.png",
     "static/media/not_found.png": "/phone_catalog/static/media/not_found.5770a2800e95e93ccbfc.png",
     "static/media/1741327.png": "/phone_catalog/static/media/1741327.687cd2f0abe49e80ae8c.png",
@@ -37,11 +38,11 @@
     "index.html": "/phone_catalog/index.html",
     "static/media/button-minus-active.svg": "/phone_catalog/static/media/button-minus-active.0365a13e7f5baa53bce8c439c4e812c3.svg",
     "static/media/button-minus.svg": "/phone_catalog/static/media/button-minus.cec33362a9c8f4101ffad2ac15b68f25.svg",
-    "main.c3a481b8.css.map": "/phone_catalog/static/css/main.c3a481b8.css.map",
-    "main.52c7f56d.js.map": "/phone_catalog/static/js/main.52c7f56d.js.map"
+    "main.5862c15c.css.map": "/phone_catalog/static/css/main.5862c15c.css.map",
+    "main.d5d75909.js.map": "/phone_catalog/static/js/main.d5d75909.js.map"
   },
   "entrypoints": [
-    "static/css/main.c3a481b8.css",
-    "static/js/main.52c7f56d.js"
+    "static/css/main.5862c15c.css",
+    "static/js/main.d5d75909.js"
   ]
 }
