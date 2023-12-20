@@ -12,6 +12,7 @@ import {
 import { useCallback, useEffect, useState } from "react";
 import Modal from "../../widgets/Modal/Modal";
 import globalVariables from "../../static/variables";
+import { EmptyPageButton } from "../../shared/ui/EmptyPageButton/EmptyPageButton";
 
 export const CartPage = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -72,6 +73,7 @@ export const CartPage = () => {
                 src={EmptyImage}
                 alt="EmptyCart"
               />
+              <EmptyPageButton page="cart" />
             </div>
           )
           : (
