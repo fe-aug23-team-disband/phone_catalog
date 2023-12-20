@@ -160,6 +160,12 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
         </div>
       </div>
       <div className={styles.products}>
+        {(!state && data.total === 0) &&
+          <h2 className={styles.products__nothing_found}>
+            Nothing found by query {`${params.query}`}
+          </h2>
+        }
+
         {state
           ? stateArray.map(id => (
             <ItemCardState key={id} state={state} />
