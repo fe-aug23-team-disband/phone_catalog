@@ -18,6 +18,14 @@
     height: 65px;
   }
 
+  &_switch {
+    justify-self: flex-end;
+    align-self: center;
+    width: 50px;
+    height: 25px;
+    padding-inline: 15px;
+  }
+
   &_menu {
     display: none;
     margin: 0;
@@ -33,7 +41,6 @@
 
   &_inside_wrapper {
     display: flex;
-    justify-content: space-between;
     width: 100%;
   }
 
@@ -53,10 +60,17 @@
     align-items: center;
     &__list {
       display: flex;
-      gap: 64px;
       margin: 0;
       padding: 0;
       list-style-type: none;
+
+      @include onTablet {
+        gap: 32px;
+      }
+
+      @include onDesktop {
+        gap: 64px;
+      }
     }
 
     &__item {
@@ -95,7 +109,12 @@
     }
   }
 
+  &_spacer {
+    flex: 1;
+  }
+
   &_icons {
+    align-self: flex-end;
     &_link {
       position: relative;
       display: inline-flex;
