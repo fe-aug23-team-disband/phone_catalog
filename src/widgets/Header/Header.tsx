@@ -10,6 +10,7 @@ import darkThemeIcon from "../../static/Header/themeDarkIcon.svg";
 import cartIcon from "../../static/Header/button-shop.png";
 import cartIcon_light from "../../static/Header/button-shop_light.png";
 import menuIcon from "../../static/Header/button-burger-menu.png";
+import menuIconLight from "../../static/Header/button-burger-menu_light.png";
 import MobileMenu from "../MobileMenu/MobileMenu";
 import { useAppSelector } from "../../app/store/hooks";
 import { useContext, useState } from "react";
@@ -124,7 +125,7 @@ const Header = () => {
           className={styles.header_menu}
         >
           <span className={styles.header_icon_wrap}>
-            <img src={menuIcon} alt={"menu"} />
+            <img src={`${theme === globalVariables.themeLight ? menuIconLight : menuIcon}`} alt={"menu"} />
           </span>
         </button>
       </header>
