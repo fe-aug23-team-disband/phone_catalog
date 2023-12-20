@@ -18,7 +18,7 @@ export const getSingle: GetProduct = async ({
     delete product.discount;
 
     if (product.images) {
-      const image = product.images[product.images.length - 1].string;
+      const image = product.images[0].string;
       return { ...product, image };
     }
 

@@ -46,7 +46,7 @@
     line-height: 26px;
     margin: 0;
     padding-bottom: 16px;
-    border-bottom: 1px solid $elements;
+    border-bottom: 1px solid $separator-color;
 
     @include onDesktop {
       font-size: 22px;

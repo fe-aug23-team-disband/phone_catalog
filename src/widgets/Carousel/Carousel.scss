@@ -19,14 +19,40 @@
       }
     }
   }
+  
+  //light-theme-stles
+  &.carousel_main_light {
+    .slick-arrow {
+      &.slick-next {
+        &::before {
+          background: url("../../static/Carousel/arrow_banner_right_light.svg")
+            center/contain no-repeat;
+        }
+
+        &:hover {
+          border-radius: 4px;
+          background-color: $bg-color-controllers-hov;
+        }
+      }
+
+      &.slick-prev {
+        &::before {
+          background: url("../../static/Carousel/arrow_banner_right_light.svg")
+            center/contain no-repeat;
+        }
+        &:hover {
+          border-radius: 4px;
+          background-color: $bg-color-controllers-hov;
+        }
+      }
+    }
+  }
 
   .slick-arrow {
     transition: $animation-time;
 
-
-
     &.slick-next {
-      background: $surface-2;
+      background: $bg-color-controllers;
       height: 100%;
       border: none;
       max-height: 400px;
@@ -35,18 +61,19 @@
       &::before {
         content: "";
         display: block;
-        background: url("../../static/Carousel/arrow_banner.svg") center/contain no-repeat;
+        background: url("../../static/Carousel/arrow_banner.svg") center/contain
+          no-repeat;
         width: 32px;
         height: 9px;
       }
       &:hover {
         border-radius: 4px;
-        background-color: $icons;
+        background-color: $bg-color-controllers-hov;
       }
     }
 
     &.slick-prev {
-      background: $surface-2;
+      background: $bg-color-controllers;
       height: 100%;
       border: none;
       max-height: 400px;
@@ -55,14 +82,15 @@
       &::before {
         content: "";
         display: block;
-        background: url("../../static/Carousel/arrow_banner.svg") center/contain no-repeat;
+        background: url("../../static/Carousel/arrow_banner.svg") center/contain
+          no-repeat;
         width: 32px;
         height: 9px;
         transform: rotate(180deg);
       }
       &:hover {
         border-radius: 4px;
-        background-color: $icons;
+        background-color: $bg-color-controllers-hov;
       }
     }
   }
@@ -82,7 +110,7 @@
         width: 14px;
         height: 4px;
         padding: 0;
-        background: $elements;
+        background: $separator-color;
 
         &:before {
           display: none;
@@ -91,7 +119,6 @@
     }
 
     li.slick-active {
-
       button {
         background: $primary-text-color;
       }

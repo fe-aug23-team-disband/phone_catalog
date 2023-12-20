@@ -6,6 +6,7 @@ import EmptyImage from "../../static/FavouritesPage/empty-icon.svg";
 
 export const FavouritesPage = () => {
   const { items } = useAppSelector(wishlistSelector);
+  console.log(items);
 
   return (
     <>
@@ -17,7 +18,7 @@ export const FavouritesPage = () => {
         ? (
           <div className={styles.empty}>
             <h1 className={styles.empty__description}>
-              Your favourites list is currently empty
+              The favourites list is currently empty
             </h1>
             <img
               className={styles.empty__image}

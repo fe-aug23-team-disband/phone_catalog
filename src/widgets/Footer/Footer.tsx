@@ -3,8 +3,7 @@ import main_styles from "../../styles/main.module.scss";
 import styles from "./Footer.module.scss";
 import logoImg from "../../static/Footer/logo.png";
 import topIcon from "../../static/Footer/button-top.png";
-import ButtonIcon from "../../shared/ui/ButtonIcon/ButtonIcon";
-import { scrollToTop } from "../../shared/utils/ScrollToTop";
+import ButtonIcon from "../../shared/ButtonIcon/ButtonIcon";
 
 const Footer = () => {
   const links = [
@@ -13,10 +12,14 @@ const Footer = () => {
     { to: "/rights", label: "Rights" }
   ];
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className={styles.footer}>
       <div className={`${styles.footer_inside} ${main_styles.mainContent}`}>
-        <Link className={styles.footer_logo_link} to="/" onClick={() => scrollToTop()}>
+        <Link className={styles.footer_logo_link} to="/">
           <img className={styles.footer_logo_img} src={logoImg} alt="logo" />
         </Link>
 
@@ -30,7 +33,7 @@ const Footer = () => {
 
         <div className={styles.footer_swipe_top}>
           <p className={styles.footer_swipe_top_title}>Back to top</p>
-          <ButtonIcon icon={topIcon} size="small" onClick={() => scrollToTop("smooth")} />
+          <ButtonIcon icon={topIcon} size="small" onClick={scrollToTop} />
         </div>
       </div>
     </footer>

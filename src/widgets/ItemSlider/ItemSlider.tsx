@@ -23,14 +23,7 @@ export const ItemSlider: React.FC<Props> = ({ name, state }) => {
     slidesToScroll: 4,
     className: "slider-style",
     margin: 16,
-    swipe: false,
     responsive: [
-      {
-        breakpoint: 1199,
-        settings: {
-          swipe: true,
-        },
-      },
       {
         breakpoint: 1040,
         settings: {

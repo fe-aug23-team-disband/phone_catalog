@@ -1,6 +1,6 @@
 import styles from "./ItemCardState.module.scss";
-import { FavoriteButton } from "../../shared/ui/FavoriteButton/FavoriteButton";
-import { AddToCartButtonState } from "../../shared/ui/AddToCardButtonState/AddToCartButtonState";
+import { FavoriteButton } from "../../shared/FavoriteButton/FavoriteButton";
+import { AddToCartButtonState } from "../../shared/AddToCardButtonState/AddToCartButtonState";
 import errorImage from "../../static/ItemCard/1741327.png";
 
 const Specs = ({ category, state }: { category: string; state: "loading" | "error" }) => (

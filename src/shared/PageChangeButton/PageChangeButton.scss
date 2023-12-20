@@ -1,0 +1,61 @@
+@import "../../styles/utils/variables.scss";
+
+.pageChangeButton {
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  box-sizing: border-box;
+  border: none;
+  background: $bg-color-controllers;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.left {
+  background-image: url('../../static/Slider/arrow-left-active.svg');
+
+  &:hover {
+    cursor: pointer;
+
+    background: $bg-color-controllers-hov;
+    background-image: url('../../static/Slider/arrow-left-active.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &-disabled {
+    background: none;
+    background-image: url('../../static/Slider/arrow-left-disabled.svg');
+    border: 1px solid $separator-color;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}
+
+.right {
+  background-image: url('../../static/Slider/arrow-right-active.svg');
+
+  &:hover {
+    cursor: pointer;
+    background: $bg-color-controllers-hov;
+    background-image: url('../../static/Slider/arrow-right-active.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &-disabled {
+    background: none;
+    background-image: url('../../static/Slider/arrow-right-disabled.svg');
+    border: 1px solid $separator-color;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
+}

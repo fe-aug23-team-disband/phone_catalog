@@ -4,20 +4,13 @@ import { useAsyncValue } from "react-router";
 import { ItemCard } from "../../../entities/ItemCard/ItemCard";
 import styles from "../CatalogPage.module.scss";
 import { ProductResponse } from "../../../types/ProductResponse";
-import { PageButton } from "../../../shared/ui/PageButton/PageButton";
-import { PageChangeButton } from "../../../shared/ui/PageChangeButton/PageChangeButton";
+import { PageButton } from "../../../shared/PageButton/PageButton";
+import { PageChangeButton } from "../../../shared/PageChangeButton/PageChangeButton";
 import { getNumbers } from "../../../shared/utils/getNumbers";
-import { ItemCardState } from "../../../entities/ItemCardState/ItemCardState";
 
 const limits = [16, 24, 48];
 
-const arrayRange = (start: number, stop: number, step: number) =>
-  Array.from(
-    { length: (stop - start) / step + 1 },
-    (value, index) => start + index * step
-  );
-
-export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ state }) => {
+export const CategoryProducts: React.FC = () => {
   const location = useLocation();
   const category = location.pathname.slice(1);
 
@@ -32,14 +25,9 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
     };
   }, [searchParams, category]);
 
-  const pages = (state) ? [] : getNumbers(0, (data.total / +params.limit));
-
   const [currentPage, setCurrentPage] = useState(params.page);
   const [limit, setLimit] = useState(params.limit);
-  const [sort, setSort] = useState({ type: "", isDesc: false });
   const [query] = useState(params.query);
-
-  const stateArray = arrayRange(1, +limit, 1);
 
   useEffect(() => {
     setSearchParams(params => {
@@ -48,13 +36,9 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
       if (query) {
         params.set("query", query?.toString());
       }
-      if (sort.type) {
-        params.set("sortBy", sort.type);
-        params.set("desc", sort.isDesc.toString());
-      }
       return params;
     });
-  }, [currentPage, limit, query, sort]);
+  }, [currentPage, limit, query]);
 
   useEffect(() => {
     setCurrentPage(() => "0");
@@ -66,13 +50,7 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
     setLimit(value);
   };
 
-  const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const [type, order = "asc"] = event.target.value.split("-");
-    setSort({
-      type,
-      isDesc: order === "desc"
-    });
-  };
+  const pages = getNumbers(0, (data.total / +params.limit));
 
   return (
     <>
@@ -80,15 +58,7 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
       {category === "tablets" && <h1 className={styles.title}>Tablets</h1>}
       {category === "accessories" && <h1 className={styles.title}>Accessories</h1>}
 
-      <p className={styles.modelCount}>
-        {state
-          ? (state === "loading"
-            ? "Loading models"
-            : "Could not load models"
-          )
-          : `${data.total} models`
-        }
-      </p>
+      <p className={styles.modelCount}>{data.onPage} models</p>
 
       <div className={styles.selectors}>
         <div className={styles.selectors__Wrapper}>
@@ -98,14 +68,12 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
             name="Sort by"
             id="Sort"
             className={styles.selectors__Sort}
-            onChange={handleSortChange}
-            defaultValue={"name"}
           >
-            <option value="time">Newest</option>
-            <option value="time-desc">Oldest</option>
-            <option value="price">Price ascending</option>
-            <option value="price-desc">Price descending</option>
-            <option value="name">Alphabet</option>
+            <option value="Newest">Newest</option>
+            <option value="Oldest">Oldest</option>
+            <option value="Price ascending">Price ascending</option>
+            <option value="Price descending">Price descending</option>
+            <option value="Alphabet">Alphabet</option>
           </select>
         </div>
 
@@ -124,14 +92,9 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
         </div>
       </div>
       <div className={styles.products}>
-        {state
-          ? stateArray.map(id => (
-            <ItemCardState key={id} state={state} />
-          ))
-          : data.data.map(item => (
-            <ItemCard key={item.id} phone={item} />
-          ))
-        }
+        {data.data.map(item => (
+          <ItemCard key={item.id} phone={item} />
+        ))}
       </div>
 
       {pages.length > 1

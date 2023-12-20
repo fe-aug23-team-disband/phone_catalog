@@ -1,7 +1,7 @@
 import styles from "./CartItem.module.scss";
 
 import IconRemove from "../../static/CartItem/button-close.svg";
-import ButtonIcon from "../../shared/ui/ButtonIcon/ButtonIcon";
+import ButtonIcon from "../../shared/ButtonIcon/ButtonIcon";
 import IconPlus from "../../static/CartItem/button-plus.svg";
 import IconMinus from "../../static/CartItem/button-minus-active.svg";
 import IconMinusDisabled from "../../static/CartItem/button-minus.svg";

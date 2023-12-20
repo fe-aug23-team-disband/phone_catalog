@@ -1,49 +1,48 @@
 import styles from "./ItemCard.module.scss";
-import { FavoriteButton } from "../../shared/ui/FavoriteButton/FavoriteButton";
-import { AddToCartButton } from "../../shared/ui/AddToCartButton/AddToCartButton";
+import { FavoriteButton } from "../../shared/FavoriteButton/FavoriteButton";
+import { AddToCartButton } from "../../shared/AddToCartButton/AddToCartButton";
 import { ProductShorted } from "../../types/Product";
-import { Link } from "react-router-dom";
-import { scrollToTop } from "../../shared/utils/ScrollToTop";
-import { getCategory } from "../../shared/utils/getCategory";
-import { ItemCardSpecs } from "./ItemCardSpecs/ItemCardSpecs";
+import {Link} from "react-router-dom";
+
+const Specs = ({ category, value }: { category: string; value: string }) => (
+  <div className={styles.itemCard__Specs_Container}>
+    <div className={styles.itemCard__Specs_Category}>{category}</div>
+    <div className={styles.itemCard__Specs_Value}>{value}</div>
+  </div>
+);
 
 export const ItemCard = ({ phone }: { phone: ProductShorted }) => {
-
   return (
     <div className={styles.itemCard}>
       <Link
-        to={`../${getCategory(phone.namespaceId)}/${phone.namespaceId}`}
+        to={`../${phone.category.name}/${phone.namespaceId}`}
         className={styles.itemCard__link}
-        onClick={() => scrollToTop()}
-        draggable="false"
-      />
-
-      <img
-        src={`${phone.image}`}
-        alt={phone.name}
-        className={styles.itemCard__Image}
-      />
+      >
+        <img
+          src={`${phone.image}`}
+          alt={phone.name}
+          className={styles.itemCard__Image}
+        />
+      </Link>
 
       <div className={styles.itemCard__Title}>
-        <p className={styles.itemCard__Title_Text}>{phone.name}</p>
+        <div className={styles.itemCard__Title_Text}>{phone.name}</div>
       </div>
 
       <div className={styles.itemCard__Price}>
-        <p className={styles.itemCard__Price_Current}>
+        <div className={styles.itemCard__Price_Current}>
           ${phone.priceDiscount}
-        </p>
+        </div>
 
-        <p className={styles.itemCard__Price_Full}>${phone.priceRegular}</p>
+        <div className={styles.itemCard__Price_Full}>${phone.priceRegular}</div>
       </div>
-
-      <div className={styles.itemCard__divider}></div>
 
       <div className={styles.itemCard__Specs}>
-        <ItemCardSpecs category="Screen" value={phone.screen} />
-        <ItemCardSpecs category="Capacity" value={phone.capacity} />
-        <ItemCardSpecs category="RAM" value={phone.ram} />
-
+        <Specs category="Screen" value={phone.screen} />
+        <Specs category="Capacity" value={phone.capacity} />
+        <Specs category="RAM" value={phone.ram} />
       </div>
+
       <div className={styles.itemCard__ButtonWrapper}>
         <AddToCartButton product={phone} />
 

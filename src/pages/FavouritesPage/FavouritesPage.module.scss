@@ -25,6 +25,7 @@
 }
 
 .heading {
+  grid-column: span 4;
   padding: 0;
   margin: 0;
   margin-bottom: 16px;
@@ -36,22 +37,27 @@
     font-size: 48px;
     line-height: 56px;
   }
+
+  @include onDesktop {
+    grid-column: span 24;
+  }
 }
 
 .empty {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  grid-column: span 4;
   align-items: center;
   text-align: center;
-  height: 40vh;
+
+  @include onTablet {
+    grid-column: span 12;
+  }
 
   &__description {
     margin: 0;
     margin-bottom: 16px;
     font-size: 22px;
     line-height: 33px;
-    color: $elements;
+    color: $separator-color;
 
     @include onTablet {
       font-size: 27px;
@@ -67,5 +73,9 @@
       width: 100px;
       height: 100px;
     }
+  }
+
+  @include onDesktop {
+    grid-column: span 24;
   }
 }

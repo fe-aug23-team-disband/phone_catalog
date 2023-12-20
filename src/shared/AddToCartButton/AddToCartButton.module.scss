@@ -1,0 +1,38 @@
+@import '../../styles/utils/variables.scss';
+
+.NotAdded {
+  display: flex;
+  width: calc(100% - 48px);
+  height: 40px;
+  justify-content: center;
+  box-sizing: border-box;
+  border: none;
+  padding: 0;
+  align-items: center;
+  flex-shrink: 0;
+  background: $accent-color;
+  transition: $animation-time ease-in-out;
+
+  &:hover {
+    border-radius: 4px;
+    cursor: pointer;
+    background: $accent-color-hov;
+  }
+
+  &:active {
+    background: $accent-color;
+  }
+}
+
+.Added {
+  background-color: $bg-color-controllers;
+}
+
+.Text {
+  color: $primary-text-color;
+  text-align: center;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 21px;
+}

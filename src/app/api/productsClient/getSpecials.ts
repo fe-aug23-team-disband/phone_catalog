@@ -14,6 +14,8 @@ export const getSpecials: GetSpecials = async ({ special, category }) => {
   if (response.status === 200) {
     const products = response.data.rows;
 
+    // console.log(products[0]);
+
     return products.map((item: Product) => {
       delete item.discount;
 

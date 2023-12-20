@@ -13,8 +13,6 @@ export const productsListLoader = async ({ request }: { request: Request }) => {
       page: searchParams.get("page"),
       limit: searchParams.get("limit"),
       query: searchParams.get("query"),
-      sortBy: searchParams.get("sortBy"),
-      desc: searchParams.get("desc"),
     });
 
     return defer({ data });
