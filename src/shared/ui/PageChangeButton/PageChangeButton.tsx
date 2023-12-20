@@ -1,6 +1,6 @@
 import cn from "classnames";
 import "./PageChangeButton.scss";
-import { scrollToTop } from "../ScrollToTop/ScrollToTop";
+import { scrollToTop } from "../../utils/ScrollToTop";
 
 interface Props {
   direction: "prev" | "next";

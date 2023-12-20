@@ -1,6 +1,6 @@
 import cn from "classnames";
 import "./PageButton.scss";
-import { scrollToTop } from "../ScrollToTop/ScrollToTop";
+import { scrollToTop } from "../../utils/ScrollToTop";
 
 interface Props {
   pageNumber: number;

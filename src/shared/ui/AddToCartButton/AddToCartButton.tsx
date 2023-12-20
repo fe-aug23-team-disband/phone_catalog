@@ -1,9 +1,9 @@
 import styles from "./AddToCartButton.module.scss";
 import {useDispatch} from "react-redux";
 import React, { useEffect, useState } from "react";
-import {add, cartSelector, removeAll} from "../../app/store/slices/cart.slice";
-import { ProductShorted} from "../../types/Product";
-import { useAppSelector } from "../../app/store/hooks";
+import {add, cartSelector, removeAll} from "../../../app/store/slices/cart.slice";
+import { ProductShorted} from "../../../types/Product";
+import { useAppSelector } from "../../../app/store/hooks";
 import classNames from "classnames";
 
 interface Props {

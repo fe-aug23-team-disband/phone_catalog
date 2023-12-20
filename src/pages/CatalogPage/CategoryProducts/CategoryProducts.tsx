@@ -4,8 +4,8 @@ import { useAsyncValue } from "react-router";
 import { ItemCard } from "../../../entities/ItemCard/ItemCard";
 import styles from "../CatalogPage.module.scss";
 import { ProductResponse } from "../../../types/ProductResponse";
-import { PageButton } from "../../../shared/PageButton/PageButton";
-import { PageChangeButton } from "../../../shared/PageChangeButton/PageChangeButton";
+import { PageButton } from "../../../shared/ui/PageButton/PageButton";
+import { PageChangeButton } from "../../../shared/ui/PageChangeButton/PageChangeButton";
 import { getNumbers } from "../../../shared/utils/getNumbers";
 import { ItemCardState } from "../../../entities/ItemCardState/ItemCardState";
 

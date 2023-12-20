@@ -1,6 +1,6 @@
 import React, { FC, ReactNode } from "react";
 import styled from "./Modal.module.scss";
-import ButtonIcon from "../ButtonIcon/ButtonIcon";
+import ButtonIcon from "../../shared/ui/ButtonIcon/ButtonIcon";
 import closeIcon from "../../static/Modal/button-close.png";
 interface ModalProps {
   setIsOpenModal: (state: boolean) => void;

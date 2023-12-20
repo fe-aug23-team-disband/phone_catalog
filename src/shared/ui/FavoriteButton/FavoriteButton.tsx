@@ -1,11 +1,11 @@
 import styles from "./FavoriteButton.module.scss";
-import heartIcon from "../../static/ItemCard/Button-Heart.svg";
-import heartIconActive from "../../static/ItemCard/Button-Heart-Active.svg";
+import heartIcon from "../../../static/ItemCard/Button-Heart.svg";
+import heartIconActive from "../../../static/ItemCard/Button-Heart-Active.svg";
 import React, { useEffect, useState} from "react";
-import {ProductShorted} from "../../types/Product";
+import {ProductShorted} from "../../../types/Product";
 import {useDispatch} from "react-redux";
-import {add, remove, wishlistSelector} from "../../app/store/slices/wishlist.slice";
-import { useAppSelector } from "../../app/store/hooks";
+import {add, remove, wishlistSelector} from "../../../app/store/slices/wishlist.slice";
+import { useAppSelector } from "../../../app/store/hooks";
 import classNames from "classnames";
 
 interface Props {

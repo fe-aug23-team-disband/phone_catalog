@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "./PriceSection.module.scss";
 import { Product } from "../../../../types/Product";
-import { AddToCartButton } from "../../../../shared/AddToCartButton/AddToCartButton";
-import { FavoriteButton } from "../../../../shared/FavoriteButton/FavoriteButton";
+import { AddToCartButton } from "../../../../shared/ui/AddToCartButton/AddToCartButton";
+import { FavoriteButton } from "../../../../shared/ui/FavoriteButton/FavoriteButton";
 
 type Props = {
   data: Product,

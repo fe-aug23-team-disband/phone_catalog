@@ -3,7 +3,7 @@ import "./Carousel.scss";
 import Slider from "react-slick";
 import { useMediaQuery } from "react-responsive";
 import styles from "./Carousel.module.scss";
-import { scrollToTop } from "../../shared/ScrollToTop/ScrollToTop";
+import { scrollToTop } from "../../shared/utils/ScrollToTop";
 
 import Phones_Banner_Desktop from "../../static/Carousel/banner-phones-desktop.png";
 import Tablets_Banner_Desktop from "../../static/Carousel/banner-tablets-desktop.png";
@@ -62,7 +62,7 @@ export const Carousel = () => {
             to={banner.link}
             key={index}
             className={styles.carousel_wrap_item}
-            onClick={scrollToTop}
+            onClick={() => scrollToTop()}
           >
             <img
               className={styles.carousel_banner}

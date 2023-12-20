@@ -10,7 +10,7 @@ import {
   removeAll
 } from "../../app/store/slices/cart.slice";
 import { useCallback, useEffect, useState } from "react";
-import Modal from "../../shared/Modal/Modal";
+import Modal from "../../widgets/Modal/Modal";
 import globalVariables from "../../static/variables";
 
 export const CartPage = () => {
@@ -65,7 +65,7 @@ export const CartPage = () => {
           ? (
             <div className={styles.cart__empty}>
               <h1 className={styles.cart__empty_description}>
-                The cart is currently empty
+                Your cart is empty
               </h1>
               <img
                 className={styles.cart__empty_image}
@@ -83,7 +83,7 @@ export const CartPage = () => {
               </div>
               <div className={styles.cart__order}>
                 <div className={styles.cart__info}>
-                  <h2 className={styles.cart__price}>{sum}</h2>
+                  <h2 className={styles.cart__price}>${sum}</h2>
                   <p className={styles.cart__item_count}>
                     {`Total for ${countTotalItems()} items`}
                   </p>

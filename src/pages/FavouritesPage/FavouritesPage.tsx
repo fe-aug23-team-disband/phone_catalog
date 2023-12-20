@@ -17,7 +17,7 @@ export const FavouritesPage = () => {
         ? (
           <div className={styles.empty}>
             <h1 className={styles.empty__description}>
-              The favourites list is currently empty
+              Your favourites list is currently empty
             </h1>
             <img
               className={styles.empty__image}
