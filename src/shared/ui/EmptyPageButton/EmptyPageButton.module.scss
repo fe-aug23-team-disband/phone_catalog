@@ -18,13 +18,13 @@
     padding: 10px;
     align-items: center;
     flex-shrink: 0;
-    background: var(--Accent, #905BFF);
+    background: $accent-color;
     transition: $animation-time ease-in-out;
 
     &:hover {
       border-radius: 4px;
       cursor: pointer;
-      background: #A378FF;
+      background: $accent-color-hov;
     }
 
     &:active {
@@ -32,7 +32,7 @@
     }
 
     &__Text {
-      color: var(--gray-white, #F1F2F9);
+      color: $primary-text-color;
       text-align: center;
       font-size: 14px;
       font-style: normal;

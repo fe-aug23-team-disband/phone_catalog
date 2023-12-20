@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Carousel.scss";
 import Slider from "react-slick";
 import { useMediaQuery } from "react-responsive";
@@ -13,9 +13,11 @@ import Tablets_Banner_Mobile from "../../static/Carousel/banner-tablets-mobile.p
 import Accessories_Banner_Mobile from "../../static/Carousel/banner-accessories-mobile.png";
 
 import { Link } from "react-router-dom";
+import { ThemeContext } from "../../app/providers/ThemeProvider";
 
 export const Carousel = () => {
   const isSmallScreen = useMediaQuery({ maxWidth: 640 });
+  const { theme } = useContext(ThemeContext);
   const banners = [
     {
       desktop: Phones_Banner_Desktop,
@@ -31,7 +33,7 @@ export const Carousel = () => {
       desktop: Accessories_Banner_Desktop,
       mobile: Accessories_Banner_Mobile,
       link: "accessories"
-    },
+    }
   ];
 
   const settings = {
@@ -56,7 +58,14 @@ export const Carousel = () => {
   };
   return (
     <div>
-      <Slider {...settings} className={`${styles.carousel} carousel_main`}>
+      <Slider
+        {...settings}
+        className={`${styles.carousel} ${
+          theme === "light"
+            ? "carousel_main carousel_main_light"
+            : "carousel_main"
+        }`}
+      >
         {banners.map((banner, index) => (
           <Link
             to={banner.link}
