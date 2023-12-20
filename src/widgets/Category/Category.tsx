@@ -16,7 +16,7 @@ export const Category = () => {
   const [totalAccessories, setTotalAccessories] = useState(0);
 
   async function setTotalCategory(category: Categories, setData: (total: number) => void) {
-    const data = await get({ category: category, page: null, limit: null, query: null });
+    const data = await get({ category: category, page: null, limit: null, query: null, desc: null, sortBy: null });
     setData(data.total);
   }
 
