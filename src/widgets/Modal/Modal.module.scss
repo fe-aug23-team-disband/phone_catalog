@@ -1,25 +1,26 @@
 @import "../../styles/utils/variables.scss";
+@import '../../styles/mixins/mixins.scss';
 
 .modal {
   &_background {
-    width: 100vw;
-    height: 100vh;
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(1.5px);
     left: 0;
     top: 0;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(1.5px);
   }
 
   &_container {
-    width: 500px;
-    min-height: 200px;
+    max-width: 500px;
     border-radius: 12px;
     background-color: $bg-color-main;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 7px 25px;
+    margin: 0px 16px;
     padding: 25px;
     display: flex;
     flex-direction: column;
@@ -28,10 +29,15 @@
 
   &_title {
     margin: 16px 0;
-    font-size: 38px;
+    font-size: 28px;
     font-weight: 800;
-    line-height: 56px;
-    letter-spacing: -0.48px;
+
+    @include onTablet {
+      font-size: 38px;
+      font-weight: 800;
+      line-height: 56px;
+      letter-spacing: -0.48px;
+    }
   }
 
   &_form {
@@ -49,7 +55,9 @@
       padding: 10px 20px;
       color: $primary-text-color;
       border-radius: 6px;
+      font-family: inherit;
       transition: $animation-time;
+
       &:hover {
         cursor: pointer;
         border: 1px solid $accent-color-hov;

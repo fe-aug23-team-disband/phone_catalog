@@ -27,19 +27,18 @@
     border-radius: $button-border-radius;
     transition: $animation-time ease-in-out;
 
-    &:hover {
+    &__disabled {
+      background-color: $bg-color-product;
+      border: 1px solid $bg-color-controllers;
+    }
+    
+    &:hover:not(.button_icon_wrapper__disabled) {
       cursor: pointer;
       background: $bg-color-controllers-hov;
     }
-    &__disabled {
-
-      &:hover {
-        cursor: not-allowed;
-      }
-    }
 
 
-    &:active {
+    &:active:not(.button_icon_wrapper__disabled) {
       background: #0f1121;
       border: 1px solid $separator-color;
     }
