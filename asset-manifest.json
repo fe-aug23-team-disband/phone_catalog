@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/phone_catalog/static/css/main.80c9a9dc.css",
-    "main.js": "/phone_catalog/static/js/main.42738d26.js",
+    "main.css": "/phone_catalog/static/css/main.e1473aa1.css",
+    "main.js": "/phone_catalog/static/js/main.477a151d.js",
     "static/media/banner-tablets-desktop.png": "/phone_catalog/static/media/banner-tablets-desktop.0e9cf27e26669c70429c.png",
     "static/media/banner-phones-desktop.png": "/phone_catalog/static/media/banner-phones-desktop.e7410c42215a1175ed3a.png",
     "static/media/banner-accessories-mobile.png": "/phone_catalog/static/media/banner-accessories-mobile.87d30deaaf6a23797a63.png",
@@ -18,6 +18,8 @@
     "static/media/not_found.png": "/phone_catalog/static/media/not_found.5770a2800e95e93ccbfc.png",
     "static/media/1741327.png": "/phone_catalog/static/media/1741327.687cd2f0abe49e80ae8c.png",
     "static/media/logo.png": "/phone_catalog/static/media/logo.149bfff5d4be962172aa.png",
+    "static/media/logo_footer.png": "/phone_catalog/static/media/logo_footer.149bfff5d4be962172aa.png",
+    "static/media/logo_footer_light.png": "/phone_catalog/static/media/logo_footer_light.35f644d31ea66381a641.png",
     "static/media/logo_light.png": "/phone_catalog/static/media/logo_light.85cc803a6436a984f48e.png",
     "static/media/empty-cart.svg": "/phone_catalog/static/media/empty-cart.c008792ed2f0a058457d6eda18a04894.svg",
     "static/media/slick.svg": "/phone_catalog/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -43,11 +45,11 @@
     "index.html": "/phone_catalog/index.html",
     "static/media/button-minus-active.svg": "/phone_catalog/static/media/button-minus-active.0365a13e7f5baa53bce8c439c4e812c3.svg",
     "static/media/button-minus.svg": "/phone_catalog/static/media/button-minus.cec33362a9c8f4101ffad2ac15b68f25.svg",
-    "main.80c9a9dc.css.map": "/phone_catalog/static/css/main.80c9a9dc.css.map",
-    "main.42738d26.js.map": "/phone_catalog/static/js/main.42738d26.js.map"
+    "main.e1473aa1.css.map": "/phone_catalog/static/css/main.e1473aa1.css.map",
+    "main.477a151d.js.map": "/phone_catalog/static/js/main.477a151d.js.map"
   },
   "entrypoints": [
-    "static/css/main.80c9a9dc.css",
-    "static/js/main.42738d26.js"
+    "static/css/main.e1473aa1.css",
+    "static/js/main.477a151d.js"
   ]
 }
