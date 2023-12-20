@@ -20,7 +20,7 @@
   }
 
   &:hover &__text {
-    color: #905BFF;
+    color: $accent-color;
   }
 
   &__icon {
@@ -78,7 +78,7 @@
       margin-bottom: 16px;
       font-size: 22px;
       line-height: 33px;
-      color: $elements;
+      color: $separator-color;
 
       @include onTablet {
         font-size: 27px;
@@ -112,7 +112,7 @@
     align-self: flex-start;
     text-align: center;
     padding: 24px;
-    border: 1px solid $elements;
+    border: 1px solid $separator-color;
 
     @include onTablet {
       grid-column: span 12;
@@ -147,7 +147,7 @@
   &__line {
     width: 100%;
     margin-bottom: 16px;
-    border-bottom: 1px solid $elements;
+    border-bottom: 1px solid $separator-color;
 
     @include onDesktop {
       margin-bottom: 24px;
@@ -162,7 +162,7 @@
     height: 48px;
     border: none;
     padding: 0;
-    background: #905BFF;
+    background: $accent-color;
     font-family: inherit;
     color: $primary-text-color;
     font-size: 14px;
@@ -172,7 +172,7 @@
     &:hover {
       cursor: pointer;
       border-radius: 4px;
-      background: #A378FF;
+      background: $accent-color-hov;
     }
   }
 }

@@ -1,7 +1,10 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC, ReactNode, useContext } from "react";
 import styled from "./Modal.module.scss";
 import ButtonIcon from "../../shared/ui/ButtonIcon/ButtonIcon";
 import closeIcon from "../../static/Modal/button-close.png";
+import closeIconLight from "../../static/Modal/button-close_light.png";
+import { ThemeContext } from "../../app/providers/ThemeProvider";
+import globalVariables from "../../static/variables";
 interface ModalProps {
   setIsOpenModal: (state: boolean) => void;
   title: string;
@@ -23,6 +26,7 @@ const Modal: FC<ModalProps> = ({
   cancelBtnTitle,
   showCloselBtn = true
 }) => {
+  const { theme } = useContext(ThemeContext);
   const hanlerCloseModal = () => {
     setIsOpenModal(false);
   };
@@ -40,7 +44,7 @@ const Modal: FC<ModalProps> = ({
           <div className={styled.modal_button_close__wraper}>
             <ButtonIcon
               size="small"
-              icon={closeIcon}
+              icon={`${theme === globalVariables.themeLight ? closeIconLight : closeIcon}`}
               onClick={hanlerCloseModal}
               customStyles={styled.modal_button_close}
             />
