@@ -32,8 +32,11 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
     };
   }, [searchParams, category]);
 
+  const pages = (state) ? [] : getNumbers(0, (data.total / +params.limit));
+
   const [currentPage, setCurrentPage] = useState(params.page);
   const [limit, setLimit] = useState(params.limit);
+  const [sort, setSort] = useState({ type: "", isDesc: false });
   const [query] = useState(params.query);
 
   const stateArray = arrayRange(1, +limit, 1);
@@ -45,9 +48,13 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
       if (query) {
         params.set("query", query?.toString());
       }
+      if (sort.type) {
+        params.set("sortBy", sort.type);
+        params.set("desc", sort.isDesc.toString());
+      }
       return params;
     });
-  }, [currentPage, limit, query]);
+  }, [currentPage, limit, query, sort]);
 
   useEffect(() => {
     setCurrentPage(() => "0");
@@ -59,7 +66,13 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
     setLimit(value);
   };
 
-  const pages = (state) ? [] : getNumbers(0, (data.total / +params.limit));
+  const handleSortChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const [type, order = "asc"] = event.target.value.split("-");
+    setSort({
+      type,
+      isDesc: order === "desc"
+    });
+  };
 
   return (
     <>
@@ -85,12 +98,14 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
             name="Sort by"
             id="Sort"
             className={styles.selectors__Sort}
+            onChange={handleSortChange}
+            defaultValue={"name"}
           >
-            <option value="Newest">Newest</option>
-            <option value="Oldest">Oldest</option>
-            <option value="Price ascending">Price ascending</option>
-            <option value="Price descending">Price descending</option>
-            <option value="Alphabet">Alphabet</option>
+            <option value="time">Newest</option>
+            <option value="time-desc">Oldest</option>
+            <option value="price">Price ascending</option>
+            <option value="price-desc">Price descending</option>
+            <option value="name">Alphabet</option>
           </select>
         </div>
 
