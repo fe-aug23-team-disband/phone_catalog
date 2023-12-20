@@ -5,7 +5,7 @@ import { Product } from "../../../types/Product";
 import { Image } from "../../../types/Image";
 
 import styles from "../ItemPage.module.scss";
-import ErrorImage from "../../../static/ItemPageState/error-state.png";
+// import ErrorImage from "../../../static/ItemPageState/mentor.png";
 import LoadingImage from "../../../static/ItemPageState/loading-state.png";
 
 import { ItemPageAbout } from "./ItemPageAbout/ItemPageAbout";
@@ -13,6 +13,7 @@ import { ItemPageTechSpecs } from "./ItemPageTechSpecs/ItemPageTechSpecs";
 import { PhonesPhoto } from "./PhonesPhoto/PhonesPhoto";
 import { PhonesMainInfo } from "./PhonesMainInfo/PhonesMainInfo";
 import { useAsyncValue } from "react-router-dom";
+import { Animation } from "./Animation/Animation";
 
 type Props = {
   state?: "loading" | "error",
@@ -84,9 +85,7 @@ export const ItemInfo: React.FC<Props> = ({ state }) => {
             </div>
           </div>
         ) : (state === "error" ? (
-          <div className={styles["itemPage__state-error"]}>
-            <img src={ErrorImage} alt="Error" />
-          </div>
+          <Animation />
         ) : (
           <div className={styles["itemPage__state-loading"]}>
             <div className={styles.animation}>
