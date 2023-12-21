@@ -90,7 +90,7 @@ const Header = () => {
               className={styles.header_icons_link}
             >
               <span className={styles.header_icon_wrap}>
-                <img src={`${theme === globalVariables.themeLight ? darkThemeIcon : lightThemeIcon}`} alt={"theme"} />
+                <img src={`${theme === globalVariables.themeLight ? darkThemeIcon : lightThemeIcon}`} alt={"theme_buton"} />
               </span>
             </div>
             {icons.map((item, index) => (

@@ -14,6 +14,7 @@ const patchToHome = "/";
 const patchToPhones = "/phones?page=0&limit=16";
 const patchToTablets = "/tablets?page=0&limit=16";
 const patchToAccessories = "/accessories?page=0&limit=16";
+
 //page themes
 const themeDark = "dark";
 const themeLight = "light";

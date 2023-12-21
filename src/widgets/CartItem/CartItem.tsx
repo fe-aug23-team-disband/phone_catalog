@@ -3,18 +3,31 @@ import styles from "./CartItem.module.scss";
 import IconRemove from "../../static/CartItem/button-close.svg";
 import ButtonIcon from "../../shared/ui/ButtonIcon/ButtonIcon";
 import IconPlus from "../../static/CartItem/button-plus.svg";
+import IconPlusLigh from "../../static/CartItem/button-plus_light.png";
 import IconMinus from "../../static/CartItem/button-minus-active.svg";
+import IconMinusLight from "../../static/CartItem/button-minus_light.png";
 import IconMinusDisabled from "../../static/CartItem/button-minus.svg";
-import {Product, ProductShorted} from "../../types/Product";
-import {useCallback, useMemo} from "react";
-import {useAppDispatch} from "../../app/store/hooks";
+import { Product, ProductShorted } from "../../types/Product";
+import { useCallback, useContext, useMemo } from "react";
+import { useAppDispatch } from "../../app/store/hooks";
 import { add, remove, removeAll } from "../../app/store/slices/cart.slice";
+import { ThemeContext } from "../../app/providers/ThemeProvider";
+import globalVariables from "../../static/variables";
 
-export const CartItem: React.FC<{ product: Product | ProductShorted, count: number }> = ({ product, count }) => {
+export const CartItem: React.FC<{
+  product: Product | ProductShorted;
+  count: number;
+}> = ({ product, count }) => {
   const dispatch = useAppDispatch();
   const isRemoveDisabled = useMemo(() => {
     return count === 1;
   }, [count]);
+
+  const { theme } = useContext(ThemeContext);
+  const buttonMinusWithThemeDisable =
+    theme === globalVariables.themeLight ? IconMinusLight : IconMinusDisabled;
+  const buttonMinusWithTheme =
+    theme === globalVariables.themeLight ? IconMinusLight : IconMinus;
 
   const handleRemove = useCallback(() => {
     if (!isRemoveDisabled) {
@@ -47,9 +60,7 @@ export const CartItem: React.FC<{ product: Product | ProductShorted, count: numb
           alt="Phone"
         />
 
-        <p className={styles.item__name}>
-          {product.name}
-        </p>
+        <p className={styles.item__name}>{product.name}</p>
       </div>
 
       <div className={styles.item__values}>
@@ -57,7 +68,7 @@ export const CartItem: React.FC<{ product: Product | ProductShorted, count: numb
           <ButtonIcon
             size="small"
             onClick={handleRemove}
-            icon={isRemoveDisabled ? IconMinusDisabled : IconMinus}
+            icon={isRemoveDisabled ? buttonMinusWithThemeDisable : buttonMinusWithTheme}
             isDisabled={isRemoveDisabled}
           />
 
@@ -66,7 +77,9 @@ export const CartItem: React.FC<{ product: Product | ProductShorted, count: numb
           <ButtonIcon
             size="small"
             onClick={handleAdd}
-            icon={IconPlus}
+            icon={
+              theme === globalVariables.themeLight ? IconPlusLigh : IconPlus
+            }
           />
         </div>
 
