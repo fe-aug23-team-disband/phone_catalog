@@ -12,7 +12,7 @@
 }
 
 .left {
-  background-image: url('../../../static/Slider/arrow-left-active.svg');
+  background-image: url('../../../static/Slider/arrow-left-disabled.svg');
 
   &:hover {
     cursor: pointer;
@@ -25,7 +25,7 @@
 
   &-disabled {
     background: none;
-    background-image: url('../../../static/Slider/arrow-left-disabled.svg');
+    background-image: url('../../../static/Slider/arrow-left-active.svg');
     border: 1px solid $separator-color;
     background-repeat: no-repeat;
     background-position: center;
@@ -37,7 +37,7 @@
 }
 
 .right {
-  background-image: url('../../../static/Slider/arrow-right-active.svg');
+  background-image: url('../../../static/Slider/arrow-right-disabled.svg');
 
   &:hover {
     cursor: pointer;
@@ -49,7 +49,7 @@
 
   &-disabled {
     background: none;
-    background-image: url('../../../static/Slider/arrow-right-disabled.svg');
+    background-image: url('../../../static/Slider/arrow-right-active.svg');
     border: 1px solid $separator-color;
     background-repeat: no-repeat;
     background-position: center;

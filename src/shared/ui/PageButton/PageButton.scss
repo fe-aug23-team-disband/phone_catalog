@@ -4,7 +4,7 @@
   width: 32px;
   height: 32px;
   background: $bg-color-product;
-  color: $primary-text-color;
+  color: $btn-inactive-color-text;
   text-align: center;
   font-size: 14px;
   font-style: normal;
@@ -19,7 +19,7 @@
 
 .selected {
   background: $accent-color;
-
+  color: $btn-color-text;
   &:hover {
     background: $accent-color;
   }
