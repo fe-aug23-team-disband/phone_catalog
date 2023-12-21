@@ -17,6 +17,10 @@ iframe {
 
   &__about-tech {
     @include pageGrid;
+
+    @include onDesktop {
+      margin-bottom: 80px;
+    }
   }
 
   &__title {
