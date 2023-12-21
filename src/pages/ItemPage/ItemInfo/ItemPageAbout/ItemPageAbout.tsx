@@ -24,13 +24,11 @@ export const ItemPageAbout: React.FC<Props> = ({ description }) => {
                     {title}
                   </h4>
 
-                  <p className={styles["about__product-info"]}>
-                    {text.map((text: string) => (
-                      <span key={text} className={styles["about__product-text"]}>
-                        {text}
-                      </span>
-                    ))}
-                  </p>
+                  {text.map((text: string) => (
+                    <p key={text} className={styles["about__product-info"]}>
+                      {text}
+                    </p>
+                  ))}
                 </div>
               </Fragment>
             );

@@ -18,17 +18,8 @@ iframe {
   &__about-tech {
     @include pageGrid;
 
-    margin: 56px 0;
-    gap: 56px;
-
-    @include onTablet {
-      gap: 64px;
-      margin: 64px 0;
-    }
-
     @include onDesktop {
-      gap: 0px;
-      margin: 80px 0;
+      margin-bottom: 80px;
     }
   }
 
