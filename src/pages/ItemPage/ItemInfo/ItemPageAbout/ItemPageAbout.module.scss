@@ -3,12 +3,22 @@
 
 .about {
   grid-column: 1 / -1;
+  margin-top: 56px;
+
+  @include onTablet {
+    margin-top: 64px;
+  }
 
   @include onDesktop {
     grid-column: 1 / span 12;
+    margin-top: 80px;
   }
 
   &__product {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
     &-items {
       display: flex;
       flex-direction: column;
@@ -28,9 +38,6 @@
       }
     }
 
-    &-container {
-      width: 100%;
-    }
 
     &-info {
       font-size: 14px;
