@@ -11,8 +11,8 @@ import { ItemPageAbout } from "./ItemPageAbout/ItemPageAbout";
 import { ItemPageTechSpecs } from "./ItemPageTechSpecs/ItemPageTechSpecs";
 import { ItemPhoto } from "./ItemPhoto/ItemPhoto";
 import { ItemMainInfo } from "./ItemMainInfo/ItemMainInfo";
-import { Loader } from "../../../entities/Loader/Loader";
-import { ErrorState } from "../../../entities/ErrorState/ErrorState";
+import { Loader } from "../../../shared/Loader/Loader";
+import { ErrorState } from "../../../shared/ErrorState/ErrorState";
 import { scrollToTop } from "../../../shared/utils/ScrollToTop";
 
 type Props = {

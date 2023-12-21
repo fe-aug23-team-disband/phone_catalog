@@ -18,15 +18,15 @@ export const ItemPage = () => {
         Error={<ItemInfo state="error" />}
       >
         <ItemInfo />
+        <AsyncWrapper
+          data={related}
+          Loader={<ItemSlider name={"You may also like"} state="loading" />}
+          Error={<ItemSlider name={"You may also like"} state="error" />}
+        >
+          <ItemSlider name={"You may also like"} />
+        </AsyncWrapper>
       </AsyncWrapper>
 
-      <AsyncWrapper
-        data={related}
-        Loader={<ItemSlider name={"You may also like"} state="loading" />}
-        Error={<ItemSlider name={"You may also like"} state="error" />}
-      >
-        <ItemSlider name={"You may also like"} />
-      </AsyncWrapper>
     </>
   );
 };

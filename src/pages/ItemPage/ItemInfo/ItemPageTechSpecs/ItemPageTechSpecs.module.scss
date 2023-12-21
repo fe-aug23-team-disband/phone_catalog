@@ -34,7 +34,7 @@
   &__section {
     display: flex;
     justify-content: space-between;
-
+    flex-wrap: nowrap;
     &-title {
       color: $secondary-text-color;
       font-size: 14px;
@@ -43,6 +43,7 @@
     }
 
     &-value {
+      margin-left: 10px;
       font-size: 14px;
       font-weight: 600;
       line-height: 21px;
