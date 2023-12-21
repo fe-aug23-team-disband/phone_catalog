@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/phone_catalog/static/css/main.cff82569.css",
-    "main.js": "/phone_catalog/static/js/main.a905243c.js",
+    "main.css": "/phone_catalog/static/css/main.9696f896.css",
+    "main.js": "/phone_catalog/static/js/main.8124c166.js",
     "static/media/banner-tablets-desktop.png": "/phone_catalog/static/media/banner-tablets-desktop.0e9cf27e26669c70429c.png",
     "static/media/banner-phones-desktop.png": "/phone_catalog/static/media/banner-phones-desktop.e7410c42215a1175ed3a.png",
     "static/media/banner-accessories-mobile.png": "/phone_catalog/static/media/banner-accessories-mobile.87d30deaaf6a23797a63.png",
@@ -16,7 +16,15 @@
     "static/media/mentor.png": "/phone_catalog/static/media/mentor.1057aaa11cedef691dd0.png",
     "static/media/banner-phones.png": "/phone_catalog/static/media/banner-phones.60b525e8ac27dc7f8220.png",
     "static/media/not_found.png": "/phone_catalog/static/media/not_found.5770a2800e95e93ccbfc.png",
+    "static/media/telegram_d.png": "/phone_catalog/static/media/telegram_d.0a4265bfea7fe8beeaf2.png",
+    "static/media/email_d.png": "/phone_catalog/static/media/email_d.ec2baa4fdf43af637972.png",
+    "static/media/github_d.png": "/phone_catalog/static/media/github_d.a855c3975c028d8069f5.png",
     "static/media/1741327.png": "/phone_catalog/static/media/1741327.687cd2f0abe49e80ae8c.png",
+    "static/media/github.png": "/phone_catalog/static/media/github.f11021803f68852df283.png",
+    "static/media/telegram.png": "/phone_catalog/static/media/telegram.6ea7b05c265797c650e5.png",
+    "static/media/email.png": "/phone_catalog/static/media/email.67bda94140af311d041f.png",
+    "static/media/linkedin.png": "/phone_catalog/static/media/linkedin.032cf8a63be2f0f4d425.png",
+    "static/media/linkedin_d.png": "/phone_catalog/static/media/linkedin_d.6892b3ae328c7a1e055f.png",
     "static/media/logo.png": "/phone_catalog/static/media/logo.149bfff5d4be962172aa.png",
     "static/media/logo_footer.png": "/phone_catalog/static/media/logo_footer.149bfff5d4be962172aa.png",
     "static/media/logo_footer_light.png": "/phone_catalog/static/media/logo_footer_light.35f644d31ea66381a641.png",
@@ -43,11 +51,11 @@
     "index.html": "/phone_catalog/index.html",
     "static/media/button-minus-active.svg": "/phone_catalog/static/media/button-minus-active.0365a13e7f5baa53bce8c439c4e812c3.svg",
     "static/media/button-minus.svg": "/phone_catalog/static/media/button-minus.cec33362a9c8f4101ffad2ac15b68f25.svg",
-    "main.cff82569.css.map": "/phone_catalog/static/css/main.cff82569.css.map",
-    "main.a905243c.js.map": "/phone_catalog/static/js/main.a905243c.js.map"
+    "main.9696f896.css.map": "/phone_catalog/static/css/main.9696f896.css.map",
+    "main.8124c166.js.map": "/phone_catalog/static/js/main.8124c166.js.map"
   },
   "entrypoints": [
-    "static/css/main.cff82569.css",
-    "static/js/main.a905243c.js"
+    "static/css/main.9696f896.css",
+    "static/js/main.8124c166.js"
   ]
 }
