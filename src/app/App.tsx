@@ -2,7 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Header from "../widgets/Header/Header";
 import Footer from "../widgets/Footer/Footer";
 import styles from "../styles/main.module.scss";
-import Bredcrumbs from "../widgets/Bredcrumbs/Bredcrumbs";
+import Bredcrumbs from "../shared/ui/Bredcrumbs/Bredcrumbs";
 import { ThemeProvider } from "./providers/ThemeProvider";
 
 export const App = () => {

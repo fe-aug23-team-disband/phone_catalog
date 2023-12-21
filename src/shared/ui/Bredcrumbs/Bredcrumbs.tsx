@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import styles from "./Bredcrumbs.module.scss";
 import { Link, useLocation } from "react-router-dom";
-import homeImg from "../../static/Bredcrumbs/button-home.png";
-import homeImg_light from "../../static/Bredcrumbs/button-home_light.png";
+import homeImg from "../../../static/Bredcrumbs/button-home.png";
+import homeImg_light from "../../../static/Bredcrumbs/button-home_light.png";
 
-import { ThemeContext } from "../../app/providers/ThemeProvider";
+import { ThemeContext } from "../../../app/providers/ThemeProvider";
 
 const Bredcrumbs: React.FC = () => {
   const location = useLocation();

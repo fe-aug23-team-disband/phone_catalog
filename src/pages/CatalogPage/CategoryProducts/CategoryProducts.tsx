@@ -60,6 +60,8 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
   useEffect(() => {
     setCurrentPage(() => "0");
     setLimit(() => params.limit);
+    setSort({ type: "", isDesc: false });
+    setQuery(() => "");
   }, [category]);
 
   const handleLimitChange = (value: string) => {

@@ -1,4 +1,4 @@
-@import "../../styles/utils/variables.scss";
+@import "../../../styles/utils/variables.scss";
 
 .bredcrumbs {
   display: flex;
@@ -49,6 +49,6 @@
     margin-right: 8px;
     width: 16px;
     height: 16px;
-    background: url("../../static/Bredcrumbs/bredcrumbs_arrow.png") no-repeat center/cover;
+    background: url("../../../static/Bredcrumbs/bredcrumbs_arrow.png") no-repeat center/cover;
   }
 }
