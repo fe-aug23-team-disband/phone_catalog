@@ -2,6 +2,8 @@ import React, { useContext } from "react";
 import "../../styles/utils/variables.scss";
 import styles from "./MobileMenu.module.scss";
 import { Link } from "react-router-dom";
+import lightThemeIcon from "../../static/Header/themeLightIcon.svg";
+import darkThemeIcon from "../../static/Header/themeDarkIcon.svg";
 import logoImg from "../../static/Header/logo.png";
 import logoImgLight from "../../static/Header/logo_light.png";
 import menuCloseIcon from "../../static/MobileMenu/button-close.png";
@@ -52,6 +54,14 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
       count: cartItems.length
     }
   ];
+
+  const hanlerChangeTheme = () => {
+    setTheme(
+      theme === globalVariables.themeDark
+        ? globalVariables.themeLight
+        : globalVariables.themeDark
+    );
+  };
 
   return (
     <nav className={styles.mobile_menu}>
@@ -109,6 +119,21 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
       </ul>
 
       <div className={styles.mobile_menu_buttons_bottom}>
+        <div
+          onClick={hanlerChangeTheme}
+          className={styles.mobile_menu_button_link}
+        >
+          <span className={styles.mobile_menu_button_wrap}>
+            <img
+              src={`${
+                theme === globalVariables.themeLight
+                  ? darkThemeIcon
+                  : lightThemeIcon
+              }`}
+              alt={"theme_change_button"}
+            />
+          </span>
+        </div>
         {icons.map((item, index) => (
           <Link
             onClick={() => {

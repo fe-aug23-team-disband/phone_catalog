@@ -77,7 +77,8 @@
       display: block;
       color: $secondary-text-color;
       text-decoration: none;
-
+      cursor: pointer;
+      
       &:hover {
         color: $primary-text-color;
       }
