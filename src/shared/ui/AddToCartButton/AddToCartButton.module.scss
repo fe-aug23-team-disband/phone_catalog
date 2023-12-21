@@ -26,6 +26,10 @@
   &:hover {
     background-color: $bg-color-controllers-hov;
   }
+
+  .Text {
+    color: $btn-inactive-color-text;
+  }
 }
 
 .Text {

@@ -13,6 +13,7 @@ $bg-color-controllers: var(--bg-color-controllers);
 $bg-color-controllers-hov: var(--bg-color-controllers-hov);
 
 $btn-color-text: var(--btn-color-text);
+$btn-inactive-color-text: var(--btn-inactive-color-text);
 
 $red: var(--error_color);
 $green: var(--success_color);
@@ -35,7 +36,7 @@ $accent: #e8e9ee;
   --bg-color-controllers-hov: #4a4d58;
 
   --btn-color-text: #f1f2f9;
-
+  --btn-inactive-color-text: #f1f2f9;
   --error_color: #eb5757;
   --success_color: #27ae60;
 }
@@ -55,7 +56,7 @@ $accent: #e8e9ee;
   --bg-color-controllers-hov: #f1f5f8;
 
   --btn-color-text: #f1f2f9;
-
+  --btn-inactive-color-text: #0f0f11;
   --error_color: #f86800;
   --success_color: #27ae60;
 }

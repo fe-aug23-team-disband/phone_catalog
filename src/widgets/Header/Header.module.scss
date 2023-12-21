@@ -159,11 +159,11 @@
     }
 
     &_count {
+      color: $btn-color-text;
       display: flex;
       align-items: center;
       justify-content: center;
       height: inherit;
-      color: $primary-text-color;
     }
   }
 }
