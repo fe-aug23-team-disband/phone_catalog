@@ -1,8 +1,6 @@
 import styles from "./ErrorState.module.scss";
 import ErrorImage from "../../static/ErrorState/mentor.png";
 
-console.log(ErrorImage);
-
 export const ErrorState = () => {
   return (
     <div className={styles.wrapper}>

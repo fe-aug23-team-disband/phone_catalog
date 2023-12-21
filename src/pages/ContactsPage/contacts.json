@@ -1,0 +1,56 @@
+[
+  {
+    "name": "Serhii Mykhailivskyi",
+    "avatar": "https://res.cloudinary.com/djvhfzen7/image/upload/v1703122209/developers/Serhii.jpg",
+    "role": "Full-Stack | Team Lead",
+    "linkedin": "https://www.linkedin.com/in/serhii-mykhailivskii-482888250/",
+    "email": "email",
+    "github": "https://github.com/adioskv",
+    "telegram": "https://t.me/lfmane"
+  },
+  {
+    "name": "Kyrylo Mukomela",
+    "avatar": "https://res.cloudinary.com/djvhfzen7/image/upload/v1703122172/developers/Kyrylo.jpg",
+    "role": "Full-Stack",
+    "linkedin": "https://www.linkedin.com/in/kyrylo-mukomela-1205b4262/",
+    "email": "email",
+    "github": "https://github.com/koros-rk",
+    "telegram": "https://t.me/Rinstor"
+  },
+  {
+    "name": "Oleksandr Petrovskyi",
+    "avatar": "https://res.cloudinary.com/djvhfzen7/image/upload/v1703120844/developers/Alexander.jpg",
+    "role": "Full-Stack",
+    "linkedin": "https://www.linkedin.com/in/oleksandr-petrovskyi-6b1010196/",
+    "email": "email",
+    "github": "https://github.com/A1eeex",
+    "telegram": "https://t.me/a1eexX"
+  },
+  {
+    "name": "Olena Shchipina",
+    "avatar": "https://res.cloudinary.com/djvhfzen7/image/upload/v1703122156/developers/Lena.jpg",
+    "role": "Full-Stack",
+    "linkedin": "https://www.linkedin.com/in/olena-shchipina-7460832a0/",
+    "email": "email",
+    "github": "https://github.com/shchipina",
+    "telegram": "https://t.me/Shchipina_Olena"
+  },
+  {
+    "name": "Illia Drach",
+    "avatar": "https://res.cloudinary.com/djvhfzen7/image/upload/v1703120913/developers/Illia.jpg",
+    "role": "Full-Stack",
+    "linkedin": "linkedin",
+    "email": "email",
+    "github": "https://github.com/Drach-Illya",
+    "telegram": "https://t.me/Illia_Drach"
+  },
+  {
+    "name": "Andrii Voitovych",
+    "avatar": "https://res.cloudinary.com/djvhfzen7/image/upload/v1703122190/developers/Andrii.jpg",
+    "role": "Full-Stack",
+    "linkedin": "linkedin",
+    "email": "email",
+    "github": "https://github.com/dolphinnq",
+    "telegram": "https://t.me/dolphinnq"
+  }
+]
