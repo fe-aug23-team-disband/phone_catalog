@@ -5,6 +5,7 @@ import closeIcon from "../../static/Modal/button-close.png";
 import closeIconLight from "../../static/Modal/button-close_light.png";
 import { ThemeContext } from "../../app/providers/ThemeProvider";
 import globalVariables from "../../static/variables";
+
 interface ModalProps {
   setIsOpenModal: (state: boolean) => void;
   title: string;

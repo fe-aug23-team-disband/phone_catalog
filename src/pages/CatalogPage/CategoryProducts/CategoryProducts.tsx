@@ -10,7 +10,14 @@ import { getNumbers } from "../../../shared/utils/getNumbers";
 import { ItemCardState } from "../../../entities/ItemCardState/ItemCardState";
 import crossIcon from "../../../static/Catalog/cross.svg";
 
-const limits = [16, 24, 48];
+const limits = [8, 16, 24, 48];
+const sorts = [
+  { name: "Newest", value: "time" },
+  { name: "Oldest", value: "time-desc" },
+  { name: "Price ascending", value: "price" },
+  { name: "Price descending", value: "price-desc" },
+  { name: "Alphabet", value: "name" }
+];
 
 const arrayRange = (start: number, stop: number, step: number) =>
   Array.from(
@@ -29,7 +36,9 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
     return {
       page: searchParams.get("page") || "",
       limit: searchParams.get("limit") || "16",
-      query: searchParams.get("query") || ""
+      query: searchParams.get("query") || "",
+      sortBy: searchParams.get("sortBy") || "",
+      desc: searchParams.get("desc") || ""
     };
   }, [searchParams, category]);
 
@@ -37,7 +46,7 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
 
   const [currentPage, setCurrentPage] = useState(params.page);
   const [limit, setLimit] = useState(params.limit);
-  const [sort, setSort] = useState({ type: "", isDesc: false });
+  const [sort, setSort] = useState({ type: params.sortBy, isDesc: !!params.desc });
   const [query, setQuery] = useState(params.query);
 
   const stateArray = arrayRange(1, +limit, 1);
@@ -60,7 +69,7 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
   useEffect(() => {
     setCurrentPage(() => "0");
     setLimit(() => params.limit);
-    setSort({ type: "", isDesc: false });
+    setSort({ type: "time", isDesc: false });
     setQuery(() => "");
   }, [category]);
 
@@ -116,13 +125,17 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
             id="Sort"
             className={styles.selectors__Sort}
             onChange={handleSortChange}
-            defaultValue={"name"}
           >
-            <option className={styles.selectors__Option} value="time">Newest</option>
-            <option className={styles.selectors__Option} value="time-desc">Oldest</option>
-            <option className={styles.selectors__Option} value="price">Price ascending</option>
-            <option className={styles.selectors__Option} value="price-desc">Price descending</option>
-            <option className={styles.selectors__Option} value="name">Alphabet</option>
+            {sorts.map(sort =>
+              <option
+                key={sort.value}
+                className={styles.selectors__Option}
+                value={sort.value}
+                selected={params.sortBy === sort.value}
+              >
+                {sort.name}
+              </option>
+            )}
           </select>
         </div>
 
@@ -136,7 +149,14 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
             onChange={event => handleLimitChange(event.target.value)}
           >
             {limits.map(number =>
-              <option className={styles.selectors__Option} key={number} value={number} selected={number === +limit}>{number}</option>)}
+              <option
+                className={styles.selectors__Option}
+                key={number}
+                value={number}
+                selected={number === +limit}
+              >
+                {number}
+              </option>)}
           </select>
         </div>
 

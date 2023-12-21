@@ -74,10 +74,10 @@
     }
 
     &__Button {
+      cursor: pointer;
       position: absolute;
       border: none;
       background: none;
-      cursor: pointer;
       margin-right: 8px;
       right: 0;
       top: 12px;
@@ -100,7 +100,7 @@
     flex-shrink: 0;
     background: $bg-color-controllers;
     border: none;
-    border-right: 12px solid transparent;
+    border-right: 10px solid transparent;
     outline: none;
     color: $primary-text-color;
     font-family: inherit;
