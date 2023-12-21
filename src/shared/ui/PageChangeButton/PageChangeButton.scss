@@ -12,7 +12,7 @@
 }
 
 .left {
-  background-image: url('../../../static/Slider/arrow-left-disabled.svg');
+  background-image: url('../../../static/Slider/arrow-left-active.svg');
 
   &:hover {
     cursor: pointer;
@@ -25,7 +25,7 @@
 
   &-disabled {
     background: none;
-    background-image: url('../../../static/Slider/arrow-left-active.svg');
+    background-image: url('../../../static/Slider/arrow-left-disabled.svg');
     border: 1px solid $separator-color;
     background-repeat: no-repeat;
     background-position: center;
@@ -34,10 +34,14 @@
       cursor: not-allowed;
     }
   }
+
+  &__light {
+    background-image: url('../../../static/Slider/arrow-left-disabled.svg');
+  }
 }
 
 .right {
-  background-image: url('../../../static/Slider/arrow-right-disabled.svg');
+  background-image: url('../../../static/Slider/arrow-right-active.svg');
 
   &:hover {
     cursor: pointer;
@@ -49,7 +53,7 @@
 
   &-disabled {
     background: none;
-    background-image: url('../../../static/Slider/arrow-right-active.svg');
+    background-image: url('../../../static/Slider/arrow-right-disabled.svg');
     border: 1px solid $separator-color;
     background-repeat: no-repeat;
     background-position: center;

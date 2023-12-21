@@ -51,7 +51,7 @@
     margin-bottom: 16px;
     font-size: 22px;
     line-height: 33px;
-    color: $separator-color;
+    color: $btn-inactive-color-text;
 
     @include onTablet {
       font-size: 27px;
