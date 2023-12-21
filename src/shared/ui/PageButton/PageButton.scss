@@ -11,6 +11,8 @@
   font-weight: 600;
   line-height: 21px;
   border: none;
+  cursor: pointer;
+  transition: $animation-time ease-in-out;
 
   &:hover {
     background: $separator-color;
@@ -18,8 +20,10 @@
 }
 
 .selected {
+  pointer-events: none;
   background: $accent-color;
   color: $btn-color-text;
+
   &:hover {
     background: $accent-color;
   }

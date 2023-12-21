@@ -3,7 +3,7 @@ import styles from "./CartItem.module.scss";
 import IconRemove from "../../static/CartItem/button-close.svg";
 import ButtonIcon from "../../shared/ui/ButtonIcon/ButtonIcon";
 import IconPlus from "../../static/CartItem/button-plus.svg";
-import IconPlusLigh from "../../static/CartItem/button-plus_light.png";
+import IconPlusLight from "../../static/CartItem/button-plus_light.png";
 import IconMinus from "../../static/CartItem/button-minus-active.svg";
 import IconMinusLight from "../../static/CartItem/button-minus_light.png";
 import IconMinusDisabled from "../../static/CartItem/button-minus.svg";
@@ -78,7 +78,7 @@ export const CartItem: React.FC<{
             size="small"
             onClick={handleAdd}
             icon={
-              theme === globalVariables.themeLight ? IconPlusLigh : IconPlus
+              theme === globalVariables.themeLight ? IconPlusLight : IconPlus
             }
           />
         </div>
