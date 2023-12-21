@@ -31,7 +31,7 @@ html {
 //scrollbar
 body::-webkit-scrollbar {
   width: 8px;
-  background-color: $primary-text-color;
+  background-color: $bg-color-main;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -42,5 +42,5 @@ body::-webkit-scrollbar-thumb {
 body::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
   border-radius: 10px;
-  background-color: $primary-text-color;
+  background-color: $bg-color-main;
 }

@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useEffect, useMemo, useState } from "react";
+import React, { ChangeEvent, useContext, useEffect, useMemo, useState } from "react";
 import { useLocation, useSearchParams } from "react-router-dom";
 import { useAsyncValue } from "react-router";
 import { ItemCard } from "../../../entities/ItemCard/ItemCard";
@@ -8,7 +8,9 @@ import { PageButton } from "../../../shared/ui/PageButton/PageButton";
 import { PageChangeButton } from "../../../shared/ui/PageChangeButton/PageChangeButton";
 import { getNumbers } from "../../../shared/utils/getNumbers";
 import { ItemCardState } from "../../../entities/ItemCardState/ItemCardState";
+import crossIcon_light from "../../../static/Catalog/cross_light.svg";
 import crossIcon from "../../../static/Catalog/cross.svg";
+import { ThemeContext } from "../../../app/providers/ThemeProvider";
 
 const limits = [8, 16, 24, 48];
 const sorts = [
@@ -28,6 +30,7 @@ const arrayRange = (start: number, stop: number, step: number) =>
 export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ state }) => {
   const location = useLocation();
   const category = location.pathname.slice(1);
+  const { theme } = useContext(ThemeContext);
 
   const data = useAsyncValue() as ProductResponse;
   const [searchParams, setSearchParams] = useSearchParams();
@@ -176,7 +179,7 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
               className={styles.selectors__Search__Button}
               onClick={handleCrossClick}
             >
-              <img src={crossIcon} alt="delete" />
+              <img src={theme === "light" ? crossIcon_light : crossIcon} alt="delete" />
             </button>}
           </div>
         </div>
