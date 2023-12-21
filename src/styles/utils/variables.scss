@@ -12,6 +12,8 @@ $bg-color-product: var(--bg-color-product);
 $bg-color-controllers: var(--bg-color-controllers);
 $bg-color-controllers-hov: var(--bg-color-controllers-hov);
 
+$btn-color-text: var(--btn-color-text);
+
 $red: var(--error_color);
 $green: var(--success_color);
 
@@ -32,6 +34,8 @@ $accent: #e8e9ee;
   --bg-color-controllers: #323542;
   --bg-color-controllers-hov: #4a4d58;
 
+  --btn-color-text: #f1f2f9;
+
   --error_color: #eb5757;
   --success_color: #27ae60;
 }
@@ -50,7 +54,8 @@ $accent: #e8e9ee;
   --bg-color-controllers: #e9ecee;
   --bg-color-controllers-hov: #f1f5f8;
 
-  // --error_color: #eb5757;
+  --btn-color-text: #f1f2f9;
+
   --error_color: #f86800;
   --success_color: #27ae60;
 }

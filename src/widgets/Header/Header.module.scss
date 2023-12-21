@@ -40,8 +40,12 @@
   }
 
   &_inside_wrapper {
-    display: flex;
+    display: none;
     width: 100%;
+
+    @include onTablet {
+      display: flex;
+    }
   }
 
   &_logo {
@@ -169,7 +173,7 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 760px) {
   .header {
     display: flex;
     justify-content: space-between;
@@ -180,14 +184,6 @@
 
     &_inside_wrapper {
       display: none;
-    }
-
-    &_logo {
-      display: flex;
-      &_img {
-        width: 64px;
-        height: 22px;
-      }
     }
   }
 }
