@@ -40,7 +40,9 @@
 
   &__Image {
     height: 196px;
+    width: 100%;
     margin: 0 auto;
+    object-fit: contain;
   }
 
   &__Title {
