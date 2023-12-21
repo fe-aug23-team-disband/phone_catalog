@@ -151,13 +151,13 @@ export const CategoryProducts: React.FC<{ state?: "loading" | "error" }> = ({ st
               value={query}
               placeholder="Input text..."
             />
-            <button
+            {query && <button
               type="button"
               className={styles.selectors__Search__Button}
               onClick={handleCrossClick}
             >
               <img src={crossIcon} alt="delete" />
-            </button>
+            </button>}
           </div>
         </div>
       </div>

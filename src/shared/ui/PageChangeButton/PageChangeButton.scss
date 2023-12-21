@@ -9,18 +9,21 @@
   background: $bg-color-controllers;
   background-repeat: no-repeat;
   background-position: center;
+  transition: $animation-time ease-in-out;
 }
 
 .left {
   background-image: url('../../../static/Slider/arrow-left-active.svg');
 
-  &:hover {
+  &:hover:not(.left-disabled) {
     cursor: pointer;
-
-    background: $bg-color-controllers-hov;
-    background-image: url('../../../static/Slider/arrow-left-active.svg');
+    background-color: $bg-color-controllers-hov;
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  &-light {
+    background-image: url('../../../static/Slider/arrow-left-disabled.svg');
   }
 
   &-disabled {
@@ -29,26 +32,25 @@
     border: 1px solid $separator-color;
     background-repeat: no-repeat;
     background-position: center;
-
-    &:hover {
-      cursor: not-allowed;
-    }
   }
 
-  &__light {
-    background-image: url('../../../static/Slider/arrow-left-disabled.svg');
+  &:hover:not(.left-light):not(.left-disabled) {
+    background-image: url('../../../static/Slider/arrow-left-active.svg');
   }
 }
 
 .right {
   background-image: url('../../../static/Slider/arrow-right-active.svg');
 
-  &:hover {
+  &:hover:not(.right-disabled) {
     cursor: pointer;
-    background: $bg-color-controllers-hov;
-    background-image: url('../../../static/Slider/arrow-right-active.svg');
+    background-color: $bg-color-controllers-hov;
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  &-light {
+    background-image: url('../../../static/Slider/arrow-right-disabled.svg');
   }
 
   &-disabled {
@@ -57,9 +59,9 @@
     border: 1px solid $separator-color;
     background-repeat: no-repeat;
     background-position: center;
+  }
 
-    &:hover {
-      cursor: not-allowed;
-    }
+  &:hover:not(.right-light):not(.right-disabled) {
+    background-image: url('../../../static/Slider/arrow-right-active.svg');
   }
 }
