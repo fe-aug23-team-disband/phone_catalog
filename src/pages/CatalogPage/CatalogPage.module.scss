@@ -60,13 +60,13 @@
       background: $accent;
       border: none;
       outline: none;
-      color: $bg-color-main;
       font-family: inherit;
       font-size: 14px;
       font-style: normal;
       font-weight: 700;
       line-height: 21px;
       box-sizing: border-box;
+      color: black;
 
       &:hover {
         outline: 1px solid $bg-color-controllers-hov;
@@ -162,6 +162,11 @@
     @include onDesktop {
       width: 272px;
     }
+  }
+
+  &__nothing_found {
+    text-align: center;
+    margin-top: 100px;
   }
 }
 

@@ -45,13 +45,11 @@ export const Carousel = () => {
     slidesToShow: 1,
     autoplaySpeed: 5000,
     slidesToScroll: 1,
-    swipe: false,
     responsive: [
       {
         breakpoint: 640,
         settings: {
           arrows: false,
-          swipe: true
         }
       }
     ]

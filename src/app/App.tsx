@@ -3,7 +3,7 @@ import Header from "../widgets/Header/Header";
 import Footer from "../widgets/Footer/Footer";
 import styles from "../styles/main.module.scss";
 import Bredcrumbs from "../widgets/Bredcrumbs/Bredcrumbs";
-import ThemeProvider from "./providers/ThemeProvider";
+import { ThemeProvider } from "./providers/ThemeProvider";
 
 export const App = () => {
   const location = useLocation();

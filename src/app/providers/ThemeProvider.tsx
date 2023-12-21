@@ -1,27 +1,27 @@
 import { createContext, useEffect } from "react";
-import { useLocalStoregeTheme } from "./useLocalStoregeTheme";
+import { useLocalStorageTheme } from "./useLocalStorageTheme";
 import globalVariables from "../../static/variables";
 
-type ThemeContextType = {
+interface ThemeContextType {
   theme: typeof globalVariables.themeDark | typeof globalVariables.themeLight;
   setTheme: React.Dispatch<
     React.SetStateAction<
       typeof globalVariables.themeDark | typeof globalVariables.themeLight
     >
   >;
-};
+}
 
 export const ThemeContext = createContext<ThemeContextType>({
   theme: globalVariables.themeDark,
   setTheme: () => {}
 });
 
-type Props = {
+interface Props {
   children: React.ReactNode;
-};
+}
 
-const ThemeProvider: React.FC<Props> = ({ children }) => {
-  const [theme, setTheme] = useLocalStoregeTheme(
+export const ThemeProvider: React.FC<Props> = ({ children }) => {
+  const [theme, setTheme] = useLocalStorageTheme(
     "theme",
     globalVariables.themeDark
   );
@@ -36,5 +36,3 @@ const ThemeProvider: React.FC<Props> = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
-
-export default ThemeProvider;

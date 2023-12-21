@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-export const useLocalStoregeTheme = (key, defData) => {
+export const useLocalStorageTheme = (key, defData) => {
   const [state, setState] = useState(() => {
     const localData = localStorage.getItem(key);
     return localData || defData;

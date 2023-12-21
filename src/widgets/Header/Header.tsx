@@ -5,8 +5,6 @@ import logoImg from "../../static/Header/logo.png";
 import logoImg_light from "../../static/Header/logo_light.png";
 import favoriteIcon from "../../static/Header/button-heart.png";
 import favoriteIcon_light from "../../static/ItemCard/heartIcon_light.png";
-import lightThemeIcon from "../../static/Header/themeLightIcon.svg";
-import darkThemeIcon from "../../static/Header/themeDarkIcon.svg";
 import cartIcon from "../../static/Header/button-shop.png";
 import cartIcon_light from "../../static/Header/button-shop_light.png";
 import menuIcon from "../../static/Header/button-burger-menu.png";
@@ -19,6 +17,7 @@ import { wishlistSelector } from "../../app/store/slices/wishlist.slice";
 import { NavLink } from "react-router-dom";
 import cn from "classnames";
 import { ThemeContext } from "../../app/providers/ThemeProvider";
+import { ThemeSwitcher } from "../ThemeSwitcher/ThemeSwitcher";
 
 const navItems = [
   { path: `${globalVariables.patchToHome}`, label: "home" },
@@ -31,7 +30,7 @@ const Header = () => {
   const [isOpenMenu, setIsOpenMenu] = useState(false);
   const { items: wishlistItems } = useAppSelector(wishlistSelector);
   const { items: cartItems } = useAppSelector(cartSelector);
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
 
   const icons = [
     {
@@ -50,10 +49,6 @@ const Header = () => {
 
   const handleCloseMenu = () => {
     setIsOpenMenu(false);
-  };
-
-  const hanlerChangeTheme = () => {
-    setTheme(theme === globalVariables.themeDark ? globalVariables.themeLight : globalVariables.themeDark);
   };
 
   return (
@@ -84,15 +79,15 @@ const Header = () => {
             </ul>
           </nav>
 
+          <div className={styles.header_spacer} />
+
+          <div
+            className={styles.header_switch}
+          >
+            <ThemeSwitcher />
+          </div>
+
           <div className={styles.header_icons}>
-            <div
-              onClick={hanlerChangeTheme}
-              className={styles.header_icons_link}
-            >
-              <span className={styles.header_icon_wrap}>
-                <img src={`${theme === globalVariables.themeLight ? darkThemeIcon : lightThemeIcon}`} alt={"theme_buton"} />
-              </span>
-            </div>
             {icons.map((item, index) => (
               <NavLink
                 key={index}

@@ -25,7 +25,7 @@ type Props = {
 };
 
 const MobileMenu: React.FC<Props> = ({ onClose }) => {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   const { items: wishlistItems } = useAppSelector(wishlistSelector);
   const { items: cartItems } = useAppSelector(cartSelector);
 
