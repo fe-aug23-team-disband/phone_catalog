@@ -13,6 +13,7 @@ import { ItemPhoto } from "./ItemPhoto/ItemPhoto";
 import { ItemMainInfo } from "./ItemMainInfo/ItemMainInfo";
 import { Loader } from "../../../entities/Loader/Loader";
 import { ErrorState } from "../../../entities/ErrorState/ErrorState";
+import { scrollToTop } from "../../../shared/utils/ScrollToTop";
 
 type Props = {
   state?: "loading" | "error",
@@ -31,6 +32,7 @@ export const ItemInfo: React.FC<Props> = ({ state }) => {
 
   const handleColorClick = (color: Color) => {
     setSelectedColor(color);
+    scrollToTop();
   };
 
   const handleCapacityClick = (capacity: string) => {
