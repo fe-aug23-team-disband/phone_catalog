@@ -19,7 +19,6 @@
   }
 
   &_switch {
-    justify-self: flex-end;
     align-self: center;
     width: 50px;
     height: 25px;
@@ -111,10 +110,6 @@
         transition: $animation-time;
       }
     }
-  }
-
-  &_spacer {
-    flex: 1;
   }
 
   &_icons {

@@ -1,5 +1,6 @@
 import globalVariables from "../../static/variables";
 import styles from "./Header.module.scss";
+import spacer from "../../styles/flex_spacer.module.scss";
 import { Link } from "react-router-dom";
 import logoImg from "../../static/Header/logo.png";
 import logoImg_light from "../../static/Header/logo_light.png";
@@ -79,7 +80,7 @@ const Header = () => {
             </ul>
           </nav>
 
-          <div className={styles.header_spacer} />
+          <div className={spacer.flex_spacer} />
 
           <div
             className={styles.header_switch}

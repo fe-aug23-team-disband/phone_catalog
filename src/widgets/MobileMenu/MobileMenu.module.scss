@@ -30,6 +30,13 @@
     }
   }
 
+  &_switch {
+    align-self: center;
+    width: 50px;
+    height: 25px;
+    padding-inline: 15px;
+  }
+
   &_logo {
     display: flex;
     width: 64px;
@@ -78,7 +85,7 @@
       color: $secondary-text-color;
       text-decoration: none;
       cursor: pointer;
-      
+
       &:hover {
         color: $primary-text-color;
       }

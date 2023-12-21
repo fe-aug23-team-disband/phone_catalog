@@ -1,9 +1,8 @@
 import React, { useContext } from "react";
 import "../../styles/utils/variables.scss";
 import styles from "./MobileMenu.module.scss";
+import spacer from "../../styles/flex_spacer.module.scss";
 import { Link } from "react-router-dom";
-import lightThemeIcon from "../../static/Header/themeLightIcon.svg";
-import darkThemeIcon from "../../static/Header/themeDarkIcon.svg";
 import logoImg from "../../static/Header/logo.png";
 import logoImgLight from "../../static/Header/logo_light.png";
 import menuCloseIcon from "../../static/MobileMenu/button-close.png";
@@ -19,6 +18,7 @@ import { useAppSelector } from "../../app/store/hooks";
 import { NavLink } from "react-router-dom";
 import cn from "classnames";
 import { ThemeContext } from "../../app/providers/ThemeProvider";
+import { ThemeSwitcher } from "../ThemeSwitcher/ThemeSwitcher";
 
 type Props = {
   onClose: () => void;
@@ -55,14 +55,6 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
     }
   ];
 
-  const hanlerChangeTheme = () => {
-    setTheme(
-      theme === globalVariables.themeDark
-        ? globalVariables.themeLight
-        : globalVariables.themeDark
-    );
-  };
-
   return (
     <nav className={styles.mobile_menu}>
       <header className={styles.mobile_menu_header}>
@@ -80,6 +72,13 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
             alt="logo"
           />
         </Link>
+
+        <div className={spacer.flex_spacer}></div>
+
+        <div className={styles.mobile_menu_switch}>
+          <ThemeSwitcher />
+        </div>
+
         <button
           onClick={() => {
             onClose();
@@ -119,21 +118,6 @@ const MobileMenu: React.FC<Props> = ({ onClose }) => {
       </ul>
 
       <div className={styles.mobile_menu_buttons_bottom}>
-        <div
-          onClick={hanlerChangeTheme}
-          className={styles.mobile_menu_button_link}
-        >
-          <span className={styles.mobile_menu_button_wrap}>
-            <img
-              src={`${
-                theme === globalVariables.themeLight
-                  ? darkThemeIcon
-                  : lightThemeIcon
-              }`}
-              alt={"theme_change_button"}
-            />
-          </span>
-        </div>
         {icons.map((item, index) => (
           <Link
             onClick={() => {
