@@ -39,7 +39,7 @@ export const ItemCard = ({ phone }: { phone: ProductShorted }) => {
       <div className={styles.itemCard__divider}></div>
 
       <div className={styles.itemCard__Specs}>
-        <ItemCardSpecs category="Screen" value={phone.screen} />
+        <ItemCardSpecs category="Screen" value={phone.screen.replace("Super Retina XDR", "SR XDR")} />
         <ItemCardSpecs category="Capacity" value={phone.capacity} />
         <ItemCardSpecs category="RAM" value={phone.ram} />
 
