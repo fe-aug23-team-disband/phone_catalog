@@ -1,25 +1,39 @@
+@import "../../styles/utils/variables.scss";
+
 .wrapper {
-  height: 60vh;
+  height: 100%;
   margin-bottom: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 40px;
+
+  &__titles {
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .animation {
   &__image {
-    animation: rotateMentor 7s linear infinite;
+    animation: rotateMentor 9s ease-in-out infinite;
   }
 }
 
 .title {
   font-weight: 800;
-  font-size: 24px;
+  font-size: 36px;
 
   background-image: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
   color: transparent;
   display: inline-block;
   background-clip: text;
+}
+
+.link {
+  color: $secondary-text-color;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 @keyframes rotateMentor {
