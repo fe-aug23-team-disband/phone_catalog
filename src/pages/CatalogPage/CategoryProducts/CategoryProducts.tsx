@@ -12,7 +12,7 @@ import crossIcon_light from "../../../static/Catalog/cross_light.svg";
 import crossIcon from "../../../static/Catalog/cross.svg";
 import { ThemeContext } from "../../../app/providers/ThemeProvider";
 
-const limits = [8, 16, 24, 48];
+const limits = [16, 24, 48];
 const sorts = [
   { name: "Newest", value: "time" },
   { name: "Oldest", value: "time-desc" },
