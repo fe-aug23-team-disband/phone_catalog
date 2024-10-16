@@ -4,12 +4,18 @@
 .item {
   display: flex;
   flex-direction: column;
-  padding: 23px 16px 16px 16px;
+  padding: 23px 16px 16px;
   background-color: $bg-color-product;
+  transition: $animation-time ease-in-out;
+
   @include onTablet {
     padding: 24px;
     flex-direction: row;
     justify-content: space-between;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: 16px;
   }
 
   &__info {
@@ -70,7 +76,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // gap: 16px;
     width: 106px;
 
     @include onTablet {
@@ -93,8 +98,4 @@
     color: $primary-text-color;
     margin: 0;
   }
-}
-
-.item:not(:last-child) {
-  margin-bottom: 16px;
 }
